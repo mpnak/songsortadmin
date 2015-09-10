@@ -8,6 +8,7 @@
   text-align: right;
   margin-bottom: 2%;
   .btn {
+    margin-left: 2%;
     background-color: #7ED321;
     border-radius: 0;
     &:hover {
@@ -45,4 +46,46 @@
     transform: translate(-50%, -50%);
   }
 
+  &.show {
+    margin: 0;
+    width: 15%;
+    padding-bottom: 15%;
+    &:hover {
+      background-color: #D8D8D8;
+    }
+
+  }
+
 }
+
+#station-song-loader {
+  position: relative;
+  width: 70%;
+  padding-bottom: 15%;
+  margin-left: 5%;
+  float: right;
+  border: 1px solid #979797;
+  background-color: #D8D8D8;
+  text-decoration: none;
+  color: $text-color;
+
+  content: "Drag or drop spotify playlists";
+
+  &.draggingOver {
+    background-color: green;
+  }
+
+  &.dropped {
+  }
+
+  .loader-content {
+    pointer-events: none;
+    color: #9B9B9B;
+    font-size: 1.4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+

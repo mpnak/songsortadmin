@@ -55,6 +55,7 @@ gem 'bootstrap-sass-extras'
 gem 'delayed_job_active_record'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
+gem 'underscore-rails'
 
 group :development, :test do
   gem 'rspec-rails'

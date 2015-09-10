@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @station.name %>
-</p>
+<div class="station show">
+  <div class="station-content">
+    <%= @station.name %>
+  </div>
+</div>
+
+<div id="station-song-loader">
+  <div class="loader-content">
+    Drag and drop spotify tracks or playlists
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_station_path(@station) %> |
 <%= link_to 'Back', stations_path %>
