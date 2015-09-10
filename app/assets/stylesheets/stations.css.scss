@@ -1,0 +1,48 @@
+// Place all the styles related to the Stations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap_configuration";
+
+.new-station {
+  text-align: right;
+  margin-bottom: 2%;
+  .btn {
+    background-color: #7ED321;
+    border-radius: 0;
+    &:hover {
+      background-color: $brand-primary;
+    }
+  }
+}
+
+.station {
+  position: relative;
+  width: 23%;
+  padding-bottom: 23%;
+  margin: 1.3333%;
+  float: left;
+  border: 1px solid #979797;
+  background-color: #D8D8D8;
+  text-decoration: none;
+  color: $text-color;
+
+  &:nth-of-type(4n+1) {
+    margin-left: 0;
+  }
+  &:nth-of-type(4n+4) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: $brand-primary;
+  }
+
+  .station-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}

@@ -1,0 +1,14 @@
+<div class="new-station">
+  (12 Station max for now)
+  <%= link_to 'NEW STATION', new_station_path, class: 'btn btn-default' %>
+</div>
+
+<div class="stations">
+  <% @stations.each do |station| %>
+    <%= link_to station, class: "station" do %>
+      <div class="station-content">
+        <%= station.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
