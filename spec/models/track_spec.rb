@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Song, type: :model do
-  before { @song = FactoryGirl.build(:song) }
+RSpec.describe Track, type: :model do
+  before { @track = FactoryGirl.build(:track) }
 
-  subject { @song }
+  subject { @track }
 
   it { should respond_to(:station) }
   it { should respond_to(:spotify_id) }
-  it { should respond_to(:name) }
+  it { should respond_to(:echo_nest_id) }
+  it { should respond_to(:title) }
   it { should respond_to(:artist) }
   it { should respond_to(:undergroundness) }
 
@@ -15,7 +16,8 @@ RSpec.describe Song, type: :model do
 
   it { should validate_presence_of(:station) }
   it { should validate_presence_of(:spotify_id) }
-  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:echo_nest_id) }
+  it { should validate_presence_of(:title) }
   it { should validate_presence_of(:artist) }
 
   it { should belong_to(:station) }
