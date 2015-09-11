@@ -56,11 +56,12 @@ gem 'delayed_job_active_record'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'underscore-rails'
+gem 'echowrap'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'dotenv-rails'
+  gem 'faker', "~>1.5.0"
 end
 
 group :test do
