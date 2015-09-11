@@ -22,6 +22,7 @@ $(function() {
     addDroppedUIState($target);
     var message = e.originalEvent.dataTransfer.getData("text/plain");
     e.preventDefault();
+    matchAndAlert(message);
    });
 
    function addDroppedUIState($target) {
@@ -32,6 +33,14 @@ $(function() {
         $target.removeClass("dropped");
         $target.find(".loader-content").text("Drag and drop spotify tracks or playlists");
       }, 1000, $target);
+   }
+
+   function matchAndAlert(text) {
+     var re = /^http:\/\/open\.spotify\.com\/track\/(.*)/;
+     var matches = text.match(re);
+     if (matches) {
+      alert(matches[1]);
+     }
    }
 });
 
