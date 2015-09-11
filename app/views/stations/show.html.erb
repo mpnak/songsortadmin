@@ -1,16 +1,78 @@
 <p id="notice"><%= notice %></p>
 
-<div class="station show">
-  <div class="station-content">
-    <%= @station.name %>
+<div class="row">
+  <div class="station show">
+    <div class="station-content">
+      <%= @station.name %>
+    </div>
+  </div>
+
+  <div id="station-song-loader">
+    <div class="loader-content">
+      Drag and drop spotify tracks or playlists
+    </div>
   </div>
 </div>
 
-<div id="station-song-loader">
-  <div class="loader-content">
-    Drag and drop spotify tracks or playlists
+<div class="station-toolbar row">
+  <div class="total-tracks">
+    Total Tracks: 250
+  </div>
+
+  <div class="station-sort">
+  </div>
+
+  <%= link_to 'UPDATE', "#", class: 'btn update-station' %>
+</div>
+
+<div class="tabletop-row">
+  <div>
+    All
+  </div>
+
+  <div>
+    Unranked
+  </div>
+
+  <div>
+    Ranked
+  </div>
+
+  <div>
+    MORE POPULAR
+  </div>
+
+  <div>
+    LESS POPULAR
   </div>
 </div>
+
+<table class="table table-striped">
+  <tbody>
+
+    <% 10.times do %>
+    <tr>
+      <td>X</td>
+      <td>California Love</td>
+      <td>2Pac</td>
+      <td class="no-padding">
+        <div class="undergroundness-label">
+          UNDERGROUNDNESS
+        </div>
+        <div class="rating-selector">
+          <div class="rating-item"></div>
+          <div class="rating-item"></div>
+          <div class="rating-item"></div>
+          <div class="rating-item"></div>
+          <div class="rating-item"></div>
+          <div class="rating-item"></div>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_station_path(@station) %> |
 <%= link_to 'Back', stations_path %>

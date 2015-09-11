@@ -55,7 +55,6 @@
     }
 
   }
-
 }
 
 #station-song-loader {
@@ -86,6 +85,49 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.station-toolbar {
+  width: 100%;
+
+  .total-tracks {
+    float: left;
+  }
+  .station-sort {
+    float: right;
+  }
+  .update-station {
+    float: right;
+    background-color: #7ED321;
+    border-radius: 0;
+    &:hover {
+      background-color: $brand-primary;
+    }
+  }
+}
+
+.row {
+  margin-bottom: 2%;
+}
+
+td.no-padding {
+  padding: 0;
+}
+
+.undergroundness-label {
+  float: left;
+  margin-right: 1em;
+}
+
+.rating-selector {
+  display: inline-block;
+  .rating-item {
+    height: 1.8em;
+    width: 1.8em;
+    background-color: #AAA9AA;
+    float: left;
+    margin-left: 1px;
   }
 }
 
