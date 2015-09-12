@@ -9,6 +9,7 @@ class StationsController < ApplicationController
   end
 
   def show
+    gon.push({ :station_id => @station.id })
     respond_with(@station)
   end
 

@@ -42,7 +42,6 @@ gem 'bundler'
 
 group :development do
   gem 'better_errors'
-  gem 'pry-rails'
 end
 
 gem 'binding_of_caller'
@@ -57,11 +56,13 @@ gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'underscore-rails'
 gem 'echowrap'
+gem 'gon'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker', "~>1.5.0"
+  gem 'pry-rails'
 end
 
 group :test do
