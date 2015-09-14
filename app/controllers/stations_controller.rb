@@ -10,6 +10,7 @@ class StationsController < ApplicationController
 
   def show
     gon.push({ :station_id => @station.id })
+    @tracks = @station.tracks
     respond_with(@station)
   end
 

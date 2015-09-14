@@ -1,4 +1,37 @@
 $(function() {
+
+  // Undergroundess rating
+
+  $(".rating-selector .rating-item").on('click', function() {
+    console.log('clicked');
+
+    var $this = $(this);
+
+    // Update the background color instantly for perceived responsivness
+
+    $this.siblings().toggleClass('selected', false);
+    $this.toggleClass('selected', true);
+
+    // Send the update to the server
+    var rating = $this.attr("data-rating");
+    var track_id = $this.attr("data-track");
+    var data = {
+      "track": {
+        "undergroundness": rating
+      }
+    };
+
+    $.ajax({
+      type: "PUT",
+      url: "/tracks/" + track_id,
+      data: data,
+      success: function() {},
+      dataType: "json"
+    });
+  });
+
+  // Song loader
+
   var $target = $("#station-song-loader");
 
   $target.on("dragenter", function(e) {
@@ -59,7 +92,7 @@ $(function() {
   }
 
   function trackCreated(data) {
-      alert(data);
+    alert(data);
   }
 });
 

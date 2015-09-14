@@ -59,4 +59,40 @@ RSpec.describe TracksController, type: :controller do
     end
   end
 
+  describe "PUT #update" do
+    context "with valid params" do
+      let(:new_attributes) {
+        { undergroundness: "4" }
+      }
+
+      it "updates the requested station" do
+        track = FactoryGirl.create(:track)
+        put :update, {:id => track.to_param, :track => new_attributes}, valid_session
+        track.reload
+        expect(track.undergroundness).to eq 4
+      end
+
+      it "assigns the requested track as @track" do
+        track = Track.create! valid_attributes
+        put :update, {:id => track.to_param, :track => valid_attributes}, valid_session
+        expect(assigns(:track)).to eq(track)
+      end
+
+      it "redirects to the station" do
+        track = Track.create! valid_attributes
+        put :update, {:id => track.to_param, :track => valid_attributes}, valid_session
+        expect(response).to redirect_to(track)
+      end
+    end
+
+    context "with invalid params" do
+      it "assigns the track as @track" do
+        track = Track.create! valid_attributes
+        put :update, {:id => track.to_param, :track => invalid_attributes}, valid_session
+        expect(assigns(:track)).to eq(track)
+      end
+
+    end
+  end
+
 end

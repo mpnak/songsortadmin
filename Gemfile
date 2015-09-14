@@ -57,6 +57,7 @@ gem 'tzinfo-data'
 gem 'underscore-rails'
 gem 'echowrap'
 gem 'gon'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'rspec-rails'
