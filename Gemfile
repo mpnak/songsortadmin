@@ -63,6 +63,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker', "~>1.5.0"
   gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
