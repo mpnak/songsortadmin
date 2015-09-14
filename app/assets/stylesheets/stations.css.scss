@@ -9,10 +9,10 @@
   margin-bottom: 2%;
   .btn {
     margin-left: 2%;
-    background-color: #7ED321;
+    background-color: $lima;
     border-radius: 0;
     &:hover {
-      background-color: $brand-primary;
+      background-color: $deep_magenta;
     }
   }
 }
@@ -23,8 +23,8 @@
   padding-bottom: 23%;
   margin: 1.3333%;
   float: left;
-  border: 1px solid #979797;
-  background-color: #D8D8D8;
+  border: 1px solid $mountain_mist;
+  background-color: $iron;
   text-decoration: none;
   color: $text-color;
 
@@ -36,7 +36,8 @@
   }
 
   &:hover {
-    background-color: $brand-primary;
+    background-color: $deep_magenta;
+    color: $text-color;
   }
 
   .station-content {
@@ -51,7 +52,7 @@
     width: 15%;
     padding-bottom: 15%;
     &:hover {
-      background-color: #D8D8D8;
+      background-color: $iron;
     }
 
   }
@@ -63,15 +64,15 @@
   padding-bottom: 15%;
   margin-left: 5%;
   float: right;
-  border: 1px solid #979797;
-  background-color: #D8D8D8;
+  border: 1px solid $mountain_mist;
+  background-color: $iron;
   text-decoration: none;
   color: $text-color;
 
   content: "Drag or drop spotify playlists";
 
   &.draggingOver {
-    background-color: green;
+    background-color: $lima;
   }
 
   &.dropped {
@@ -79,7 +80,7 @@
 
   .loader-content {
     pointer-events: none;
-    color: #9B9B9B;
+    color: $star_dust;
     font-size: 1.4em;
     position: absolute;
     top: 50%;
@@ -99,10 +100,10 @@
   }
   .update-station {
     float: right;
-    background-color: #7ED321;
+    background-color: $lima;
     border-radius: 0;
     &:hover {
-      background-color: $brand-primary;
+      background-color: $deep_magenta;
     }
   }
 }
@@ -125,9 +126,17 @@ td.no-padding {
   .rating-item {
     height: 1.8em;
     width: 1.8em;
-    background-color: #AAA9AA;
+    background-color: $dark_gray;
     float: left;
     margin-left: 1px;
+
+    &:hover {
+      background-color: $deep_magenta;
+    }
+
+    &.selected {
+      background-color: $deep_magenta;
+    }
   }
 }
 
