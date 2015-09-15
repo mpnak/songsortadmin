@@ -4,8 +4,7 @@ class TracksController < ApplicationController
   def create
     @station = Station.find(track_params[:station_id])
 
-    @track = Track.build_from_spotify_id(track_params[:spotify_id])
-    @track.station = @station
+    @track = Station.tracks.build_from_spotify_id(track_params[:spotify_id])
 
     if @track.save
       render json: @track, status: 201, location: @track
