@@ -16,7 +16,7 @@
 
 <div class="station-toolbar row">
   <div class="total-tracks">
-    Total Tracks: 250
+    Total Tracks: <%= @tracks.count %>
   </div>
 
   <div class="station-sort">
@@ -47,32 +47,30 @@
   </div>
 </div>
 
-<table class="table table-striped">
-  <tbody>
-
-    <% @tracks.each do |track| %>
-    <tr>
-      <td>X</td>
-      <td><%= track.title %></td>
-      <td><%= track.artist %></td>
-      <td class="no-padding">
+<table class="tracks">
+  <% @tracks.each do |track| %>
+    <tr class="track-row">
+      <td class="delete-track track-cell">
+        <%= image_tag("delete_track_icon.png") %>
+      </td>
+      <td class="track-title track-cell"><%= track.title %></td>
+      <td class="track-artist track-cell"><%= track.artist %></td>
+      <td class="undergroundness-rating track-cell">
         <div class="undergroundness-label">
           UNDERGROUNDNESS
         </div>
         <div class="rating-selector">
-          <% 1.upto(5) do |n| %>
-            <div
-             class="rating-item <%= track.undergroundness == n ? 'selected' : '' %>"
-             data-rating="<%= n %>"
-             data-track="<%= track.id %>"
-             ></div>
-          <% end %>
+        <% 1.upto(5) do |n| %>
+          <div
+           class="rating-item <%= track.undergroundness == n ? 'selected' : '' %>"
+           data-rating="<%= n %>"
+           data-track="<%= track.id %>"
+           ></div>
+         <% end %>
         </div>
       </td>
     </tr>
   <% end %>
-
-  </tbody>
 </table>
 
 <%= link_to 'Edit', edit_station_path(@station) %> |

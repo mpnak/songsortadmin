@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap_configuration";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .new-station {
   text-align: right;
@@ -112,31 +114,75 @@
   margin-bottom: 2%;
 }
 
-td.no-padding {
+.tracks {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+}
+
+.track-row {
+  height: 48px;
+  margin-bottom: 1px;
   padding: 0;
-}
 
-.undergroundness-label {
-  float: left;
-  margin-right: 1em;
-}
+  &:nth-of-type(even) {
+    background-color: $ebb;
+  }
 
-.rating-selector {
-  display: inline-block;
-  .rating-item {
-    height: 1.8em;
-    width: 1.8em;
-    background-color: $dark_gray;
+  &:nth-of-type(odd) {
+    background-color: $iron;
+  }
+
+  .track-cell {
+    text-align: center;
+  }
+
+  .delete-track {
+    width: 6%;
+  }
+
+  .track-title {
+    width: 24%;
+    text-align: left;
+    padding: 1em;
+  }
+
+  .track-artist {
+    width: 24%;
+    text-align: left;
+    padding: 1em;
+  }
+
+  .undergroundness-label {
+    padding: 1em;
     float: left;
-    margin-left: 1px;
+  }
 
-    &:hover {
-      background-color: $deep_magenta;
-    }
+  .undergroundness-rating {
+    width: 46%;
+  }
 
-    &.selected {
-      background-color: $deep_magenta;
+  .rating-selector {
+    height: 48px;
+    display: inline-block;
+    position: relative;
+
+    .rating-item {
+      height: 48px;
+      width: 48px;
+      background-color: $dark_gray;
+      float: left;
+
+      &:hover {
+        background-color: $deep_magenta;
+      }
+
+      &.selected {
+        background-color: $deep_magenta;
+      }
     }
   }
 }
+
 
