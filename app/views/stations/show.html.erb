@@ -20,6 +20,14 @@
   </div>
 
   <div class="station-sort">
+    <label>SORT</label>
+
+    <select id="sort-select">
+      <option value="created_at:desc">Added</option>
+      <option value="title:asc">Title</option>
+      <option value="artist:asc">Artist</option>
+      <option value="undergroundness:desc">Undergroundness</option>
+    </select>
   </div>
 
   <%= link_to 'UPDATE', "#", class: 'btn update-station' %>

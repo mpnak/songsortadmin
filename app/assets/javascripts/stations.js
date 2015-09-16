@@ -93,16 +93,18 @@ $(function() {
   }
 });
 
-// On document ready:
-
 $(function(){
 
-  // Instantiate MixItUp:
+  $sortSelect = $('#sort-select'),
+    $container = $('#tracks');
 
-  $('#tracks').mixItUp({
+  $container.mixItUp({
     selectors: {
       target: '.track', /* .mix */
       filter: '.filter-btn' /* .filter */
+    },
+    load: {
+      sort: 'created_at:desc' /* default:asc */
     },
     animation: {
       enable: false
@@ -116,6 +118,10 @@ $(function(){
         });
       }
     }
+  });
+
+  $sortSelect.on('change', function(){
+    $container.mixItUp('sort', this.value);
   });
 
 });

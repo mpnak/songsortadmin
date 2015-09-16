@@ -1,4 +1,10 @@
-<tr class="track <%= track.undergroundness ? 'ranked' : 'unranked' %>" >
+<tr
+  class="track <%= track.undergroundness ? 'ranked' : 'unranked' %>"
+  data-created_at="<%= track.created_at.to_i %>"
+  data-title="<%= track.title %>"
+  data-artist="<%= track.artist %>"
+  data-undergroundness="<%= track.undergroundness %>"
+  >
   <td class="delete-track track-cell">
     <%= image_tag("delete_track_icon.png") %>
   </td>
