@@ -19,27 +19,41 @@
   }
 }
 
+section.margin-bottom {
+  margin-bottom: 2%;
+}
+
 .station {
   position: relative;
   width: 23%;
   padding-bottom: 23%;
   margin: 1.3333%;
-  float: left;
+  display: inline-block;
   border: 1px solid $mountain_mist;
   background-color: $iron;
   text-decoration: none;
   color: $text-color;
 
+  &:hover {
+    background-color: $deep_magenta;
+    color: $text-color;
+  }
+
   &:nth-of-type(4n+1) {
     margin-left: 0;
   }
+
   &:nth-of-type(4n+4) {
     margin-right: 0;
   }
 
-  &:hover {
-    background-color: $deep_magenta;
-    color: $text-color;
+  &.show-page {
+    margin: 0;
+    width: 15%;
+    padding-bottom: 15%;
+    &:hover {
+      background-color: $iron;
+    }
   }
 
   .station-content {
@@ -47,16 +61,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  &.show {
-    margin: 0;
-    width: 15%;
-    padding-bottom: 15%;
-    &:hover {
-      background-color: $iron;
-    }
-
   }
 }
 
@@ -95,10 +99,17 @@
   width: 100%;
 
   .total-tracks {
-    float: left;
+    display: inline-block;
   }
+
   .station-sort {
     float: right;
+    color: $star_dust;
+    font-size: 0.8em;
+
+    #sort-select {
+      margin-left: 0.5em;
+    }
   }
   .update-station {
     float: right;
@@ -124,12 +135,6 @@
       color: $lima;
     }
   }
-}
-
-
-
-.row {
-  margin-bottom: 2%;
 }
 
 #tracks {
