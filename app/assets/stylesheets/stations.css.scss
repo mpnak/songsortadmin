@@ -110,6 +110,24 @@
   }
 }
 
+.filters {
+  height: 3em;
+  padding: 1em;
+
+  .filter-btn {
+    display: inline-block;
+    margin-right: 1em;
+    cursor: pointer;
+    color: $star_dust;
+
+    &.active {
+      color: $lima;
+    }
+  }
+}
+
+
+
 .row {
   margin-bottom: 2%;
 }

@@ -101,7 +101,8 @@ $(function(){
 
   $('#tracks').mixItUp({
     selectors: {
-      target: '.track' /* .mix */
+      target: '.track', /* .mix */
+      filter: '.filter-btn' /* .filter */
     },
     animation: {
       enable: false
