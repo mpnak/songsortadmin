@@ -26,7 +26,6 @@ $(function() {
       url: "/tracks/" + track_id,
       data: data,
       success: function() {},
-      dataType: "json"
     });
   });
 
@@ -72,27 +71,51 @@ $(function() {
     var re = /^http:\/\/open\.spotify\.com\/track\/(.*)/;
     var matches = text.match(re);
 
-    var track_data = {
-      "track": {
-        "spotify_id": matches[1],
-        "station_id": gon.station_id
-      }
-    };
-
     if (matches) {
+      var track_data = {
+        "track": {
+          "spotify_id": matches[1],
+          "station_id": gon.station_id
+        }
+      };
 
       $.ajax({
         type: "POST",
         url: "/tracks",
         data: track_data,
         success: trackCreated,
-        dataType: "json"
       });
     }
   }
 
   function trackCreated(data) {
-    alert(data);
+    $('#tracks').mixItUp('prepend', $(data));
   }
+});
+
+// On document ready:
+
+$(function(){
+
+  // Instantiate MixItUp:
+
+  $('#tracks').mixItUp({
+    selectors: {
+      target: '.track' /* .mix */
+    },
+    animation: {
+      enable: false
+    },
+    callbacks: {
+      onMixLoad: function(){
+        $(this).mixItUp('setOptions', {
+          animation: {
+            enable: true
+          },
+        });
+      }
+    }
+  });
+
 });
 

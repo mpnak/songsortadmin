@@ -114,14 +114,15 @@
   margin-bottom: 2%;
 }
 
-.tracks {
+#tracks {
   table-layout: fixed;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 2px;
 }
 
-.track-row {
+.track {
+  display: none;
   height: 48px;
   margin-bottom: 1px;
   padding: 0;
