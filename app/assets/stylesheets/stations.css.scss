@@ -124,6 +124,7 @@ section.margin-bottom {
 .filters {
   height: 3em;
   padding: 1em;
+  display: inline-block;
 
   .filter-btn {
     display: inline-block;
@@ -137,9 +138,32 @@ section.margin-bottom {
   }
 }
 
-/* Tracks */
-
 $track-height: 48px;
+
+.rating-labels {
+  float: right;
+  height: 3em;
+  font-size: 0.8em;
+  color: $star_dust;
+  position: relative;
+  top: 6px;
+  width: $track-height * 5 + 4;
+
+  div {
+    height: 3em;
+    width: $track-height;
+    display: inline-block;
+  }
+
+  .more-popular {
+  }
+
+  .less-popular {
+    text-align: right;
+    direction: rtl;
+    float: right;
+  }
+}
 
 #tracks {
   width: 100%;
