@@ -22,7 +22,7 @@ $(function() {
 
   // Undergroundess rating
 
-  $(".rating-selector .rating-item").on('click', function() {
+  $("#tracks").on('click', '.rating-item', function() {
     console.log('clicked');
 
     var $this = $(this);
@@ -58,7 +58,7 @@ $(function() {
 
   // Delete track button
 
-  $(".track > .delete-track").on('click', function() {
+  $('#tracks').on('click', '.track > .delete-track', function() {
 
     var track_id = $(this).parent().attr("data-id");
 
