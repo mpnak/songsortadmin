@@ -122,9 +122,9 @@ section.margin-bottom {
 }
 
 .filters {
-  height: 3em;
-  padding: 1em;
+  padding-left: 1em;
   display: inline-block;
+  font-size: 1.2em;
 
   .filter-btn {
     display: inline-block;
@@ -145,8 +145,6 @@ $track-height: 48px;
   height: 3em;
   font-size: 0.8em;
   color: $star-dust;
-  position: relative;
-  top: 6px;
   width: $track-height * 5 + 4;
 
   div {
