@@ -14,7 +14,7 @@
     background-color: $lima;
     border-radius: 0;
     &:hover {
-      background-color: $deep_magenta;
+      background-color: $deep-magenta;
     }
   }
 }
@@ -29,13 +29,13 @@ section.margin-bottom {
   padding-bottom: 23%;
   margin: 1.3333%;
   display: inline-block;
-  border: 1px solid $mountain_mist;
+  border: 1px solid $mountain-mist;
   background-color: $iron;
   text-decoration: none;
   color: $text-color;
 
   &:hover {
-    background-color: $deep_magenta;
+    background-color: $deep-magenta;
     color: $text-color;
   }
 
@@ -70,7 +70,7 @@ section.margin-bottom {
   padding-bottom: 15%;
   margin-left: 5%;
   float: right;
-  border: 1px solid $mountain_mist;
+  border: 1px solid $mountain-mist;
   background-color: $iron;
   text-decoration: none;
   color: $text-color;
@@ -86,7 +86,7 @@ section.margin-bottom {
 
   .loader-content {
     pointer-events: none;
-    color: $star_dust;
+    color: $star-dust;
     font-size: 1.4em;
     position: absolute;
     top: 50%;
@@ -104,7 +104,7 @@ section.margin-bottom {
 
   .station-sort {
     float: right;
-    color: $star_dust;
+    color: $star-dust;
     font-size: 0.8em;
 
     #sort-select {
@@ -116,7 +116,7 @@ section.margin-bottom {
     background-color: $lima;
     border-radius: 0;
     &:hover {
-      background-color: $deep_magenta;
+      background-color: $deep-magenta;
     }
   }
 }
@@ -130,7 +130,7 @@ section.margin-bottom {
     display: inline-block;
     margin-right: 1em;
     cursor: pointer;
-    color: $star_dust;
+    color: $star-dust;
 
     &.active {
       color: $lima;
@@ -144,7 +144,7 @@ $track-height: 48px;
   float: right;
   height: 3em;
   font-size: 0.8em;
-  color: $star_dust;
+  color: $star-dust;
   position: relative;
   top: 6px;
   width: $track-height * 5 + 4;
@@ -238,15 +238,15 @@ $track-height: 48px;
       height: $track-height;
       width: $track-height;
       margin-left: 1px;
-      background-color: $dark_gray;
+      background-color: $dark-gray;
       float: right;
 
       &:hover {
-        background-color: $deep_magenta;
+        background-color: $deep-magenta;
       }
 
       &.selected {
-        background-color: $deep_magenta;
+        background-color: $deep-magenta;
       }
     }
   }
