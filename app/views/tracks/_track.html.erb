@@ -1,16 +1,16 @@
-<tr
+<div
   class="track <%= track.undergroundness ? 'ranked' : 'unranked' %>"
   data-created_at="<%= track.created_at.to_i %>"
   data-title="<%= track.title %>"
   data-artist="<%= track.artist %>"
   data-undergroundness="<%= track.undergroundness %>"
   >
-  <td class="delete-track track-cell">
+  <div class="delete-track track-cell">
     <%= image_tag("delete_track_icon.png") %>
-  </td>
-  <td class="track-title track-cell"><%= track.title %></td>
-  <td class="track-artist track-cell"><%= track.artist %></td>
-  <td class="undergroundness-rating track-cell">
+  </div>
+  <div class="track-title track-cell"><%= track.title %></div>
+  <div class="track-artist track-cell"><%= track.artist %></div>
+  <div class="undergroundness-rating track-cell">
     <div class="undergroundness-label">
       UNDERGROUNDNESS
     </div>
@@ -21,7 +21,7 @@
          data-rating="<%= n %>"
          data-track="<%= track.id %>"
          ></div>
-      <% end %>
+       <% end %>
     </div>
-  </td>
-</tr>
+  </div>
+</div>

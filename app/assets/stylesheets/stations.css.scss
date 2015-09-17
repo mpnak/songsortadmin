@@ -137,18 +137,20 @@ section.margin-bottom {
   }
 }
 
+/* Tracks */
+
+$track-height: 48px;
+
 #tracks {
-  table-layout: fixed;
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 2px;
 }
 
 .track {
   display: none;
-  height: 48px;
+  height: $track-height;
   margin-bottom: 1px;
   padding: 0;
+  width: 100%;
 
   &:nth-of-type(even) {
     background-color: $ebb;
@@ -158,8 +160,21 @@ section.margin-bottom {
     background-color: $iron;
   }
 
+  &:hover {
+    background-color: white;
+
+    .rating-selector .rating-item {
+      background-color: $iron;
+    }
+
+  }
+
   .track-cell {
     text-align: center;
+    display: inline-block;
+    line-height: $track-height;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .delete-track {
@@ -169,34 +184,37 @@ section.margin-bottom {
   .track-title {
     width: 24%;
     text-align: left;
-    padding: 1em;
   }
 
   .track-artist {
     width: 24%;
     text-align: left;
-    padding: 1em;
   }
 
   .undergroundness-label {
-    padding: 1em;
-    float: left;
+    display: inline-block;
   }
 
+  /* width makes 99% in total. 100% and it does not stack - we hack this by
+   * floating right */
   .undergroundness-rating {
-    width: 46%;
+    width: 45%;
+    float: right;
+    text-align: right;
   }
 
   .rating-selector {
-    height: 48px;
+    height: $track-height;
     display: inline-block;
-    position: relative;
+    float: right;
+    margin-left: 10px;
 
     .rating-item {
-      height: 48px;
-      width: 48px;
+      height: $track-height;
+      width: $track-height;
+      margin-left: 1px;
       background-color: $dark_gray;
-      float: left;
+      float: right;
 
       &:hover {
         background-color: $deep_magenta;
