@@ -8,6 +8,8 @@ $ebb: #E7E4E4;
 $lima: #7ED321;
 
 // Bootstrap Configuration
+// For more customization see https://github.com/twbs/bootstrap-sass/blob/master/templates/project/_bootstrap-variables.sass
+
 $brand-primary: #428bca;
 $body-bg: white;
 $navbar-default-bg: $iron;
@@ -15,7 +17,3 @@ $navbar-default-color: black;
 $navbar-default-brand-color: black;
 $text-color: black;
 
-// Extra
-body .container {
-  padding: 0;
-}
