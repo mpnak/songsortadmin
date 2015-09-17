@@ -6,15 +6,11 @@ $(function() {
     console.log('clicked');
 
     var $this = $(this);
-
-    // Update the background color instantly for perceived responsivness
-
-    $this.siblings().toggleClass('selected', false);
-    $this.toggleClass('selected', true);
+    var $track = $this.closest('.track');
 
     // Send the update to the server
-    var rating = $this.attr("data-rating");
-    var track_id = $this.attr("data-track");
+    var rating = $this.attr('data-rating');
+    var track_id = $track.attr('data-id');
     var data = {
       "track": {
         "undergroundness": rating
@@ -27,6 +23,33 @@ $(function() {
       data: data,
       success: function() {},
     });
+
+    // Assume success and update the background color instantly for perceived responsivness
+    $this.siblings().toggleClass('selected', false);
+    $this.toggleClass('selected', true);
+
+    // Set the track rating on the dom so mixitup can sort
+    $track.attr('data-undergroundness', rating);
+
+    // Set the track classes so that mixitup can filter
+    $track.removeClass('unranked');
+    $track.addClass('ranked');
+  });
+
+  // Delete track button
+
+  $(".track > .delete-track").on('click', function() {
+
+    var track_id = $(this).parent().attr("data-id");
+
+    $.ajax({
+      type: "DELETE",
+      url: "/tracks/" + track_id,
+      success: function() {},
+    });
+
+    // Optimistically assume that the delete request is successfull
+    $(this).parent().remove();
   });
 
   // Song loader

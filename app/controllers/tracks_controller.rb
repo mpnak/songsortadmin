@@ -1,5 +1,5 @@
 class TracksController < ApplicationController
-  before_action :set_track, only: [:update]
+  before_action :set_track, only: [:update, :destroy]
 
   def create
     @station = Station.find(track_params[:station_id])
@@ -8,10 +8,7 @@ class TracksController < ApplicationController
 
     if @track.save
       render partial: 'track', locals: { track: @track }
-      #render json: @track, status: 201, location: @track
     else
-      #render json: { errors: @track.errors }, status: 422
-      ap @track.errors
       head :bad_request
     end
   end
@@ -21,6 +18,14 @@ class TracksController < ApplicationController
       render json: @track, status: 201, location: @track
     else
       render json: { errors: @track.errors }, status: 422
+    end
+  end
+
+  def destroy
+    if @track.destroy
+      head :no_content
+    else
+      head :bad_request
     end
   end
 

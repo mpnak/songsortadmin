@@ -95,4 +95,13 @@ RSpec.describe TracksController, type: :controller do
     end
   end
 
+  describe "DELETE #destroy" do
+    it "destroys the requested track" do
+      track = Track.create! valid_attributes
+      expect {
+        delete :destroy, {:id => track.to_param}, valid_session
+      }.to change(Track, :count).by(-1)
+    end
+  end
+
 end

@@ -1,5 +1,6 @@
 <div
   class="track <%= track.undergroundness ? 'ranked' : 'unranked' %>"
+  data-id="<%= track.id %>"
   data-created_at="<%= track.created_at.to_i %>"
   data-title="<%= track.title %>"
   data-artist="<%= track.artist %>"
