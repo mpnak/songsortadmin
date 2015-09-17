@@ -232,12 +232,13 @@ $track-height: 48px;
 
   .undergroundness-label {
     display: inline-block;
+    color: $star-dust;
   }
 
-  /* width makes 99% in total. 100% and it does not stack - we hack this by
+  /* width makes 98% in total. 100% and it does not stack - we hack this by
    * floating right */
   .undergroundness-rating {
-    width: 45%;
+    width: 44%;
     float: right;
     text-align: right;
   }
@@ -267,3 +268,8 @@ $track-height: 48px;
 }
 
 
+@media (max-width: 991px) {
+  .undergroundness-label {
+    display: none !important;
+  }
+}
