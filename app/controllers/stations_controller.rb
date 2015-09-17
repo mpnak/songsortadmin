@@ -19,9 +19,6 @@ class StationsController < ApplicationController
     respond_with(@station)
   end
 
-  def edit
-  end
-
   def create
     @station = Station.new(station_params)
     @station.save
@@ -29,8 +26,9 @@ class StationsController < ApplicationController
   end
 
   def update
-    @station.update(station_params)
-    respond_with(@station)
+    # No updating for now thanks
+    # @station.update(station_params)
+    # respond_with(@station)
   end
 
   def destroy
