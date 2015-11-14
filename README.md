@@ -40,39 +40,39 @@ Station image
 GET /stations/:station_id/image
 ```
 
-### User Stations
+### Playlists
 
-list of a users saved stations
+list a users playlists
 ```
-GET users/:user_id/stations
+GET users/:user_id/playlists
 ```
 
 Read
 ```
-GET users/:user_id/stations/:station_id
+GET users/:user_id/playlists/:playlist_id
 ```
 
 Create
 ```
-POST users/:user_id/stations/
+POST users/:user_id/playlists/
 ```
 
 Update
 ```
-PUT users/:user_id/stations/:station_id
+PUT users/:user_id/playlists/:playlist_id
 ```
 
 Delete
 ```
-DELETE users/:user_id/stations/:station_id
+DELETE users/:user_id/playlists/:playlist_id
 ```
 
 ### Tracks
 
 track is played, skipped, favorited or banned
 ```
-POST /users/:user_id/stations/:station_id/tracks/:track_id/play
-POST /users/:user_id/stations/:station_id/tracks/:track_id/skipped
-POST /users/:user_id/stations/:station_id/tracks/:track_id/favorited
-POST /users/:user_id/stations/:station_id/tracks/:track_id/banned
+POST /users/:user_id/playlists/:playlist_id/tracks/:track_id/play
+POST /users/:user_id/playlists/:playlist_id/tracks/:track_id/skipped
+POST /users/:user_id/playlists/:playlist_id/tracks/:track_id/favorited
+POST /users/:user_id/playlists/:playlist_id/tracks/:track_id/banned
 ```
