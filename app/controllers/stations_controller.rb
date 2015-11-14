@@ -26,9 +26,8 @@ class StationsController < ApplicationController
   end
 
   def update
-    # No updating for now thanks
-    # @station.update(station_params)
-    # respond_with(@station)
+    @station.update(station_params)
+    respond_with(@station)
   end
 
   def destroy

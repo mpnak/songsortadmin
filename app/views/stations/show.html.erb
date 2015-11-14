@@ -3,7 +3,7 @@
 <section class="margin-bottom">
   <div class="station show-page">
     <div class="station-content">
-      <%= @station.name %>
+      <%= link_to @station.name, edit_station_path(@station) %>
     </div>
   </div>
 
@@ -17,7 +17,7 @@
 <section class="station-toolbar margin-bottom">
   <div class="total-tracks">
     Total Tracks: <%= @tracks.count %>
-  </div>
+</div>
 
   <div class="station-sort">
     SORT
