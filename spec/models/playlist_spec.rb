@@ -13,8 +13,8 @@ RSpec.describe Playlist, type: :model do
     track1 = FactoryGirl.create(:track)
     track2 = FactoryGirl.create(:track)
     playlist.tracks << track1
-    #playlist.tracks << track2
+    playlist.tracks << track2
 
-    expect(playlist.tracks.count).to be 1
+    expect(playlist.tracks.count).to be 2
   end
 end
