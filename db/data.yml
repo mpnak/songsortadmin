@@ -1,0 +1,745 @@
+
+---
+stations:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  - taste_profile_id
+  records: 
+  - - '3'
+    - The Living Room
+    - '2015-09-17 22:32:43.61232'
+    - '2015-11-14 04:04:06.49356'
+    - CAAZFGU14FDD70397C
+  - - '4'
+    - The Basement
+    - '2015-11-14 00:18:49.547437'
+    - '2015-11-14 00:18:49.547437'
+    - CAVPORJ151035BD85B
+
+---
+tracks:
+  columns:
+  - id
+  - station_id
+  - spotify_id
+  - echo_nest_id
+  - title
+  - artist
+  - undergroundness
+  - created_at
+  - updated_at
+  records: 
+  - - '3'
+    - '3'
+    - 0dwudL6pM7zLO7MSUxMUYd
+    - TRCXCEO14CC05DAF6B
+    - Lose My Mind
+    - Brett Eldredge
+    - '3'
+    - '2015-09-17 22:33:06.295878'
+    - '2015-09-17 22:39:46.977011'
+  - - '9'
+    - '3'
+    - 5JtPGzRgrWxkXX9LoROq3d
+    - TRVOJVQ144D1786A94
+    - '1901'
+    - Phoenix
+    - '4'
+    - '2015-11-14 00:00:03.65763'
+    - '2015-11-14 00:17:18.410992'
+  - - '10'
+    - '3'
+    - 1595LW73XBxkRk2ciQOHfr
+    - TRKNTHP144D0BD2DCF
+    - A-Punk
+    - Vampire Weekend
+    - '4'
+    - '2015-11-14 00:00:07.282386'
+    - '2015-11-14 00:17:15.28027'
+  - - '11'
+    - '3'
+    - 3tRX1461C4Pgh4VbQ9SX7D
+    - TRXLPQT144D138AF5D
+    - 7/4 (Shoreline)
+    - Broken Social Scene
+    - '2'
+    - '2015-11-14 00:00:10.843056'
+    - '2015-11-14 00:17:11.87695'
+  - - '12'
+    - '3'
+    - 1LAzF3sa7k3QrOKtpCVgLJ
+    - TRURIPD14F0344A544
+    - All Yours
+    - Widowspeak
+    - '2'
+    - '2015-11-14 00:00:37.819985'
+    - '2015-11-14 00:16:54.233736'
+  - - '13'
+    - '3'
+    - 3e0yTP5trHBBVvV32jwXqF
+    - TRHNKGO144D12C5B95
+    - Anna Sun
+    - WALK THE MOON
+    - '5'
+    - '2015-11-14 00:00:52.512675'
+    - '2015-11-14 00:16:24.259316'
+  - - '14'
+    - '3'
+    - 3pXAa69soxZ98bQ1gr18HO
+    - TROYUZV14E7B4C174A
+    - Another One
+    - Mac Demarco
+    - '3'
+    - '2015-11-14 00:00:54.76156'
+    - '2015-11-14 00:16:07.475098'
+  - - '15'
+    - '3'
+    - 1JxNWpK9xTWKRPoYTIX4Qk
+    - TRQFRPQ144D0C76A2C
+    - Another Story
+    - The Head and the Heart
+    - '4'
+    - '2015-11-14 00:00:57.044567'
+    - '2015-11-14 00:16:05.068008'
+  - - '16'
+    - '3'
+    - 02Bd8WXqxchkQFBRwo9XKG
+    - TRCCDRW14ACD8F8B26
+    - A Beginning Song
+    - The Decemberists
+    - '4'
+    - '2015-11-14 00:01:04.466701'
+    - '2015-11-14 00:15:38.876526'
+  - - '17'
+    - '3'
+    - 0WGh5U2qyGpFSu9uJhnDV6
+    - TRNXYGL144D0A60E95
+    - The Big Idea
+    - Black Books
+    - '3'
+    - '2015-11-14 00:01:25.953616'
+    - '2015-11-14 00:15:34.081927'
+  - - '18'
+    - '3'
+    - 78AaMLOriBZuohWdUV3IzE
+    - TRXWSKE144D1C3110D
+    - Bizness
+    - tUnE-yArDs
+    - '5'
+    - '2015-11-14 00:01:30.701041'
+    - '2015-11-14 00:15:21.399557'
+  - - '19'
+    - '3'
+    - 6T8qnBbc2rxlWLiweD1e5M
+    - TRXGGUS144D1A56205
+    - Blue Ridge Mountains
+    - Fleet Foxes
+    - '4'
+    - '2015-11-14 00:01:34.264195'
+    - '2015-11-14 00:15:23.996444'
+  - - '20'
+    - '3'
+    - 6LLsENjsAeu99G6sxPddxr
+    - TRJSATW14A5F095CA5
+    - Bored In The USA
+    - Father John Misty
+    - '3'
+    - '2015-11-14 00:01:37.253615'
+    - '2015-11-14 00:14:52.281619'
+  - - '21'
+    - '3'
+    - 2DYs3rF4wjpFQIpnIw9V0G
+    - TRQSYDZ144D0ED560D
+    - Breadcrumb Trail
+    - Buried Beds
+    - '3'
+    - '2015-11-14 00:01:48.990482'
+    - '2015-11-14 00:14:48.717885'
+  - - '22'
+    - '3'
+    - 4mdyVTV7Tr5YDFnD2kvSM4
+    - TROZXKI144D15F0D82
+    - Bruises
+    - Chairlift
+    - '5'
+    - '2015-11-14 00:01:51.90598'
+    - '2015-11-14 00:14:35.330174'
+  - - '23'
+    - '3'
+    - 0x38UMMhYacciPRK7ETk1M
+    - TRJCABI14CEF3B7224
+    - Can’t Keep Checking My Phone
+    - Unknown Mortal Orchestra
+    - '3'
+    - '2015-11-14 00:02:14.718879'
+    - '2015-11-14 00:14:22.71031'
+  - - '24'
+    - '3'
+    - 0PFVZNMRc3Z8TC3BVn2Dln
+    - TRMLTYQ14D5C5BAA59
+    - Carousel Ride
+    - Rubblebucket
+    - '4'
+    - '2015-11-14 00:02:20.006028'
+    - '2015-11-14 00:13:51.320303'
+  - - '25'
+    - '3'
+    - 7By8F6CUJpRK4wMCVKvOKg
+    - TRMMNOJ147B6EA41A5
+    - Caterpillar
+    - Cassandra Jenkins
+    - '4'
+    - '2015-11-14 00:02:26.650707'
+    - '2015-11-14 00:13:22.409957'
+  - - '26'
+    - '3'
+    - 3hahGXklxgnfliCl0NCKmD
+    - TRANMXD14E9A69C695
+    - Church
+    - Ducktails
+    - '1'
+    - '2015-11-14 00:02:30.806746'
+    - '2015-11-14 00:13:09.642057'
+  - - '27'
+    - '3'
+    - 1nagrEJxg2Tayyy7p2MnKY
+    - TRNPNKU144D0DC09A1
+    - Crazy
+    - Au Revoir Simone
+    - '4'
+    - '2015-11-14 00:02:39.644299'
+    - '2015-11-14 00:12:47.284104'
+  - - '28'
+    - '3'
+    - 0OVzKyZzNweXwqW3Qxvt88
+    - TRIPPTK144D0A0E91B
+    - Dig A Little Deeper
+    - Peter Bjorn and John
+    - '3'
+    - '2015-11-14 00:02:48.048092'
+    - '2015-11-14 00:12:24.170754'
+  - - '29'
+    - '3'
+    - 3DhYn2rHGAY0xoqx6FIglg
+    - TRKZHXF14E47C3FF1B
+    - Drag
+    - NE-HI
+    - '2'
+    - '2015-11-14 00:03:05.718068'
+    - '2015-11-14 00:12:21.14496'
+  - - '30'
+    - '3'
+    - 3f8DQVBBB3nQVuOdDALRgX
+    - TRGKDHG144D12DA511
+    - Elegy
+    - Hey Marseilles
+    - '2'
+    - '2015-11-14 00:03:14.250297'
+    - '2015-11-14 00:12:08.918382'
+  - - '31'
+    - '3'
+    - 5EkRiZl4BY7carwe6ikHF3
+    - TRKROMH14AFD6D668F
+    - Elvis' Flaming Star
+    - Pond
+    - '1'
+    - '2015-11-14 00:03:17.798478'
+    - '2015-11-14 00:11:45.820811'
+  - - '32'
+    - '3'
+    - 3528IXKpbb7OMjdjWYlbfD
+    - TRSRLFL144D113231D
+    - Everybody Talks
+    - Neon Trees
+    - '5'
+    - '2015-11-14 00:03:21.717802'
+    - '2015-11-14 00:11:25.685953'
+  - - '33'
+    - '3'
+    - 70rDQzyN6vcNNF1fgR1wtp
+    - TRBNSZZ14D6A6B119E
+    - Full Possession Of All Her Powers
+    - Someone Still Loves You Boris Yeltsin
+    - '1'
+    - '2015-11-14 00:03:37.219578'
+    - '2015-11-14 00:10:40.720177'
+  - - '34'
+    - '3'
+    - 3vxmIYqyRHSbHhKLN9y5Sb
+    - TRQLUSZ144D13908D1
+    - Hangover Days
+    - Jason Collett
+    - '1'
+    - '2015-11-14 00:03:51.122621'
+    - '2015-11-14 00:10:19.097922'
+  - - '35'
+    - '3'
+    - 5qHPCEqdCcNCfh9eMe5pdh
+    - TRCBMXD14E04CC2DE7
+    - Hannah
+    - Yukon Blonde
+    - '2'
+    - '2015-11-14 00:03:54.098308'
+    - '2015-11-14 00:09:50.825908'
+  - - '36'
+    - '3'
+    - 4YKGc1movjOlnDQCVZ1L6H
+    - TRYFBNE144D1548CF6
+    - Heartbeat
+    - Kopecky
+    - '2'
+    - '2015-11-14 00:03:58.608604'
+    - '2015-11-14 00:09:17.216486'
+  - - '37'
+    - '3'
+    - 5hl4R0wrlYB8QF6FltwTdH
+    - TRDGFVN14BA5C40691
+    - Home With You
+    - The Delta Routine
+    - '2'
+    - '2015-11-14 00:04:04.342539'
+    - '2015-11-14 00:08:53.725021'
+  - - '38'
+    - '3'
+    - 5k6va0ELMeAkxu8kt9fNnk
+    - TRUTIVU14BA38CD663
+    - I Belong To You
+    - Brandi Carlile
+    - '4'
+    - '2015-11-14 00:04:17.188747'
+    - '2015-11-14 00:08:43.834399'
+  - - '39'
+    - '3'
+    - 0ivI6CSpXOFIRsbL1X6gER
+    - TROBGPV144D0AE5923
+    - I Love You But I Don't Know What To Say
+    - Ryan Adams
+    - '4'
+    - '2015-11-14 00:04:21.441447'
+    - '2015-11-14 00:08:29.110171'
+  - - '40'
+    - '3'
+    - 1AdzdEpJUgfAjEoawncljQ
+    - TRYCZZB144D0C14AB2
+    - It's Real
+    - Real Estate
+    - '3'
+    - '2015-11-14 00:04:37.009028'
+    - '2015-11-14 00:08:06.06981'
+  - - '41'
+    - '3'
+    - 5cHT4IvFL3XmRd3WQeXNww
+    - TRSHADZ14A43BF117E
+    - Kintsukuroi
+    - Hey Rosetta!
+    - '3'
+    - '2015-11-14 00:04:44.898475'
+    - '2015-11-14 00:07:46.39548'
+  - - '42'
+    - '3'
+    - 1lXaukDuPKF41bFadfAv9F
+    - TROFZZA144D0D9DD59
+    - Losin' All My Common Sense
+    - Quiet Life
+    - '2'
+    - '2015-11-14 00:04:54.049203'
+    - '2015-11-14 00:07:29.796499'
+  - - '43'
+    - '3'
+    - 7gfu53veFZpTpl5bCi7DG8
+    - TRRXCNN14CC58A17E2
+    - Made My Mind Up
+    - Mikal Cronin
+    - '3'
+    - '2015-11-14 00:05:04.168792'
+    - '2015-11-14 00:07:06.804603'
+  - - '44'
+    - '3'
+    - 1wnaMsPibKBnzKHKFg7XPT
+    - TRGGKTU14F255866F5
+    - Many Roads
+    - Dappled Cities
+    - '2'
+    - '2015-11-14 00:05:08.333442'
+    - '2015-11-14 00:06:59.556561'
+  - - '45'
+    - '3'
+    - 1TO3lTPLvp35VnrqCqYsmR
+    - TRKWAYX14D2CD0C874
+    - Mean Streets
+    - Tennis
+    - '3'
+    - '2015-11-14 00:05:11.598712'
+    - '2015-11-14 00:06:24.893107'
+  - - '46'
+    - '3'
+    - 5paIBtmOqa30cZvff8A7Ir
+    - TRSFSNS14CC0602909
+    - Metropolis
+    - Public Access TV
+    - '1'
+    - '2015-11-14 00:05:21.454018'
+    - '2015-11-14 00:06:02.92708'
+  - - '47'
+    - '3'
+    - 2VL6PCrcWgJfqxruAWCXnY
+    - TREETJR144D0F96EBB
+    - Milwaukee
+    - The Both
+    - '2'
+    - '2015-11-14 00:05:24.347381'
+    - '2015-11-14 00:05:49.583494'
+  - - '48'
+    - '4'
+    - 7cOM16CQtZLndLpz3Nd72B
+    - TRESRPX14D52AD1FAD
+    - Follow You Out
+    - Desert Noises
+    - '3'
+    - '2015-11-14 00:19:07.006503'
+    - '2015-11-14 00:31:16.349872'
+  - - '49'
+    - '4'
+    - 39pQAo5WH2kLPrEKwlldGJ
+    - TRKSHKH144D1177557
+    - King of the Rodeo
+    - Kings of Leon
+    - '5'
+    - '2015-11-14 00:19:10.495462'
+    - '2015-11-14 00:31:32.434002'
+  - - '50'
+    - '4'
+    - 11Z7DsmzTwKIEbSSnPwH1C
+    - TRSWOBO144D0BACCB0
+    - Knee Socks
+    - Arctic Monkeys
+    - '4'
+    - '2015-11-14 00:19:16.541866'
+    - '2015-11-14 00:31:02.472103'
+  - - '51'
+    - '4'
+    - 5yJwzSaLkXfocpsZ5S3Kq0
+    - TRHVBQA1486F4BC41C
+    - Cosmic Vibrations
+    - Foxygen
+    - '1'
+    - '2015-11-14 00:19:20.032277'
+    - '2015-11-14 00:35:59.174093'
+  - - '52'
+    - '4'
+    - 1mxqozpIELFEnfwEzTdjLs
+    - TRHGMCA144D0DB5205
+    - Floating Vibes
+    - Surfer Blood
+    - '3'
+    - '2015-11-14 00:19:22.792042'
+    - '2015-11-14 00:30:31.342179'
+  - - '53'
+    - '4'
+    - 3l9eg9RtisizG12a1D6nZl
+    - TRCRWNE14FDF717432
+    - Pretty Pimpin
+    - Kurt Vile
+    - '3'
+    - '2015-11-14 00:19:25.904212'
+    - '2015-11-14 00:30:14.378086'
+  - - '54'
+    - '4'
+    - 3k9qjgu8zVKTEuJVJIYyc0
+    - TRAWOYY144D1319664
+    - Just Breathe
+    - Pearl Jam
+    - '4'
+    - '2015-11-14 00:19:29.251893'
+    - '2015-11-14 00:29:41.237617'
+  - - '55'
+    - '4'
+    - 1evBHg1kNjsnVE2LOda1yG
+    - TRZTEIT150087B2ACE
+    - Pins And Needles
+    - Silversun Pickups
+    - '3'
+    - '2015-11-14 00:19:32.301837'
+    - '2015-11-14 00:30:09.967401'
+  - - '56'
+    - '4'
+    - 1AdzdEpJUgfAjEoawncljQ
+    - TRYCZZB144D0C14AB2
+    - It's Real
+    - Real Estate
+    - '3'
+    - '2015-11-14 00:20:01.052376'
+    - '2015-11-14 00:29:17.256322'
+  - - '57'
+    - '4'
+    - 18ztWAZG1RCysnYJY76Ox4
+    - TRFMOBO149A795A0E8
+    - I Need A Woman
+    - Hockey Dad
+    - '2'
+    - '2015-11-14 00:20:04.071364'
+    - '2015-11-14 00:29:08.483694'
+  - - '58'
+    - '4'
+    - 1DH4YwHHGBkWO8dX3JISjl
+    - TRYSCLS144D0C2DAAD
+    - The Hardest Button To Button
+    - The White Stripes
+    - '4'
+    - '2015-11-14 00:20:10.153921'
+    - '2015-11-14 00:28:52.909476'
+  - - '59'
+    - '4'
+    - 7K0KdlHbFOgZSzk9tgawbS
+    - TRRYBOE14A6BA81A95
+    - Sledgehammer
+    - Evans The Death
+    - '3'
+    - '2015-11-14 00:20:16.417043'
+    - '2015-11-14 00:28:46.042466'
+  - - '60'
+    - '4'
+    - 3mYCd23hPxJW5okSvMoy3x
+    - TRPEWTI144D1328A5A
+    - Heart In A Cage
+    - The Strokes
+    - '4'
+    - '2015-11-14 00:20:23.130685'
+    - '2015-11-14 00:28:32.753655'
+  - - '61'
+    - '4'
+    - 4ZwPUKS2nsfJ6AhtWVGUuZ
+    - TRDONRF144D1561E0F
+    - Get Found
+    - Bass Drum of Death
+    - '2'
+    - '2015-11-14 00:20:26.27851'
+    - '2015-11-14 00:28:30.369292'
+  - - '62'
+    - '4'
+    - 5956lnyCfA6I4qA5n8vPpT
+    - TRVWSWW144D170B4B6
+    - I Summon You
+    - Spoon
+    - '3'
+    - '2015-11-14 00:20:51.307509'
+    - '2015-11-14 00:28:04.92345'
+  - - '63'
+    - '4'
+    - 3TJbwHKKeQfNynhWu6HEQT
+    - TRCWOPV144D125E295
+    - Eyes
+    - Peter Bjorn and John
+    - '3'
+    - '2015-11-14 00:20:54.375581'
+    - '2015-11-14 00:27:53.153972'
+  - - '64'
+    - '4'
+    - 57i3M29DWoo7RDk0Tf0LZG
+    - TRPFUED14FDF72935C
+    - Daylight
+    - Matt and Kim
+    - '5'
+    - '2015-11-14 00:21:01.842166'
+    - '2015-11-14 00:27:49.795794'
+  - - '65'
+    - '4'
+    - 24IFYXPYaX813hEOwnaJlr
+    - TRIHQBW14D98D6AA2B
+    - Yachts and Canoes
+    - HARBOUR
+    - '4'
+    - '2015-11-14 00:21:04.279302'
+    - '2015-11-14 00:27:37.98963'
+  - - '66'
+    - '4'
+    - 3X8gOyVXP93Tslnz9Bxw24
+    - TRVDDUV144D126FD27
+    - Gronlandic Edit
+    - Of Montreal
+    - '3'
+    - '2015-11-14 00:21:06.954336'
+    - '2015-11-14 00:27:24.676281'
+  - - '67'
+    - '4'
+    - 57XbiF3mXSAXDntyEw57lW
+    - TRGCYMR144D16F78B6
+    - Ain't No Easy Way
+    - Black Rebel Motorcycle Club
+    - '3'
+    - '2015-11-14 00:21:09.926826'
+    - '2015-11-14 00:27:20.964614'
+  - - '68'
+    - '4'
+    - 5Y0MqwNSXEM22XVyQPUAtT
+    - TRNXCCD144D1847964
+    - Snake Song
+    - LODRO
+    - '1'
+    - '2015-11-14 00:21:12.791581'
+    - '2015-11-14 00:27:11.628173'
+  - - '69'
+    - '4'
+    - 3UOlYczxtt70Xj1VplXgj8
+    - TRCYDUS144D125588D
+    - All Your Light (Times Like These)
+    - Portugal. The Man
+    - '4'
+    - '2015-11-14 00:21:15.740799'
+    - '2015-11-14 00:26:50.773487'
+  - - '70'
+    - '4'
+    - 3SUusuA9jH1v6PVwtYMbdv
+    - TRLGUOF144D1207C33
+    - Last Nite
+    - The Strokes
+    - '5'
+    - '2015-11-14 00:21:19.795641'
+    - '2015-11-14 00:26:46.330249'
+  - - '71'
+    - '4'
+    - 5nrIEQ6ZmVwt9Pfr3ydvbn
+    - TRLCZWK144D18EE9B5
+    - The Plan
+    - Built To Spill
+    - '4'
+    - '2015-11-14 00:21:22.2878'
+    - '2015-11-14 00:26:43.373767'
+  - - '72'
+    - '4'
+    - 5fiEFOhcpuvk2VVEr9QZ8S
+    - TRGTQNM14F535574F7
+    - Cataract
+    - Dirty Ghosts
+    - '2'
+    - '2015-11-14 00:21:25.696213'
+    - '2015-11-14 00:26:23.122827'
+  - - '73'
+    - '4'
+    - 4xjd87Eol0onXxh8vP7dyz
+    - TRZASHF14C3B4C0219
+    - Real Love (Yeah)
+    - Michael Rault
+    - '2'
+    - '2015-11-14 00:21:28.798467'
+    - '2015-11-14 00:26:08.99912'
+  - - '74'
+    - '4'
+    - 1AQg7H4Ohu6s3qzq4m1KrN
+    - TRLVDFX144D0C0DFC2
+    - Devils Haircut
+    - Beck
+    - '4'
+    - '2015-11-14 00:22:01.068391'
+    - '2015-11-14 00:25:35.763426'
+  - - '75'
+    - '4'
+    - 1SMtj9r8K7Lzh71S5MsIhD
+    - TRCHMLT144D0CCC87C
+    - This Too Shall Pass
+    - OK Go
+    - '4'
+    - '2015-11-14 00:22:04.644544'
+    - '2015-11-14 00:25:33.154467'
+  - - '76'
+    - '4'
+    - 1yMpbmFpPC4Y8qMjtalnXf
+    - TRFMNQY144D0E39CE9
+    - Caring Is Creepy
+    - The Shins
+    - '4'
+    - '2015-11-14 00:22:07.061338'
+    - '2015-11-14 00:25:30.254895'
+  - - '77'
+    - '4'
+    - 0ntQJM78wzOLVeCUAW7Y45
+    - TRLBXKL144D0B0D2C5
+    - Sex on Fire
+    - Kings of Leon
+    - '5'
+    - '2015-11-14 00:22:09.251733'
+    - '2015-11-14 00:25:27.765543'
+  - - '78'
+    - '4'
+    - 0EldaCUDvAxAAxPJ6V7XbE
+    - TRUVLCB14CDA121C6A
+    - Plastic People
+    - Yak
+    - '2'
+    - '2015-11-14 00:22:12.428412'
+    - '2015-11-14 00:26:04.815922'
+  - - '79'
+    - '4'
+    - 59LwZvfjcbHs90huzN7j1r
+    - TRQEYKY144D16B05CF
+    - Demon Dance
+    - Surfer Blood
+    - '4'
+    - '2015-11-14 00:22:15.505244'
+    - '2015-11-14 00:25:12.719283'
+  - - '80'
+    - '4'
+    - 2ALFO1JJBhMo7cNNsKlfHd
+    - TRPMZVA144D0E8D8FC
+    - State Of The Art (A.E.I.O.U.)
+    - Jim James
+    - '4'
+    - '2015-11-14 00:22:18.532865'
+    - '2015-11-14 00:25:10.207144'
+  - - '81'
+    - '4'
+    - 4wnAu1hpe9s18kZ8NvLblC
+    - TRJTEXZ144D168FB4D
+    - Young Glass
+    - Hey Rosetta!
+    - '3'
+    - '2015-11-14 00:22:26.697494'
+    - '2015-11-14 00:25:05.83342'
+  - - '82'
+    - '4'
+    - 1BH5f9RHwlcLR6h3fG9z4M
+    - TRFXLTW144D0C16757
+    - Sleeping Ute
+    - Grizzly Bear
+    - '3'
+    - '2015-11-14 00:22:29.281317'
+    - '2015-11-14 00:24:51.423315'
+  - - '84'
+    - '4'
+    - 2OVr3Io1tZaA1803tZX7pL
+    - TRKUWOV144D0F5A90E
+    - Cherry Lips
+    - Loon Lake
+    - '4'
+    - '2015-11-14 00:23:13.276758'
+    - '2015-11-14 00:24:26.699301'
+  - - '85'
+    - '4'
+    - 5OQsiBsky2k2kDKy2bX2eT
+    - TRDPZXZ144D17D4CA8
+    - Learn to Fly
+    - Foo Fighters
+    - '5'
+    - '2015-11-14 00:23:17.583907'
+    - '2015-11-14 00:23:57.856496'
+  - - '86'
+    - '4'
+    - 4GPRSmve4MmIEhqJ7K5xHE
+    - TRMDSPO144D1474157
+    - My Girl
+    - Yukon Blonde
+    - '3'
+    - '2015-11-14 00:23:24.549743'
+    - '2015-11-14 00:23:55.508789'
+  - - '87'
+    - '4'
+    - 0ZXctIev2rvU4dEgWHoT3u
+    - TRDQRLW144D0A8280B
+    - Verbatim
+    - Mother Mother
+    - '1'
+    - '2015-11-14 00:23:29.032454'
+    - '2015-11-14 00:23:43.747814'

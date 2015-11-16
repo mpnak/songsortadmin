@@ -59,7 +59,7 @@ gem 'echowrap'
 gem 'gon'
 gem 'awesome_print'
 
-gem 'seed_dump'
+gem "yaml_db"
 
 group :development, :test do
   gem 'rspec-rails'
