@@ -18,7 +18,7 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 
 // Load development data
-bundle exec rake db:seed
+bundle exec rake db:data:load
 
 // Start the server
 bundle exec rails s
