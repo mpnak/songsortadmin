@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20151116174254) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "station_id"
-    t.integer  "undergroundess"
+    t.integer  "undergroundness"
     t.boolean  "use_weather"
     t.boolean  "use_timeofday"
     t.boolean  "autoupdate"

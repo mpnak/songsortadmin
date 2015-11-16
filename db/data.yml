@@ -943,7 +943,7 @@ playlists:
   - created_at
   - updated_at
   - station_id
-  - undergroundess
+  - undergroundness
   - use_weather
   - use_timeofday
   - autoupdate
