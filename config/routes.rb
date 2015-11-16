@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
      resources :stations
 
-      resources :users do
+      resources :users, only: [] do
         resources :playlists do
-          resources :tracks do
+          resources :tracks, only: [] do
             member do
               post "play"
               post "skipped"

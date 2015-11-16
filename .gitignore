@@ -19,3 +19,5 @@
 # Ignore .env file so sensitive environment variables are not checked into Git.
 .env
 /config/application.yml
+
+latest.dump
