@@ -1,11 +1,12 @@
 class Track < ActiveRecord::Base
   belongs_to :station
+  has_many :playlists, through: :playlist_tracks
 
   validates :station, :title, :spotify_id, :echo_nest_id, :artist, presence: true
 
-  before_create :create_in_taste_profile
-  before_destroy :destroy_from_taste_profile
-  before_update :update_taste_profile
+  #before_create :create_in_taste_profile
+  #before_destroy :destroy_from_taste_profile
+  #before_update :update_taste_profile
 
   def self.build_from_spotify_id(spotify_id)
     track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}")

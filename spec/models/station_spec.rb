@@ -13,7 +13,7 @@ RSpec.describe Station, type: :model do
   it { should be_valid }
 
   it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:taste_profile_id) }
+  #it { should validate_presence_of(:taste_profile_id) }
 
   it { should have_many(:tracks) }
 

@@ -3,7 +3,7 @@ class Station < ActiveRecord::Base
 
   validates :name, presence: true
 
-  before_create :create_taste_profile
+  #before_create :create_taste_profile
 
   def self.echo_sync
     Station.find_each do |station|
