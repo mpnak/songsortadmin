@@ -1,5 +1,6 @@
 class Track < ActiveRecord::Base
   belongs_to :station
+  has_many :playlist_tracks
   has_many :playlists, through: :playlist_tracks
 
   validates :station, :title, :spotify_id, :echo_nest_id, :artist, presence: true

@@ -11,6 +11,7 @@ RSpec.describe Track, type: :model do
   it { should respond_to(:title) }
   it { should respond_to(:artist) }
   it { should respond_to(:undergroundness) }
+  it { should respond_to(:playlists) }
 
   it { should be_valid }
 
