@@ -1,5 +1,6 @@
 class Station < ActiveRecord::Base
   has_many :tracks
+  has_many :playlists
 
   validates :name, presence: true
 
