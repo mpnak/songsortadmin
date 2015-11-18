@@ -1,0 +1,8 @@
+echo_nest_api_key: 'TH5TZNHSMONJIJA0M'
+echo_nest_consumer_key: '32493a09dd60437da7e113079018b6e3'
+echo_nest_shared_secret: '4YlKc6wWRCWt8cyFI7chCQ'
+
+spotify_client_id: "dcc5c23ee5e94b6c9583667061a37913"
+spotify_client_secret: "5affe6aadabb400aafe1115ebe59528a"
+spotify_encryption_secret: "cFJLyifeUJUBFWdHzVbykfDmPHtLKLGzViHW9aHGmyTLD8hGXC"
+spotify_client_callback_url: "stationdose-login://callback"
