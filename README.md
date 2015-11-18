@@ -28,6 +28,17 @@ Now you are good to go. Open `http://localhost:3000` in a browser to test the en
 
 ## Endpoints
 
+
+### Spotify token swap/refresh
+
+```
+POST /api/spotify/swap
+```
+
+```
+POST /api/spotify/refresh
+```
+
 ### Stations
 
 List all stations.

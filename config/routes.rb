@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
 
+    namespace :spotify do
+      post "swap"
+      post "refresh"
+    end
+
      resources :stations
 
       resources :users, only: [] do
