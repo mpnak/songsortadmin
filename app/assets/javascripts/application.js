@@ -97,7 +97,7 @@ $(function() {
     addDroppedUIState($target);
     var message = e.originalEvent.dataTransfer.getData("text/plain");
     e.preventDefault();
-    matchAndAlert(message);
+    addTracks(message);
   });
 
   function addDroppedUIState($target) {
@@ -110,14 +110,23 @@ $(function() {
     }, 1000, $target);
   }
 
-  function matchAndAlert(text) {
-    var re = /^http:\/\/open\.spotify\.com\/track\/(.*)/;
-    var matches = text.match(re);
+  function addTracks(text) {
+    var re = /http:\/\/open\.spotify\.com\/track\/(.*)/g;
+    var matches = [];
+    var m;
 
-    if (matches) {
+    while ((m = re.exec(text)) !== null) {
+      if (m.index === re.lastIndex) {
+        re.lastIndex++;
+      }
+
+      matches.push(m);
+    }
+
+    matches.forEach(function(match) {
       var track_data = {
         "track": {
-          "spotify_id": matches[1],
+          "spotify_id": match[1],
           "station_id": gon.station_id
         }
       };
@@ -128,7 +137,7 @@ $(function() {
         data: track_data,
         success: trackCreated,
       });
-    }
+    });
   }
 
   function trackCreated(data) {
