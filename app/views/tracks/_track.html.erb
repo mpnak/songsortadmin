@@ -2,8 +2,8 @@
   class="track <%= track.undergroundness ? 'ranked' : 'unranked' %>"
   data-id="<%= track.id %>"
   data-created_at="<%= track.created_at.to_i %>"
-  data-title="<%= track.title %>"
-  data-artist="<%= track.artist %>"
+  data-title="<%= track.title.gsub(/^(The |the |A |a )/, "") %>"
+  data-artist="<%= track.artist.gsub(/^(The |the |A |a )/, "") %>"
   data-undergroundness="<%= track.undergroundness %>"
   >
   <div class="delete-track track-cell">
