@@ -60,30 +60,45 @@ GET /api/users/:user_id/playlists
 
 Read
 ```
-GET /api/users/:user_id/playlists/:playlist_id
+GET /api/playlists/:playlist_id
 ```
 
 Create
 ```
 POST /api/users/:user_id/playlists/
+example data:
+{
+  playlist: {
+    user_id: 1 (required),
+    station_id: 1 (required)
+    undergroundness: 2 (optional)
+    ...
+  }
+}
 ```
 
 Update
 ```
-PUT /api/users/:user_id/playlists/:playlist_id
+PUT /api/playlists/:playlist_id
+example data:
+{
+  playlist: {
+    undergroundness: 3
+  }
+}
 ```
 
 Delete
 ```
-DELETE /api/users/:user_id/playlists/:playlist_id
+DELETE /api/playlists/:playlist_id
 ```
 
 ### Tracks
 
 track is played, skipped, favorited or banned
 ```
-POST /api/users/:user_id/playlists/:playlist_id/tracks/:track_id/play
-POST /api/users/:user_id/playlists/:playlist_id/tracks/:track_id/skipped
-POST /api/users/:user_id/playlists/:playlist_id/tracks/:track_id/favorited
-POST /api/users/:user_id/playlists/:playlist_id/tracks/:track_id/banned
+POST /api/playlists/:playlist_id/tracks/:track_id/play
+POST /api/playlists/:playlist_id/tracks/:track_id/skipped
+POST /api/playlists/:playlist_id/tracks/:track_id/favorited
+POST /api/playlists/:playlist_id/tracks/:track_id/banned
 ```
