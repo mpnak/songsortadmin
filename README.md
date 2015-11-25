@@ -71,8 +71,10 @@ example data:
   playlist: {
     user_id: 1 (required),
     station_id: 1 (required)
-    undergroundness: 2 (optional)
-    ...
+    undergroundness: 2 (optional),
+    use_weather: true (optional),
+    use_timeofday: true (optional),
+    autoupdate: true (optional)
   }
 }
 ```
