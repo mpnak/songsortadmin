@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116174254) do
+ActiveRecord::Schema.define(version: 20151124164627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20151116174254) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "taste_profile_id"
+    t.boolean  "active",           default: false
   end
 
   create_table "tracks", force: true do |t|

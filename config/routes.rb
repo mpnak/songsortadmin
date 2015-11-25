@@ -20,7 +20,7 @@ Rails.application.routes.draw do
      resources :stations
 
       resources :users, only: [] do
-        resources :playlists do
+        resources :playlists, only: [:index, :new, :create] do
           resources :tracks, only: [] do
             member do
               post "play"
@@ -31,6 +31,8 @@ Rails.application.routes.draw do
           end
         end
       end
+
+      resources :playlists, only: [:show, :edit, :update, :destroy]
     end
   end
 
