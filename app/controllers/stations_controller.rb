@@ -41,6 +41,6 @@ class StationsController < ApplicationController
     end
 
     def station_params
-      params.require(:station).permit(:name, :short_description, :station_type)
+      params.require(:station).permit(:name, :short_description, :station_type, :url)
     end
 end
