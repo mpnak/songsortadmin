@@ -46,7 +46,8 @@ section.margin-bottom {
   position: relative;
   width: 23%;
   padding-bottom: 23%;
-  margin: 1.3333%;
+  //margin: 1.3333%;
+  margin: 1.1%;
   display: inline-block;
   border: 1px solid $mountain-mist;
   background-color: $iron;
@@ -64,6 +65,24 @@ section.margin-bottom {
 
   &:nth-of-type(4n+4) {
     margin-right: 0;
+  }
+
+  .active-status {
+    border-radius: 4px;
+    padding: 4px 6px;
+
+    position: absolute;
+    top: 5%;
+    left: 5%;
+
+    &.active {
+      background-color: $ronchi;
+    }
+
+    &.inactive {
+      background-color: $dove-gray;
+      color: $iron;
+    }
   }
 
   &.show-page {

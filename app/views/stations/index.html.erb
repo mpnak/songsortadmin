@@ -6,9 +6,17 @@
 <div class="stations">
   <% @stations.each do |station| %>
     <%= link_to station, class: "station" do %>
+
+      <% if station.active %>
+        <div class="active-status active">LIVE</div>
+      <% else %>
+        <div class="active-status inactive">INACTIVE</div>
+      <% end %>
+
       <div class="station-content">
         <%= station.name %>
       </div>
+
     <% end %>
   <% end %>
 </div>
