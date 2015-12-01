@@ -44,6 +44,11 @@ POST /api/spotify/refresh
 List all stations.
 ```
 GET /api/stations
+
+query for station_type:
+GET /api/stations?station_type=standard
+GET /api/stations?station_type=featured
+GET /api/stations?station_type=sponsored
 ```
 
 Station image
