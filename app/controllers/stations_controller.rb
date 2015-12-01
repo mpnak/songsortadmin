@@ -4,7 +4,7 @@ class StationsController < ApplicationController
   respond_to :html
 
   def index
-    @stations = Station.all
+    @stations = Station.from_params(params)
     respond_with(@stations)
   end
 

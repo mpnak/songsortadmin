@@ -4,7 +4,8 @@ class Api::V1::StationsController < ApplicationController
   #before_action :authenticate_with_token!, only: [:create, :update]
 
   def index
-    respond_with Station.all
+    @stations = Station.from_params(params)
+    respond_with @stations
   end
 
   def show

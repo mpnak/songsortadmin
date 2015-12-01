@@ -6,6 +6,16 @@ class Station < ActiveRecord::Base
 
   #before_create :create_taste_profile
 
+  def self.from_params(params)
+    q = Station.all
+
+    if params[:station_type]
+      q = q.where(station_type: params[:station_type])
+    end
+
+    return q
+  end
+
   def self.echo_sync
     Station.find_each do |station|
       station.echo_sync
