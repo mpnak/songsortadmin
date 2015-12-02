@@ -51,6 +51,11 @@ GET /api/stations?station_type=featured
 GET /api/stations?station_type=sponsored
 ```
 
+Station tracks (default tracks)
+```
+GET /api/stations/:station_id/tracks
+```
+
 Station art
 ```
 a url hosting the station art image is returned in the station json response
