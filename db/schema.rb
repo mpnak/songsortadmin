@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201161544) do
+ActiveRecord::Schema.define(version: 20151202013239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20151201161544) do
     t.text     "short_description"
     t.string   "station_type",      default: "standard"
     t.string   "url"
+    t.string   "station_art"
   end
 
   create_table "tracks", force: true do |t|
