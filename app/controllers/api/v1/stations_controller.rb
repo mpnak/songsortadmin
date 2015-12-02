@@ -11,4 +11,10 @@ class Api::V1::StationsController < ApplicationController
   def show
     respond_with Station.find(params[:id])
   end
+
+  def tracks
+    @station = Station.find(params[:id])
+    @tracks = @station.tracks.all.sample(30)
+    render json: @tracks, root: "tracks"
+  end
 end

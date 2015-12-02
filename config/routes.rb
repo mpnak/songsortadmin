@@ -17,7 +17,11 @@ Rails.application.routes.draw do
         post "refresh"
       end
 
-      resources :stations
+      resources :stations do
+        member do
+          get "tracks"
+        end
+      end
 
       resources :users, only: [] do
         resources :playlists, only: [:index, :new, :create]
