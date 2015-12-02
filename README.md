@@ -51,9 +51,9 @@ GET /api/stations?station_type=featured
 GET /api/stations?station_type=sponsored
 ```
 
-Station image
+Station art
 ```
-GET /api/stations/:station_id/image
+a url hosting the station art image is returned in the station json response
 ```
 
 ### Playlists
