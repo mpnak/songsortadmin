@@ -11,10 +11,10 @@ users:
     - '2015-11-16 17:20:20.194039'
 
 ---
-playlist_tracks:
+saved_station_tracks:
   columns:
   - id
-  - playlist_id
+  - saved_station_id
   - track_id
   - created_at
   - updated_at
@@ -936,7 +936,7 @@ tracks:
     - '2015-11-14 00:23:43.747814'
 
 ---
-playlists:
+saved_stations:
   columns:
   - id
   - user_id
