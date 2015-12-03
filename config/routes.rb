@@ -24,17 +24,21 @@ Rails.application.routes.draw do
       end
 
       resources :users, only: [] do
-        resources :playlists, only: [:index, :new, :create]
+        resources :saved_stations, only: [:index, :new, :create]
       end
 
-      resources :playlists, only: [:show, :edit, :update, :destroy] do
-        resources :tracks, only: [] do
-          member do
-            post "play"
-            post "skipped"
-            post "favorited"
-            post "banned"
-          end
+      resources :saved_stations, only: [:show, :edit, :update, :destroy] do
+        member do
+          get "tracks"
+        end
+      end
+
+      resources :tracks, only: [] do
+        member do
+          post "play"
+          post "skipped"
+          post "favorited"
+          post "banned"
         end
       end
 

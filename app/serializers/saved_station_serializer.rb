@@ -1,4 +1,4 @@
-class PlaylistSerializer < ActiveModel::Serializer
+class SavedStationSerializer < ActiveModel::Serializer
   attributes :id, :undergroundness, :use_weather, :use_timeofday, :autoupdate
 
   has_one :station
