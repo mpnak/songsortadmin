@@ -1,9 +1,7 @@
 class Api::V1::TracksController < ApplicationController
   respond_to :json
 
-  before_action :set_user
-  before_action :set_playlist
-  before_action :set_track
+  protect_from_forgery with: :null_session
 
   def play
     respond_with @track
@@ -18,7 +16,19 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def banned
-    respond_with @track
+    if params[:saved_station_id]
+      @saved_station = SavedStation.find(params[:saved_station_id])
+      @saved_station_track = @saved_station.saved_station_tracks.where(track_id: params[:id]).first
+      @saved_station_track.destroy if @saved_station_track
+    end
+
+    @track_ban = TrackBan.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first_or_initialize
+
+    if @track_ban.save
+      render json: { success: true }
+    else
+      render json: { errors: @track_ban.errors }, status: 422
+    end
   end
 
   private
@@ -27,11 +37,11 @@ class Api::V1::TracksController < ApplicationController
       @user = User.find(params[:user_id])
     end
 
-    def set_playlist
-      @playlist = @user.playlists.find(params[:playlist_id])
+    def set_station
+      @station = Station.find(params[:station_id])
     end
 
     def set_track
-      @track = @playlist.find(params[:track_id])
+      @track = Track.find(params[:track_id])
     end
 end
