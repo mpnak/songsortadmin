@@ -51,9 +51,9 @@ GET /api/stations?station_type=featured
 GET /api/stations?station_type=sponsored
 ```
 
-Station tracks (default tracks)
+Generate tracks
 ```
-GET /api/stations/:station_id/tracks
+POST /api/stations/:station_id/tracks
 ```
 
 Station art
@@ -61,24 +61,24 @@ Station art
 a url hosting the station art image is returned in the station json response
 ```
 
-### Playlists
+### Saved Stations
 
 list a users playlists
 ```
-GET /api/users/:user_id/playlists
+GET /api/users/:user_id/saved_stations
 ```
 
 Read
 ```
-GET /api/playlists/:playlist_id
+GET /api/saved_stations/:saved_station_id
 ```
 
 Create
 ```
-POST /api/users/:user_id/playlists/
+POST /api/users/:user_id/saved_stations/
 example data:
 {
-  playlist: {
+  saved_station: {
     user_id: 1 (required),
     station_id: 1 (required)
     undergroundness: 2 (optional),
@@ -91,10 +91,10 @@ example data:
 
 Update
 ```
-PUT /api/playlists/:playlist_id
+PUT /api/saved_stations/:saved_station_id
 example data:
 {
-  playlist: {
+  saved_station: {
     undergroundness: 3
   }
 }
@@ -102,15 +102,25 @@ example data:
 
 Delete
 ```
-DELETE /api/playlists/:playlist_id
+DELETE /api/saved_stations/:saved_station_id
+```
+
+Generate new tracks
+```
+POST /api/saved_stations/:saved_station_id/tracks
 ```
 
 ### Tracks
 
 track is played, skipped, favorited or banned
 ```
-POST /api/playlists/:playlist_id/tracks/:track_id/play
-POST /api/playlists/:playlist_id/tracks/:track_id/skipped
-POST /api/playlists/:playlist_id/tracks/:track_id/favorited
-POST /api/playlists/:playlist_id/tracks/:track_id/banned
+POST /api/tracks/:track_id/play
+POST /api/tracks/:track_id/skipped
+POST /api/tracks/:track_id/favorited
+POST /api/tracks/:track_id/banned
+
+required params:
+  user_id
+  station_id
+  saved_station_id (if there is one)
 ```
