@@ -1,6 +1,8 @@
 class Api::V1::StationsController < ApplicationController
   respond_to :json
 
+  protect_from_forgery with: :null_session
+
   #before_action :authenticate_with_token!, only: [:create, :update]
 
   def index
