@@ -41,7 +41,8 @@ class Api::V1::SavedStationsController < ApplicationController
 
   def tracks
     @saved_station = SavedStation.find(params[:id])
-    respond_with @saved_station.generate_tracks
+    @tracks = @saved_station.generate_tracks
+    render json: @tracks, root: "tracks"
   end
 
   private

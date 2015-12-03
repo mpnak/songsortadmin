@@ -16,7 +16,7 @@ class Api::V1::StationsController < ApplicationController
 
   def tracks
     @station = Station.find(params[:id])
-    @tracks = @station.tracks.all.sample(30)
+    @tracks = @station.generate_tracks
     render json: @tracks, root: "tracks"
   end
 end

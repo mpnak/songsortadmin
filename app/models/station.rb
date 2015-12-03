@@ -22,6 +22,10 @@ class Station < ActiveRecord::Base
     end
   end
 
+  def generate_tracks(options = {})
+    tracks.all.sample(30)
+  end
+
   def create_taste_profile
     response = Echowrap.taste_profile_create(:name => name, :type => 'general')
     self.taste_profile_id = response.id
