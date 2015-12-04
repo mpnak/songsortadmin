@@ -125,6 +125,7 @@ track is played, skipped, favorited or banned
 POST /api/tracks/:track_id/play
 POST /api/tracks/:track_id/skipped
 POST /api/tracks/:track_id/favorited
+POST /api/tracks/:track_id/unfavorited
 POST /api/tracks/:track_id/banned
 
 required params:
