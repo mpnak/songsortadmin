@@ -44,7 +44,7 @@ class Api::V1::SavedStationsController < ApplicationController
     @tracks = @saved_station.generate_tracks
 
     if params[:user_id]
-      Track.decorate_with_favorited(params[:user_id], @station.id, @tracks)
+      Track.decorate_with_favorited(params[:user_id], @saved_station.station_id, @tracks)
     end
 
     render json: @tracks, root: "tracks"
@@ -55,7 +55,7 @@ class Api::V1::SavedStationsController < ApplicationController
     @tracks = @saved_station.tracks
 
     if params[:user_id]
-      Track.decorate_with_favorited(params[:user_id], @station.id, @tracks)
+      Track.decorate_with_favorited(params[:user_id], @saved_station.station_id, @tracks)
     end
 
     render json: @tracks, root: "tracks"
