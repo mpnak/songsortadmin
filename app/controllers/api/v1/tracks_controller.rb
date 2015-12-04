@@ -14,12 +14,22 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def favorited
-     @track_favorite = TrackFavorite.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first_or_initialize
+    @track_favorite = TrackFavorite.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first_or_initialize
 
     if @track_favorite.save
       render json: { success: true }
     else
       render json: { errors: @track_favorite.errors }, status: 422
+    end
+  end
+
+  def unfavorited
+    @track_favorite = TrackFavorite.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first
+
+    if @track_favorite && @track_favorite.destroy
+      head 204
+    else
+      head 422
     end
   end
 
@@ -41,15 +51,15 @@ class Api::V1::TracksController < ApplicationController
 
   private
 
-    def set_user
-      @user = User.find(params[:user_id])
-    end
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
-    def set_station
-      @station = Station.find(params[:station_id])
-    end
+  def set_station
+    @station = Station.find(params[:station_id])
+  end
 
-    def set_track
-      @track = Track.find(params[:track_id])
-    end
+  def set_track
+    @track = Track.find(params[:track_id])
+  end
 end

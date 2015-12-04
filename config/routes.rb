@@ -39,6 +39,7 @@ Rails.application.routes.draw do
           post "play"
           post "skipped"
           post "favorited"
+          post "unfavorited"
           post "banned"
         end
       end
