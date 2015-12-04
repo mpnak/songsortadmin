@@ -54,6 +54,7 @@ GET /api/stations?station_type=sponsored
 Generate tracks
 ```
 POST /api/stations/:station_id/tracks
+pass in a user_id to get back a favorited flag for each track
 ```
 
 Station art
@@ -108,6 +109,13 @@ DELETE /api/saved_stations/:saved_station_id
 Generate new tracks
 ```
 POST /api/saved_stations/:saved_station_id/tracks
+pass in a user_id to get back a favorited flag for each track
+```
+
+Read existing tracks
+```
+GET /api/saved_stations/:saved_station_id/tracks
+pass in a user_id to get back a favorited flag for each track
 ```
 
 ### Tracks
@@ -122,5 +130,6 @@ POST /api/tracks/:track_id/banned
 required params:
   user_id
   station_id
-  saved_station_id (if there is one)
+  saved_station_id (if there is one, this will remove the track from the saved
+stations existing tracks)
 ```
