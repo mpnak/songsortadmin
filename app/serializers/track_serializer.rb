@@ -1,3 +1,7 @@
 class TrackSerializer < ActiveModel::Serializer
-  attributes :id, :spotify_id, :echo_nest_id, :title, :artist, :undergroundness
+  attributes :id, :spotify_id, :echo_nest_id, :title, :artist, :undergroundness, :favorited
+
+  def favorited
+    object.favorited == true
+  end
 end

@@ -3,12 +3,32 @@ class Track < ActiveRecord::Base
   has_many :saved_station_tracks
   has_many :saved_stations, through: :saved_station_tracks
   has_many :track_bans
+  has_many :track_favorites
 
   validates :station, :title, :spotify_id, :echo_nest_id, :artist, presence: true
+
+  attr_accessor :favorited
 
   #before_create :create_in_taste_profile
   #before_destroy :destroy_from_taste_profile
   #before_update :update_taste_profile
+
+  # set favorited = true if there is a TrackFavorite relation for that station and user
+  # tracks is an array or relation of track models.
+  def self.decorate_with_favorited(user_id, station_id, tracks)
+      favs = TrackFavorite.where(
+        track_id: tracks,
+        station_id: station_id,
+        user_id: user_id
+      ).reduce({}) do |memo, track_favorite|
+        memo[track_favorite.track_id] = true
+        memo
+      end
+
+      tracks.each do |track|
+        track.favorited = favs.fetch(track.id, false)
+      end
+  end
 
   def self.build_from_spotify_id(spotify_id)
     track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}")

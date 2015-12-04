@@ -14,9 +14,14 @@ class Api::V1::StationsController < ApplicationController
     respond_with Station.find(params[:id])
   end
 
-  def tracks
+  def generate_tracks
     @station = Station.find(params[:id])
     @tracks = @station.generate_tracks
+
+    if params[:user_id]
+      Track.decorate_with_favorited(params[:user_id], @station.id, @tracks)
+    end
+
     render json: @tracks, root: "tracks"
   end
 end

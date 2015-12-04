@@ -2,6 +2,7 @@ class Station < ActiveRecord::Base
   has_many :tracks
   has_many :saved_stations
   has_many :track_bans
+  has_many :track_favorites
 
   validates :name, presence: true
 

@@ -4,15 +4,23 @@ class Api::V1::TracksController < ApplicationController
   protect_from_forgery with: :null_session
 
   def play
+    @track = Track.find(params[:track_id])
     respond_with @track
   end
 
   def skipped
+    @track = Track.find(params[:track_id])
     respond_with @track
   end
 
   def favorited
-    respond_with @track
+     @track_favorite = TrackFavorite.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first_or_initialize
+
+    if @track_favorite.save
+      render json: { success: true }
+    else
+      render json: { errors: @track_favorite.errors }, status: 422
+    end
   end
 
   def banned
