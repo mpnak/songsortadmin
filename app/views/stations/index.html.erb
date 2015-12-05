@@ -5,7 +5,12 @@
 
 <div class="stations">
   <% @stations.each do |station| %>
+
     <%= link_to station, class: "station" do %>
+
+      <% if station.station_art %>
+        <%= image_tag station.station_art, class: "station-art" %>
+      <% end %>
 
       <% if station.active %>
         <div class="active-status active">LIVE</div>

@@ -2,6 +2,11 @@
 
 <section class="margin-bottom">
   <div class="station show-page">
+
+    <% if @station.station_art %>
+      <%= image_tag @station.station_art, class: "station-art" %>
+    <% end %>
+
     <div class="station-content">
       <%= link_to @station.name, edit_station_path(@station) %>
     </div>

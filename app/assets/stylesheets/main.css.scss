@@ -67,6 +67,14 @@ section.margin-bottom {
     margin-right: 0;
   }
 
+  .station-art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .active-status {
     border-radius: 4px;
     padding: 4px 6px;
