@@ -10,6 +10,10 @@
 
       <% if station.station_art %>
         <%= image_tag station.station_art, class: "station-art" %>
+      <% else %>
+        <div class="station-content">
+          <%= station.name %>
+        </div>
       <% end %>
 
       <% if station.active %>
@@ -17,10 +21,6 @@
       <% else %>
         <div class="active-status inactive">INACTIVE</div>
       <% end %>
-
-      <div class="station-content">
-        <%= station.name %>
-      </div>
 
     <% end %>
   <% end %>

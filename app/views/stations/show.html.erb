@@ -3,13 +3,14 @@
 <section class="margin-bottom">
   <div class="station show-page">
 
+   <%= link_to edit_station_path(@station) do %> 
     <% if @station.station_art %>
       <%= image_tag @station.station_art, class: "station-art" %>
+    <% else %>
+      <div class="station-content"><%= @station.name %></div>
     <% end %>
+  <% end %>
 
-    <div class="station-content">
-      <%= link_to @station.name, edit_station_path(@station) %>
-    </div>
   </div>
 
   <div id="station-song-loader">
