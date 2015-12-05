@@ -3,11 +3,11 @@
 <section class="margin-bottom">
   <div class="station show-page">
 
-   <%= link_to edit_station_path(@station) do %> 
-    <% if @station.station_art %>
-      <%= image_tag @station.station_art, class: "station-art" %>
-    <% else %>
+   <%= link_to edit_station_path(@station) do %>
+    <% if @station.station_art.blank? %>
       <div class="station-content"><%= @station.name %></div>
+    <% else %>
+      <%= image_tag @station.station_art, class: "station-art" %>
     <% end %>
   <% end %>
 
