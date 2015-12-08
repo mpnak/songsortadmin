@@ -9,6 +9,7 @@ class Api::V1::SpotifyController < ApplicationController
   CLIENT_CALLBACK_URL = ENV["spotify_client_callback_url"]
   AUTH_HEADER = "Basic " + Base64.strict_encode64(CLIENT_ID + ":" + CLIENT_SECRET)
   SPOTIFY_ACCOUNTS_ENDPOINT = URI.parse("https://accounts.spotify.com")
+  SPOTIFY_API_ENDPOINT = URI.parse("https://api.spotify.com")
 
   def swap
 
@@ -27,23 +28,66 @@ class Api::V1::SpotifyController < ApplicationController
     _request.add_field("Authorization", AUTH_HEADER)
 
     _request.form_data = {
-        "grant_type" => "authorization_code",
-        "redirect_uri" => CLIENT_CALLBACK_URL,
-        "code" => auth_code
+      "grant_type" => "authorization_code",
+      "redirect_uri" => CLIENT_CALLBACK_URL,
+      #"redirect_uri" => "http://localhost:3000/api/spotify/callback",
+      "code" => auth_code
     }
 
     _response = http.request(_request)
 
     # encrypt the refresh token before forwarding to the client
     if _response.code.to_i == 200
-        token_data = JSON.parse(_response.body)
-        refresh_token = token_data["refresh_token"]
-        encrypted_token = refresh_token.encrypt(:symmetric, :password => ENCRYPTION_SECRET)
-        token_data["refresh_token"] = encrypted_token
-        _response.body = JSON.dump(token_data)
+      token_data = JSON.parse(_response.body)
+      refresh_token = token_data["refresh_token"]
+      encrypted_token = refresh_token.encrypt(:symmetric, :password => ENCRYPTION_SECRET)
+      token_data["refresh_token"] = encrypted_token
+
+      # find the stationdose user and include their id and auth_token
+      user = find_user(token_data["access_token"])
+      token_data["stationdose_user_id"] = user.id
+      token_data["stationdose_access_token"] = user.auth_token
+
+      _response.body = JSON.dump(token_data)
     end
 
     render json: _response.body, status: _response.code.to_i
+  end
+
+  # Make a request to Spotify's /me endpoint to grab the user id then find or create that user
+  #
+  # response from https://api.spotify.com/v1/me looks like this:
+  # {
+  #   "display_name":"JMWizzler",
+  #   "email":"email@example.com",
+  #   "external_urls":{
+  #     "spotify":"https://open.spotify.com/user/wizzler"
+  #   },
+  #   "href":"https://api.spotify.com/v1/users/wizzler",
+  #   "id":"wizzler",
+  #   "images":[{
+  #     "height":null,
+  #     "url":"https://fbcdn...2330_n.jpg",
+  #     "width":null
+  #   }],
+  #   "product":"premium",
+  #   "type":"user",
+  #   "uri":"spotify:user:wizzler"
+  # }
+  def find_user(access_token)
+
+    http = Net::HTTP.new(SPOTIFY_API_ENDPOINT.host, SPOTIFY_API_ENDPOINT.port)
+    http.use_ssl = true
+    _request2 = Net::HTTP::Get.new("/v1/me")
+    _request2.add_field("Authorization", "Bearer #{access_token}")
+    _response2 = http.request(_request2)
+
+    if _response2.code.to_i == 200
+      data = JSON.parse(_response2.body)
+      User.from_spotify_id(data["id"])
+    else
+      render json: _response2.body, status: _response2.code.to_i
+    end
   end
 
   def refresh
@@ -61,12 +105,19 @@ class Api::V1::SpotifyController < ApplicationController
     refresh_token = encrypted_token.decrypt(:symmetric, :password => ENCRYPTION_SECRET)
 
     _request.form_data = {
-        "grant_type" => "refresh_token",
-        "refresh_token" => refresh_token
+      "grant_type" => "refresh_token",
+      "refresh_token" => refresh_token
     }
 
     _response = http.request(_request)
 
     render json: _response.body, status: _response.code.to_i
   end
+
+  # Sign in with omniauth
+  def callback
+    user = User.from_omniauth(request.env['omniauth.auth'])
+    render json: user
+  end
+
 end

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'stations#index'
 
+  get '/auth/spotify/callback', to: 'api/v1/spotify#callback'
+  get '/api/spotify/callback', to: 'api/v1/spotify#swap'
+
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
 
