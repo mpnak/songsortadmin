@@ -1,11 +1,14 @@
 class Track < ActiveRecord::Base
+
+  serialize :audio_summary
+
   belongs_to :station
   has_many :saved_station_tracks
   has_many :saved_stations, through: :saved_station_tracks
   has_many :track_bans
   has_many :track_favorites
 
-  validates :station, :title, :spotify_id, :echo_nest_id, :artist, presence: true
+  validates :station, :title, :spotify_id, :artist, presence: true
 
   attr_accessor :favorited
 
@@ -31,14 +34,45 @@ class Track < ActiveRecord::Base
   end
 
   def self.build_from_spotify_id(spotify_id)
-    track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}")
+    track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}", bucket: ['audio_summary'])
 
-    Track.new({
-      title: track.title,
-      artist: track.artist,
-      spotify_id: spotify_id,
-      echo_nest_id: track.id
-    })
+    if track.id
+      Track.new({
+        title: track.title,
+        artist: track.artist,
+        spotify_id: spotify_id,
+        echo_nest_id: track.id,
+        echo_nest_song_id: track.song_id,
+        audio_summary: track.audio_summary.attrs
+      })
+    else
+      # The track is not found in echo nest. Doh. We can look for the song data
+      # however
+
+      spotify_track = RSpotify::Track.find(spotify_id)
+
+      _artist = spotify_track.artists.first.name
+      _title = spotify_track.name
+
+      # TODO should we replace the track with another? (Not for now)
+      #echo_song = Echowrap.song_search(title: _title, artist: _artist, :bucket => ['id:spotify', 'audio_summary', 'tracks']).first
+
+      echo_song = Echowrap.song_search(title: _title, artist: _artist, :bucket => ['audio_summary']).first
+
+      if echo_song
+        Track.new({
+          title: _title,
+          artist: _artist,
+          spotify_id: spotify_id,
+          echo_nest_song_id: echo_song.id,
+          audio_summary: echo_song.audio_summary.attrs
+        })
+      else
+        raise "no echonest song found"
+      end
+
+    end
+
   end
 
   def self.delete_from_taste_profile(taste_profile_id, track_ids)

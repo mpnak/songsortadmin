@@ -134,15 +134,18 @@ $(function() {
       $.ajax({
         type: "POST",
         url: "/tracks",
-        data: track_data,
-        success: trackCreated,
+        data: track_data //,
+        //success: trackCreated,
+      })
+      .done(function(data) {
+        $('#tracks').mixItUp('prepend', $(data));
+      })
+      .fail(function() {
+        alert("There was an error while importing the song: " + match[1]);
       });
     });
   }
 
-  function trackCreated(data) {
-    $('#tracks').mixItUp('prepend', $(data));
-  }
 });
 
 $(function(){

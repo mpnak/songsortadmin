@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208172712) do
+ActiveRecord::Schema.define(version: 20151209183331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 20151208172712) do
     t.integer  "undergroundness"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "echo_nest_song_id"
+    t.text     "audio_summary"
   end
 
   create_table "users", force: true do |t|
