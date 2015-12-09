@@ -18,6 +18,8 @@ Rails.application.routes.draw do
       namespace :spotify do
         post "swap"
         post "refresh"
+
+        post "sessions", action: 'create_session'
       end
 
       resources :stations do

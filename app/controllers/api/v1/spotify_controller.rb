@@ -42,52 +42,10 @@ class Api::V1::SpotifyController < ApplicationController
       refresh_token = token_data["refresh_token"]
       encrypted_token = refresh_token.encrypt(:symmetric, :password => ENCRYPTION_SECRET)
       token_data["refresh_token"] = encrypted_token
-
-      # find the stationdose user and include their id and auth_token
-      user = find_user(token_data["access_token"])
-      token_data["stationdose_user_id"] = user.id
-      token_data["stationdose_access_token"] = user.auth_token
-
       _response.body = JSON.dump(token_data)
     end
 
     render json: _response.body, status: _response.code.to_i
-  end
-
-  # Make a request to Spotify's /me endpoint to grab the user id then find or create that user
-  #
-  # response from https://api.spotify.com/v1/me looks like this:
-  # {
-  #   "display_name":"JMWizzler",
-  #   "email":"email@example.com",
-  #   "external_urls":{
-  #     "spotify":"https://open.spotify.com/user/wizzler"
-  #   },
-  #   "href":"https://api.spotify.com/v1/users/wizzler",
-  #   "id":"wizzler",
-  #   "images":[{
-  #     "height":null,
-  #     "url":"https://fbcdn...2330_n.jpg",
-  #     "width":null
-  #   }],
-  #   "product":"premium",
-  #   "type":"user",
-  #   "uri":"spotify:user:wizzler"
-  # }
-  def find_user(access_token)
-
-    http = Net::HTTP.new(SPOTIFY_API_ENDPOINT.host, SPOTIFY_API_ENDPOINT.port)
-    http.use_ssl = true
-    _request2 = Net::HTTP::Get.new("/v1/me")
-    _request2.add_field("Authorization", "Bearer #{access_token}")
-    _response2 = http.request(_request2)
-
-    if _response2.code.to_i == 200
-      data = JSON.parse(_response2.body)
-      User.from_spotify_id(data["id"])
-    else
-      render json: _response2.body, status: _response2.code.to_i
-    end
   end
 
   def refresh
@@ -117,7 +75,57 @@ class Api::V1::SpotifyController < ApplicationController
   # Sign in with omniauth
   def callback
     user = User.from_omniauth(request.env['omniauth.auth'])
-    render json: user
+    render json: user, meta: request.env['omniauth.auth']
+  end
+
+  # Make a request to Spotify's /me endpoint to grab the user id then find or create that user
+  #
+  # response from https://api.spotify.com/v1/me looks like this:
+  # {
+  #   "display_name":"JMWizzler",
+  #   "email":"email@example.com",
+  #   "external_urls":{
+  #     "spotify":"https://open.spotify.com/user/wizzler"
+  #   },
+  #   "href":"https://api.spotify.com/v1/users/wizzler",
+  #   "id":"wizzler",
+  #   "images":[{
+  #     "height":null,
+  #     "url":"https://fbcdn...2330_n.jpg",
+  #     "width":null
+  #   }],
+  #   "product":"premium",
+  #   "type":"user",
+  #   "uri":"spotify:user:wizzler"
+  # }
+  def create_session
+    # find the stationdose user using a spotify access_token and include their id and auth_token
+    access_token = params["access_token"]
+
+    http = Net::HTTP.new(SPOTIFY_API_ENDPOINT.host, SPOTIFY_API_ENDPOINT.port)
+    http.use_ssl = true
+
+    _request = Net::HTTP::Get.new("/v1/me")
+    _request.add_field("Authorization", "Bearer #{access_token}")
+    _response = http.request(_request)
+
+    if _response.code.to_i == 200
+      data = JSON.parse(_response.body)
+      user = User.from_spotify_id(data["id"])
+      user.generate_authentication_token!
+      user.save
+
+      render json: user, status: 200
+    else
+      render json: _response.body, status: _response.code.to_i
+    end
+  end
+
+  def destroy_session
+    user = User.find_by(auth_token: params[:id])
+    user.generate_authentication_token!
+    user.save
+    head 204
   end
 
 end
