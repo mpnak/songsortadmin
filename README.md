@@ -39,6 +39,21 @@ POST /api/spotify/swap
 POST /api/spotify/refresh
 ```
 
+Create a Stationdose session
+```
+POST /api/spotify/sessions
+required params:
+  access_token (a valid Spotify access_token)
+
+example response:
+{
+  "user": {
+    "id": 5,
+    "auth_token": "nP1ZzmGUsd3eNKnB5mYUgq83sRE="
+  }
+}
+```
+
 ### Stations
 
 List all stations.
