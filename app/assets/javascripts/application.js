@@ -111,7 +111,10 @@ $(function() {
   }
 
   function addTracks(text) {
-    var re = /http:\/\/open\.spotify\.com\/track\/(.*)/g;
+
+    console.log(text);
+
+    var re = /https?:\/\/open\.spotify\.com\/track\/(.*)/g;
     var matches = [];
     var m;
 
@@ -134,8 +137,7 @@ $(function() {
       $.ajax({
         type: "POST",
         url: "/tracks",
-        data: track_data //,
-        //success: trackCreated,
+        data: track_data
       })
       .done(function(data) {
         $('#tracks').mixItUp('prepend', $(data));
