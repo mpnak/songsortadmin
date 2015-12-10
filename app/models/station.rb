@@ -25,7 +25,11 @@ class Station < ActiveRecord::Base
   end
 
   def generate_tracks(options = {})
-    tracks.all.sample(30)
+    if ["featured", "sponsored"].include?(station_type)
+      tracks
+    else
+      tracks.all.sample(30)
+    end
   end
 
   def create_taste_profile
