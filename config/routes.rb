@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
       resources :saved_stations, only: [:show, :edit, :update, :destroy] do
         member do
-          post "tracks" => "tracks#generate_tracks"
+          post "tracks", action: "generate_tracks"
           get "tracks"
         end
       end
