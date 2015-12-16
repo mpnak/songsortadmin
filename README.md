@@ -88,14 +88,39 @@ a url hosting the station art image is returned in the station json response
 
 ### Saved Stations
 
-list a users playlists
+list a users saved_stations
 ```
 GET /api/users/:user_id/saved_stations
+
+response looks like: {
+  "saved_stations": [...]
+}
+note: see below for example saved_station json
 ```
 
 Read
 ```
 GET /api/saved_stations/:saved_station_id
+
+response will look like:
+{
+  "saved_station": {
+    "id": 1,
+    "undergroundness": true,
+    "use_weather": false,
+    "use_timeofday": false,
+    "autoupdate": false,
+    "updated_at": "2015-12-16T22:36:52.928Z",
+    "station": {
+      "id": 3,
+      "name": "The Living Room",
+      "short_description": "Modern rock that's not too hard. A little something for everyone.",
+      "station_type": "standard",
+      "url": "",
+      "station_art": "https://s3-us-west-2.amazonaws.com/stationdose/Station+Art/stationArt-livingRoom.png"
+    }
+  }
+}
 ```
 
 Create
@@ -136,12 +161,30 @@ POST /api/saved_stations/:saved_station_id/tracks
 params: 
   user_id // (optional) pass in a user_id to get back a favorited flag for each track
   ll // (optional) location string in the format "latitude,longitude" e.g. "37.1,45.63"
+
+
+response will look like:
+{
+  "tracks": [...],
+  "meta": {
+    "updated_at": "2015-12-16T22:31:18.356Z"
+  }
+}
 ```
 
 Read existing tracks
 ```
 GET /api/saved_stations/:saved_station_id/tracks
 pass in a user_id to get back a favorited flag for each track
+
+
+response will look like:
+{
+  "tracks": [...],
+  "meta": {
+    "updated_at": "2015-12-16T22:31:18.356Z"
+  }
+}
 ```
 
 ### Tracks
