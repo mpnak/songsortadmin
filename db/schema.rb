@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209183331) do
+ActiveRecord::Schema.define(version: 20151216161320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,17 @@ ActiveRecord::Schema.define(version: 20151209183331) do
     t.string   "echo_nest_song_id"
     t.text     "audio_summary"
   end
+
+  create_table "user_station_links", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "station_id"
+    t.text     "track_ids"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_station_links", ["station_id"], name: "index_user_station_links_on_station_id", using: :btree
+  add_index "user_station_links", ["user_id"], name: "index_user_station_links_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at"

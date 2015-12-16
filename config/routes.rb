@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :stations do
         member do
           post "tracks" => "stations#generate_tracks"
+          get "tracks", action: "get_tracks"
         end
       end
 

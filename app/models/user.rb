@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :saved_stations
   has_many :track_bans
   has_many :track_favorites
+  has_many :user_station_links
 
 
   # Find or create a user from an omniauth hash
