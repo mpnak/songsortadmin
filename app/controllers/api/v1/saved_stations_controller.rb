@@ -47,7 +47,7 @@ class Api::V1::SavedStationsController < ApplicationController
       Track.decorate_with_favorited(params[:user_id], @saved_station.station_id, @tracks)
     end
 
-    render json: @tracks, root: "tracks"
+    render json: @tracks, root: "tracks", meta: { updated_at: @saved_station.updated_at }
   end
 
   def tracks
@@ -58,7 +58,7 @@ class Api::V1::SavedStationsController < ApplicationController
       Track.decorate_with_favorited(params[:user_id], @saved_station.station_id, @tracks)
     end
 
-    render json: @tracks, root: "tracks"
+    render json: @tracks, root: "tracks", meta: { updated_at: @saved_station.updated_at }
   end
 
   private

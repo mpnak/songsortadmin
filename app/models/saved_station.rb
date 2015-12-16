@@ -7,6 +7,7 @@ class SavedStation < ActiveRecord::Base
   validates :user, :station, presence: true
 
   def generate_tracks
+    self.touch
     self.tracks = self.station.generate_tracks
   end
 end
