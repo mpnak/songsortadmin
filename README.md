@@ -69,7 +69,9 @@ GET /api/stations?station_type=sponsored
 Generate tracks
 ```
 POST /api/stations/:station_id/tracks
-pass in a user_id to get back a favorited flag for each track
+params: 
+  user_id // (optional) pass in a user_id to get back a favorited flag for each track
+  ll // (optional) location string in the format "latitude,longitude" e.g. "37.1,45.63"
 ```
 
 Station art
@@ -124,7 +126,9 @@ DELETE /api/saved_stations/:saved_station_id
 Generate new tracks
 ```
 POST /api/saved_stations/:saved_station_id/tracks
-pass in a user_id to get back a favorited flag for each track
+params: 
+  user_id // (optional) pass in a user_id to get back a favorited flag for each track
+  ll // (optional) location string in the format "latitude,longitude" e.g. "37.1,45.63"
 ```
 
 Read existing tracks
