@@ -64,6 +64,7 @@ gem 'active_model_serializers', '~> 0.8.3'
 gem "encrypted_strings"
 gem 'rspotify', git: "https://github.com/vaughankg/rspotify.git"
 gem 'timezone'
+gem 'forecast_io'
 
 group :development, :test do
   gem 'rspec-rails'
