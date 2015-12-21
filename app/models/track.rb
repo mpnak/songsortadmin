@@ -19,18 +19,30 @@ class Track < ActiveRecord::Base
   # set favorited = true if there is a TrackFavorite relation for that station and user
   # tracks is an array or relation of track models.
   def self.decorate_with_favorited(user_id, station_id, tracks)
-      favs = TrackFavorite.where(
-        track_id: tracks,
-        station_id: station_id,
-        user_id: user_id
-      ).reduce({}) do |memo, track_favorite|
-        memo[track_favorite.track_id] = true
-        memo
-      end
+    favs = TrackFavorite.where(
+      track_id: tracks,
+      station_id: station_id,
+      user_id: user_id
+    ).reduce({}) do |memo, track_favorite|
+      memo[track_favorite.track_id] = true
+      memo
+    end
 
-      tracks.each do |track|
-        track.favorited = favs.fetch(track.id, false)
-      end
+    tracks.each do |track|
+      track.favorited = favs.fetch(track.id, false)
+    end
+  end
+
+  def self.echo_song_from_spotify_id(spotify_id)
+    spotify_track = RSpotify::Track.find(spotify_id)
+
+    _artist = spotify_track.artists.first.name
+    _title = spotify_track.name
+
+    # TODO should we replace the track with another? (Not for now)
+    #echo_song = Echowrap.song_search(title: _title, artist: _artist, :bucket => ['id:spotify', 'audio_summary', 'tracks']).first
+
+    Echowrap.song_search(title: _title, artist: _artist, :bucket => ['audio_summary']).first
   end
 
   def self.build_from_spotify_id(spotify_id)
@@ -46,23 +58,12 @@ class Track < ActiveRecord::Base
         audio_summary: track.audio_summary.attrs
       })
     else
-      # The track is not found in echo nest. Doh. We can look for the song data
-      # however
-
-      spotify_track = RSpotify::Track.find(spotify_id)
-
-      _artist = spotify_track.artists.first.name
-      _title = spotify_track.name
-
-      # TODO should we replace the track with another? (Not for now)
-      #echo_song = Echowrap.song_search(title: _title, artist: _artist, :bucket => ['id:spotify', 'audio_summary', 'tracks']).first
-
-      echo_song = Echowrap.song_search(title: _title, artist: _artist, :bucket => ['audio_summary']).first
+      echo_song = echo_song_from_spotify_id(spotify_id)
 
       if echo_song
         Track.new({
-          title: _title,
-          artist: _artist,
+          title: echo_song.title,
+          artist: echo_song.artist_name,
           spotify_id: spotify_id,
           echo_nest_song_id: echo_song.id,
           audio_summary: echo_song.audio_summary.attrs
@@ -70,7 +71,6 @@ class Track < ActiveRecord::Base
       else
         raise "no echonest song found"
       end
-
     end
 
   end
@@ -87,7 +87,20 @@ class Track < ActiveRecord::Base
       :id => taste_profile_id,
       :data => JSON.generate(data)
     )
+  end
 
+  def get_audio_summary!
+    echo_song = if self.echo_nest_song_id
+                  Echowrap.song_profile(id: self.echo_nest_song_id, bucket: [:audio_summary])
+                else self.echo_nest_id
+                  Echowrap.song_profile(track_id: "TRSQANT144D17E0F21", bucket: [:audio_summary])
+                end
+
+    if echo_song
+      self.echo_nest_song_id = echo_song.id
+      self.audio_summary = echo_song.audio_summary
+      self.save
+    end
   end
 
   def create_in_taste_profile
