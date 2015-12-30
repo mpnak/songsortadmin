@@ -1,6 +1,6 @@
 class Track < ActiveRecord::Base
 
-  serialize :audio_summary
+  serialize :audio_summary, Hash
 
   belongs_to :station
   has_many :saved_station_tracks
@@ -46,16 +46,16 @@ class Track < ActiveRecord::Base
   end
 
   def self.build_from_spotify_id(spotify_id)
-    track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}", bucket: ['audio_summary'])
+    echo_track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}", bucket: ['audio_summary'])
 
     if track.id
       Track.new({
-        title: track.title,
-        artist: track.artist,
+        title: echo_track.title,
+        artist: echo_track.artist,
         spotify_id: spotify_id,
-        echo_nest_id: track.id,
-        echo_nest_song_id: track.song_id,
-        audio_summary: track.audio_summary.attrs
+        echo_nest_id: echo_track.id,
+        echo_nest_song_id: echo_track.song_id,
+        audio_summary: echo_track.audio_summary.attrs
       })
     else
       echo_song = echo_song_from_spotify_id(spotify_id)
@@ -93,12 +93,12 @@ class Track < ActiveRecord::Base
     echo_song = if self.echo_nest_song_id
                   Echowrap.song_profile(id: self.echo_nest_song_id, bucket: [:audio_summary])
                 else self.echo_nest_id
-                  Echowrap.song_profile(track_id: "TRSQANT144D17E0F21", bucket: [:audio_summary])
+                  Echowrap.song_profile(track_id: echo_nest_id, bucket: [:audio_summary])
                 end
 
     if echo_song
       self.echo_nest_song_id = echo_song.id
-      self.audio_summary = echo_song.audio_summary
+      self.audio_summary = echo_song.audio_summary.attrs
       self.save
     end
   end
@@ -142,5 +142,9 @@ class Track < ActiveRecord::Base
       :id => self.station.taste_profile_id,
       :data => JSON.generate(data)
     )
+  end
+
+  def energy
+    audio_summary[:energy].to_f
   end
 end
