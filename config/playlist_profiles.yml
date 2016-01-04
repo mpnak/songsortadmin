@@ -1,0 +1,79 @@
+test_low:
+  settings:
+    sensitivity: 1.0
+    energy_multiplier: 10.0
+    undergroundness_muliplier: 1.0
+  tracks:
+    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+
+test_mid:
+  settings:
+    sensitivity: 1.0
+    energy_multiplier: 10.0
+    undergroundness_muliplier: 1.0
+  tracks:
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+
+test_high:
+  settings:
+    sensitivity: 1.0
+    energy_multiplier: 10.0
+    undergroundness_muliplier: 1.0
+  tracks:
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
+      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+
+
+

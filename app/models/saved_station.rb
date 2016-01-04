@@ -42,16 +42,24 @@ class SavedStation < ActiveRecord::Base
     end
   end
 
-  def fill_energy_profile(undergroundness = 3)
-    pl_data = playlist_profile_data
+  def fill_energy_profile(options = {})
+    name = options[:name] || :test_high
 
-    pl_data[:tracks].each do |td|
-      td[:undergroundness][:target] = undergroundness
-      td[:undergroundness][:min] = [undergroundness - 3, 0].max
-      td[:undergroundness][:max] = [undergroundness + 3, 5].min
+    pl_data = PLAYLIST_PROFILES[name]
+
+    if undergroundness = options[:undergroundness]
+      pl_data[:tracks].each do |td|
+        td[:undergroundness][:target] = undergroundness
+        td[:undergroundness][:min] = [undergroundness - 3, 0].max
+        td[:undergroundness][:max] = [undergroundness + 3, 5].min
+      end
     end
 
-    playlist_profile = PlaylistProfile.new(playlist_profile_data)
+    if s = options[:sensitivity]
+      pl_data[:settings][:sensitivity] = s
+    end
+
+    playlist_profile = PlaylistProfile.new(pl_data)
     playlist = playlist_profile.playlist(self.station.tracks)
     playlist_profile.print_summary(playlist)
   end
@@ -200,67 +208,4 @@ class SavedStation < ActiveRecord::Base
     end
 
   end
-
-  def playlist_profile_data
-    {
-      settings: {
-        sensitivity: 1.0,
-        energy_multiplier: 10.0,
-        undergroundness_muliplier: 1.0,
-        size: 12
-      },
-      tracks: [
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        },
-        {
-          energy: { target: 0.4, min: 0, max: 1, multiplier: 1.0 },
-          undergroundness: { target: 3, min: 0, max: 5, multiplier: 1.0 }
-        }
-      ]
-    }
-  end
-
-
 end
