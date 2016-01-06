@@ -1,13 +1,13 @@
 test_low:
   settings:
-    sensitivity: 1.0
+    randomness: 0.8
     energy_multiplier: 10.0
     undergroundness_muliplier: 1.0
   tracks:
-    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.2, min: 0, max: 1 }
+      undergroundness:  { target: 3, min: 0, max: 5 }
+    - energy:           { target: 0.2, min: 0, max: 1 }
+      undergroundness:  { target: 3, min: 0, max: 5 }
     - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
       undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
     - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
@@ -19,7 +19,7 @@ test_low:
 
 test_mid:
   settings:
-    sensitivity: 1.0
+    randomness: 0.8
     energy_multiplier: 10.0
     undergroundness_muliplier: 1.0
   tracks:
@@ -48,7 +48,7 @@ test_mid:
 
 test_high:
   settings:
-    sensitivity: 1.0
+    randomness: 0.8
     energy_multiplier: 10.0
     undergroundness_muliplier: 1.0
   tracks:

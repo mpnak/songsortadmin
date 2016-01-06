@@ -33,6 +33,12 @@ class Station < ActiveRecord::Base
     end
   end
 
+  def fill_energy_profile(options = {})
+    playlist_profile = PlaylistProfile.choose(options)
+    playlist = playlist_profile.playlist(self.tracks)
+    playlist_profile.print_summary(playlist)
+  end
+
   def create_taste_profile
     response = Echowrap.taste_profile_create(:name => name, :type => 'general')
     self.taste_profile_id = response.id
