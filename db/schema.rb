@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216161320) do
+ActiveRecord::Schema.define(version: 20160106193950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20151216161320) do
     t.datetime "updated_at"
     t.string   "echo_nest_song_id"
     t.text     "audio_summary"
+    t.decimal  "energy"
   end
 
   create_table "user_station_links", force: true do |t|
