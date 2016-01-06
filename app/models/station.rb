@@ -29,14 +29,11 @@ class Station < ActiveRecord::Base
     if ["featured", "sponsored"].include?(station_type)
       tracks
     else
-      tracks.all.sample(30)
+      playlist_profile = PlaylistProfile.choose(options)
+      playlist = playlist_profile.playlist(self.tracks)
+      playlist.print_summary if options[:print]
+      playlist.tracks
     end
-  end
-
-  def fill_energy_profile(options = {})
-    playlist_profile = PlaylistProfile.choose(options)
-    playlist = playlist_profile.playlist(self.tracks)
-    playlist_profile.print_summary(playlist)
   end
 
   def create_taste_profile

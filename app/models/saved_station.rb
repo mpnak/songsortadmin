@@ -1,21 +1,3 @@
-module Enumerable
-  # weighted random sampling.
-  #
-  # Pavlos S. Efraimidis, Paul G. Spirakis
-  # Weighted random sampling with a reservoir
-  # Information Processing Letters
-  # Volume 97, Issue 5 (16 March 2006)
-  def wsample(n)
-    self.max_by(n) {|v| rand ** (1.0/yield(v)) }
-  end
-
-  # Return [[value, index]]
-  def wsamplei(n)
-    #self.each_with_index.max_by(n) {|v, i| rand ** (1.0/yield(v)) }
-    self.each_with_index.max_by(n) {|v, i| 0.5 ** (1.0/yield(v)) }
-  end
-end
-
 class SavedStation < ActiveRecord::Base
   belongs_to :user
   belongs_to :station
@@ -26,7 +8,7 @@ class SavedStation < ActiveRecord::Base
 
   def generate_tracks(options = {})
     self.touch
-    self.tracks = self.station.generate_tracks
+    self.tracks = self.station.generate_tracks(options)
   end
 
   def get_energy_profile(options = {})

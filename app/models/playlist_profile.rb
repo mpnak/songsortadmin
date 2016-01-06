@@ -56,10 +56,10 @@ class PlaylistProfile
   def playlist(tracks)
     # Each track is associated with an array of weights for a given target vecor
     track_weights = tracks.map { |track| TrackWeight.new(track, self) }
-    choose_tracks(track_weights)
+    Playlist.new(select_track_weights(track_weights), self)
   end
 
-  def choose_tracks(track_weights)
+  def select_track_weights(track_weights)
     size.times.reduce([]) do |memo,n|
       selected = track_weights.each_with_index.max_by(1) do |tw, i|
         TrackWeight::Weight.random_calibrated_weight(tw.weights[n].total, randomness)
@@ -71,21 +71,32 @@ class PlaylistProfile
     end
   end
 
-  def print_summary(playlist)
-    variance = size.times.reduce(0) do |memo, n|
-      track_weight = playlist[n]
-      track = track_weight.track
-      t_en = track_profiles[n].energy.target
-      en = track.energy
+  class Playlist
+    def initialize(track_weights, playlist_profile)
+      @playlist_profile = playlist_profile
+      @track_weights = track_weights
+    end
 
-      weight = track_weight.weights[n].total
+    def tracks
+      @track_weights.map(&:track)
+    end
 
-      puts "target energy: #{t_en}, actual energy: #{en.round(2)}, weight: #{weight}, #{track.title}"
+    def print_summary
+      variance = @playlist_profile.size.times.reduce(0) do |memo, n|
+        track_weight = @track_weights[n]
+        track = track_weight.track
+        t_en = @playlist_profile.track_profiles[n].energy.target
+        en = track.energy
 
-      memo += ( en - t_en ).abs ** 2
-    end / size.to_f
+        weight = track_weight.weights[n].total
 
-    puts "variance: #{variance}"
+        puts "target energy: #{t_en}, actual energy: #{en.round(2)}, weight: #{weight}, #{track.title}"
+
+        memo += ( en - t_en ).abs ** 2
+      end / @playlist_profile.size.to_f
+
+      puts "variance: #{variance}"
+    end
   end
 
   class TrackProfile
