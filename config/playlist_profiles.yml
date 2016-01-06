@@ -1,79 +1,215 @@
-test_low:
-  settings:
-    randomness: 0.8
-    energy_multiplier: 10.0
-    undergroundness_muliplier: 1.0
+mellow:
+  randomness: 0.8
+  energy_multiplier: 4.0
+  undergroundness_muliplier: 1.0
   tracks:
-    - energy:           { target: 0.2, min: 0, max: 1 }
-      undergroundness:  { target: 3, min: 0, max: 5 }
-    - energy:           { target: 0.2, min: 0, max: 1 }
-      undergroundness:  { target: 3, min: 0, max: 5 }
-    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.2, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.3, min: 0, max: 1 }
 
-test_mid:
-  settings:
-    randomness: 0.8
-    energy_multiplier: 10.0
-    undergroundness_muliplier: 1.0
+chill:
+  randomness: 0.8
+  energy_multiplier: 4.0
+  undergroundness_muliplier: 1.0
   tracks:
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.5, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: 1 }
 
-test_high:
-  settings:
-    randomness: 0.8
-    energy_multiplier: 10.0
-    undergroundness_muliplier: 1.0
+vibes:
+  randomness: 0.8
+  energy_multiplier: 4.0
+  undergroundness_muliplier: 1.0
   tracks:
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
-    - energy:           { target: 0.85, min: 0, max: 1, multiplier: 1.0 }
-      undergroundness:  { target: 3, min: 0, max: 5, multiplier: 1.0 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.5, min: 0, max: 1 }
 
+lounge:
+  randomness: 0.8
+  energy_multiplier: 4.0
+  undergroundness_muliplier: 1.0
+  tracks:
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.6, min: 0, max: 1 }
 
+club:
+  randomness: 0.8
+  energy_multiplier: 4.0
+  undergroundness_muliplier: 1.0
+  tracks:
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.7, min: 0, max: 1 }
 
+bangin:
+  randomness: 0.8
+  energy_multiplier: 4.0
+  undergroundness_muliplier: 1.0
+  tracks:
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.8, min: 0, max: 1 }
