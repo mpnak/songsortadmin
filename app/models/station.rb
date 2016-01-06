@@ -31,8 +31,12 @@ class Station < ActiveRecord::Base
     else
       playlist_profile = PlaylistProfile.choose(options)
       playlist = playlist_profile.playlist(self.tracks)
-      playlist.print_summary if options[:print]
-      playlist.tracks
+
+      if options[:print]
+        playlist.print_summary
+      else
+        playlist.tracks
+      end
     end
   end
 
