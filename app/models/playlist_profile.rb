@@ -164,7 +164,7 @@ class PlaylistProfile
         track_profile = playlist_profile.track_profiles[n]
 
         @undergroundness = self.class.normalize_with_limits(
-          track.undergroundness,
+          track.undergroundness || 3,
           track_profile.undergroundness.target,
           playlist_profile.min_undergroundness,
           playlist_profile.max_undergroundness,
