@@ -30,7 +30,7 @@ class Station < ActiveRecord::Base
       tracks
     else
       playlist_profile = PlaylistProfile.choose(options)
-      playlist = playlist_profile.playlist(self.tracks)
+      playlist = playlist_profile.playlist(self.tracks.where.not(energy: nil))
 
       if options[:print]
         playlist.print_summary

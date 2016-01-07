@@ -29,13 +29,13 @@ class PlaylistProfile
     data[:tracks].each do |td|
       td[:undergroundness] ||= {}
       td[:undergroundness][:target] = undergroundness
-      td[:undergroundness][:min] = [undergroundness - 3, 0].max
-      td[:undergroundness][:max] = [undergroundness + 3, 5].min
+      td[:undergroundness][:min] = [undergroundness - 2, 0].max
+      td[:undergroundness][:max] = [undergroundness + 2, 5].min
 
       td[:energy] ||= {}
       td[:energy][:target] ||= 0.5
       td[:energy][:min] ||= 0
-      td[:energy][:max] ||= 0
+      td[:energy][:max] ||= 1.0
     end
 
     if s = options[:randomness]
