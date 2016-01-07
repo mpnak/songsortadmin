@@ -54232,90 +54232,6 @@ tracks:
       :valence: 0.297954
       :danceability: 0.442315
     - '0.319212'
-  - - '2100'
-    - '4'
-    - 11Yx9ADkGhUJ4FuBjOewV4
-    - TRAKWUA144D0B9B69D
-    - Needle In The Hay
-    - Elliott Smith
-    - '3'
-    - '2015-12-29 18:53:39.685913'
-    - '2016-01-07 02:35:41.114157'
-    - SOKECFT135C240B1E2
-    - |
-      ---
-      :key: 5
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/895J6QqPo-XMZLpjjsaR0-ZcewmUhywmv7ETHUA07GBcW-NUqTyCZ_2ejsOCR4ZpaNLjt78kQjhFDTlYU%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452134740&Signature=kKSGUsuySv2n8t%2BOf9PhGJLS36M%3D
-      :energy: 0.190519
-      :liveness: 0.119586
-      :tempo: 116.111
-      :speechiness: 0.043072
-      :acousticness: 0.240715
-      :instrumentalness: 0.01843
-      :mode: 1
-      :time_signature: 4
-      :duration: 256.58667
-      :loudness: -17.438
-      :audio_md5: ''
-      :valence: 0.339332
-      :danceability: 0.56154
-    - '0.190519'
-  - - '2101'
-    - '4'
-    - 5cW9OyV8C701YkRENJH5nI
-    - TRAROUA144D187DF44
-    - Angeles
-    - Elliott Smith
-    - '3'
-    - '2015-12-29 18:53:40.321146'
-    - '2016-01-07 02:33:57.360902'
-    - SONAQRQ12AB017FD0B
-    - |
-      ---
-      :key: 4
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/Gxb54gyX9Zxb7FNVgF4dvmW3AuRmmBqH2M4r7XHvCfwAeAHCUVJPjf53WFqUjTIFUj-il_B8Ustxmz_cg%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452134637&Signature=B%2BnBdJcS4wUGczMMmczB0VwY504%3D
-      :energy: 0.22539
-      :liveness: 0.14897
-      :tempo: 118.174
-      :speechiness: 0.049385
-      :acousticness: 0.806263
-      :instrumentalness: 0.154179
-      :mode: 0
-      :time_signature: 4
-      :duration: 176.22667
-      :loudness: -16.374
-      :audio_md5: ''
-      :valence: 0.624416
-      :danceability: 0.541217
-    - '0.22539'
-  - - '2102'
-    - '4'
-    - 5AMrnF761nziCWUfjBgRUI
-    - TRSKFZX144D171AB86
-    - 'Waltz #2 (XO)'
-    - Elliott Smith
-    - '3'
-    - '2015-12-29 18:53:41.046113'
-    - '2016-01-07 02:33:58.256096'
-    - SONPNVI135C369C148
-    - |
-      ---
-      :key: 10
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/Xxv09QLobhF6IoHEaI3Xs4FoF4IiRvrWog8czIcJdqWlgrOQuFuyGNkkzGxfz9aFXEtxqRUA3gSi7HRKk%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452134638&Signature=b8OVPe6Cc6JSbUN8eDtk8QM2CCM%3D
-      :energy: 0.486585
-      :liveness: 0.087085
-      :tempo: 132.141
-      :speechiness: 0.025657
-      :acousticness: 0.358147
-      :instrumentalness: 8.8e-05
-      :mode: 1
-      :time_signature: 3
-      :duration: 278.72
-      :loudness: -7.684
-      :audio_md5: ''
-      :valence: 0.642956
-      :danceability: 0.631508
-    - '0.486585'
   - - '2103'
     - '4'
     - 3pM7gfel0ho7yVJw4KK5Eq
@@ -57094,9 +57010,9 @@ tracks:
     - TRCUAWD14AFD6B552A
     - Waiting Around For Grace
     - Pond
-    - '3'
+    - '1'
     - '2015-12-29 19:04:30.141859'
-    - '2016-01-07 02:41:31.067314'
+    - '2016-01-07 19:58:31.674901'
     - SOZDZFI14AC56BAC04
     - |
       ---
@@ -58074,9 +57990,9 @@ tracks:
     - TRNHVDC14883CF3456
     - Dirty Shakes
     - Strange Americans
-    - 
+    - '1'
     - '2015-12-29 19:07:13.476563'
-    - '2016-01-07 02:42:45.669556'
+    - '2016-01-07 20:25:18.523847'
     - SOGBPEW1488470EED6
     - |
       ---
@@ -58102,9 +58018,9 @@ tracks:
     - TRZZTRP14883CD11F9
     - Bend / Break / Wreck
     - Strange Americans
-    - 
+    - '1'
     - '2015-12-29 19:07:14.161283'
-    - '2016-01-07 02:42:46.131307'
+    - '2016-01-07 20:25:15.359689'
     - SOYOYKK1488DB13D5D
     - |
       ---
@@ -58158,9 +58074,9 @@ tracks:
     - TRQITLL144D1DA9F0E
     - Someday
     - The Strokes
-    - 
+    - '5'
     - '2015-12-29 19:07:16.76757'
-    - '2016-01-07 02:42:46.597739'
+    - '2016-01-07 20:24:39.86197'
     - SOPWQOC1288D3E6FFE
     - |
       ---
@@ -58186,9 +58102,9 @@ tracks:
     - TRYNCIH14AA3C55F78
     - Earth Apple
     - The Suitcase Junket
-    - 
+    - '1'
     - '2015-12-29 19:07:26.514873'
-    - '2016-01-07 02:42:47.062557'
+    - '2016-01-07 20:24:25.602905'
     - SONTWCN14AA6DAB454
     - |
       ---
@@ -58214,9 +58130,9 @@ tracks:
     - TRAEPDE14CC05EE33C
     - I Can't Explain
     - Surfer Blood
-    - 
+    - '3'
     - '2015-12-29 19:07:27.139199'
-    - '2016-01-07 02:42:47.493336'
+    - '2016-01-07 20:24:36.77593'
     - SOOTTGT14B80D1456C
     - |
       ---
@@ -58236,43 +58152,15 @@ tracks:
       :valence: 0.483235
       :danceability: 0.546681
     - '0.7844989999999999'
-  - - '2279'
-    - '4'
-    - 2YM919IbGgpE3d5F2XmmtZ
-    - TRIDDYT14AA3C5787B
-    - Twisted Fate
-    - The Suitcase Junket
-    - 
-    - '2015-12-29 19:07:30.150124'
-    - '2016-01-07 02:43:49.545819'
-    - SOLFLHQ14AA6DAC57C
-    - |
-      ---
-      :key: 1
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/JuHWvAL9jh3GEzGSbzEXB7Bx7CSXydjijWdIQpAyFbsPI2uH_tP5smI-LTcg_LbyOHVABPruYVA6il6qw%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135229&Signature=cbwQxNUQqANuAREL/k03aNHdVdY%3D
-      :energy: 0.346851
-      :liveness: 0.10504
-      :tempo: 104.162
-      :speechiness: 0.041791
-      :acousticness: 0.750559
-      :instrumentalness: 4.0e-06
-      :mode: 1
-      :time_signature: 4
-      :duration: 183.33333
-      :loudness: -13.896
-      :audio_md5: ''
-      :valence: 0.387092
-      :danceability: 0.646049
-    - '0.346851'
   - - '2281'
     - '4'
     - 5D3j6iBC41gjfKM07kUOCh
     - TRPUNHS14CC05FDE9D
     - Saber-Tooth & Bone
     - Surfer Blood
-    - 
+    - '2'
     - '2015-12-29 19:07:31.495715'
-    - '2016-01-07 02:43:49.995593'
+    - '2016-01-07 20:23:23.820918'
     - SONJNBM14B80D16F6E
     - |
       ---
@@ -58298,9 +58186,9 @@ tracks:
     - TRZDLYN14D277DA03F
     - Island
     - Surfer Blood
-    - 
+    - '2'
     - '2015-12-29 19:08:06.270461'
-    - '2016-01-07 02:43:50.437943'
+    - '2016-01-07 20:23:17.809756'
     - SOGYPIH14B80D136C3
     - |
       ---
@@ -58326,9 +58214,9 @@ tracks:
     - TRZARFB14E7B49DF29
     - Yes I'm Changing
     - Tame Impala
-    - 
+    - '3'
     - '2015-12-29 19:08:17.825422'
-    - '2016-01-07 02:43:50.903312'
+    - '2016-01-07 20:23:00.202219'
     - SOYAXXT14E6ACD64A8
     - |
       ---
@@ -58354,9 +58242,9 @@ tracks:
     - TRQWHIZ14E7B4A4BCD
     - The Moment
     - Tame Impala
-    - 
+    - '3'
     - '2015-12-29 19:08:18.505109'
-    - '2016-01-07 02:43:51.372614'
+    - '2016-01-07 20:22:55.707702'
     - SOQODPS14E6ACAF1E0
     - |
       ---
@@ -58382,9 +58270,9 @@ tracks:
     - TRAGDXB14E7B4B099D
     - "'Cause I'm A Man"
     - Tame Impala
-    - 
+    - '4'
     - '2015-12-29 19:08:19.199248'
-    - '2016-01-07 02:43:51.813807'
+    - '2016-01-07 20:22:40.478651'
     - SOZIQSV14C7D35873E
     - |
       ---
@@ -58410,9 +58298,9 @@ tracks:
     - TREAXUM14E7B4CE080
     - Eventually
     - Tame Impala
-    - 
+    - '4'
     - '2015-12-29 19:08:19.878966'
-    - '2016-01-07 02:43:52.82187'
+    - '2016-01-07 20:22:47.279286'
     - SOILXRR14D0383FFBF
     - |
       ---
@@ -58438,9 +58326,9 @@ tracks:
     - TRCZKAO14E7B4D6E28
     - The Less I Know The Better
     - Tame Impala
-    - 
+    - '4'
     - '2015-12-29 19:08:20.678062'
-    - '2016-01-07 02:43:53.257378'
+    - '2016-01-07 20:22:37.702267'
     - SOKPGAM14E6AD614DA
     - |
       ---
@@ -58466,9 +58354,9 @@ tracks:
     - TRPJRQS144D09F26CF
     - Feels Like We Only Go Backwards
     - Tame Impala
-    - 
+    - '5'
     - '2015-12-29 19:08:21.309607'
-    - '2016-01-07 02:43:54.143125'
+    - '2016-01-07 20:22:21.302267'
     - SOSHRHS13A8ED881B8
     - |
       ---
@@ -58494,9 +58382,9 @@ tracks:
     - TRSQRLU144D1BD71AA
     - Elephant
     - Tame Impala
-    - 
+    - '4'
     - '2015-12-29 19:08:22.847619'
-    - '2016-01-07 02:43:54.591657'
+    - '2016-01-07 20:22:17.853672'
     - SOBIMBH13A5BCB5258
     - |
       ---
@@ -58522,9 +58410,9 @@ tracks:
     - TRFNRLQ144D0BE01AB
     - Wax Face
     - Thee Oh Sees
-    - 
+    - '2'
     - '2015-12-29 19:08:33.6225'
-    - '2016-01-07 02:43:55.051311'
+    - '2016-01-07 20:22:16.746409'
     - SOIXUDW13D660C2AB1
     - |
       ---
@@ -58550,9 +58438,9 @@ tracks:
     - TRWTCMF144D0A271F4
     - Contraption/Soul Desert
     - Thee Oh Sees
-    - 
+    - '2'
     - '2015-12-29 19:08:34.260144'
-    - '2016-01-07 02:43:55.518118'
+    - '2016-01-07 20:22:14.835738'
     - SOIVWQC134EE36C7EB
     - |
       ---
@@ -58578,9 +58466,9 @@ tracks:
     - TROQDUC144D09437AF
     - Flood's New Light
     - Thee Oh Sees
-    - 
+    - '2'
     - '2015-12-29 19:08:34.947543'
-    - '2016-01-07 02:43:55.957496'
+    - '2016-01-07 20:22:11.522622'
     - SOLJVLZ13A5BCB1E89
     - |
       ---
@@ -58606,9 +58494,9 @@ tracks:
     - TRUPJJY14E52BF7D8B
     - Fatal Flaw
     - Titus Andronicus
-    - 
+    - '3'
     - '2015-12-29 19:08:35.613848'
-    - '2016-01-07 02:43:56.412884'
+    - '2016-01-07 20:21:38.91631'
     - SORNDNX14DD2097C7B
     - |
       ---
@@ -58634,9 +58522,9 @@ tracks:
     - TRDMMTD144D0C71326
     - The Dream
     - Thee Oh Sees
-    - 
+    - '3'
     - '2015-12-29 19:08:36.280844'
-    - '2016-01-07 02:43:56.858212'
+    - '2016-01-07 20:21:18.060634'
     - SOOSKAG134EE36C690
     - |
       ---
@@ -58662,9 +58550,9 @@ tracks:
     - TRXXEXL144D151107C
     - Holy Roller
     - Thao
-    - 
+    - '3'
     - '2015-12-29 19:08:38.458598'
-    - '2016-01-07 02:43:57.420297'
+    - '2016-01-07 20:21:04.570066'
     - SOBHQRU13B1F6C98CF
     - |
       ---
@@ -58690,9 +58578,9 @@ tracks:
     - TRAMUGF144D192C5BD
     - Badillac
     - Together Pangea
-    - 
+    - '2'
     - '2015-12-29 19:08:39.133258'
-    - '2016-01-07 02:43:58.154886'
+    - '2016-01-07 20:20:41.997195'
     - SOROIHQ143869C0817
     - |
       ---
@@ -58712,43 +58600,15 @@ tracks:
       :valence: 0.456191
       :danceability: 0.344117
     - '0.91748'
-  - - '2298'
-    - '4'
-    - 038A1NyyetJslykmlBKyGo
-    - TRHEDDE144D092EF7D
-    - Golden Age
-    - TV On The Radio
-    - 
-    - '2015-12-29 19:08:46.905823'
-    - '2016-01-07 02:43:58.621042'
-    - SOCMFIH1315CD44DB7
-    - |
-      ---
-      :key: 5
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/HMlNswbks6xwTvjSYAnkZty3RckX15RNxl7wwFckh9NmPElTy3IPHfI0sT6CqLKs6Gthx1taGulxhvwqw%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135238&Signature=MonLwpNjV7WKAAW5y4JYCBh5gWc%3D
-      :energy: 0.822975
-      :liveness: 0.141927
-      :tempo: 110.093
-      :speechiness: 0.062921
-      :acousticness: 0.015865
-      :instrumentalness: 9.5e-05
-      :mode: 1
-      :time_signature: 4
-      :duration: 249.69333
-      :loudness: -5.739
-      :audio_md5: ''
-      :valence: 0.587149
-      :danceability: 0.706782
-    - '0.822975'
   - - '2299'
     - '4'
     - 03wKMRNYVvw6s9nm4I4jUS
     - TRPPFZY144D0937FB1
     - Wolf Like Me
     - TV On The Radio
-    - 
+    - '3'
     - '2015-12-29 19:08:47.555744'
-    - '2016-01-07 03:26:41.444326'
+    - '2016-01-07 20:19:44.069641'
     - SOLJTMZ135B551DF3A
     - |
       ---
@@ -58768,43 +58628,15 @@ tracks:
       :valence: 0.206248
       :danceability: 0.219907
     - '0.8004'
-  - - '2300'
-    - '4'
-    - 6q9o34l9jRBiICBJidG9TZ
-    - TRHTGSJ144D1BDC02F
-    - I Can Talk
-    - Two Door Cinema Club
-    - 
-    - '2015-12-29 19:08:48.199746'
-    - '2016-01-07 02:44:59.090824'
-    - SOBSSLN1376F32F2F4
-    - |
-      ---
-      :key: 9
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/4vQVggkQIVmq00J7aue7T3pGiCnofmvE4JdaD_X8ntlC4-eCROzN7A0R7B5XxadiqdKAL6CeADN2TPpvc%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135298&Signature=i9sjFV7TQZ1bWHj5A82/Z5kXMNw%3D
-      :energy: 0.774485
-      :liveness: 0.320028
-      :tempo: 162.978
-      :speechiness: 0.213695
-      :acousticness: 2.8e-05
-      :instrumentalness: 0.179129
-      :mode: 0
-      :time_signature: 4
-      :duration: 175.90667
-      :loudness: -4.857
-      :audio_md5: ''
-      :valence: 0.621777
-      :danceability: 0.473771
-    - '0.774485'
   - - '2301'
     - '4'
     - 63mnZ0zF5fBwJzYg2pDo9e
     - TRNXSML1498F5A01AF
     - Happy Idiot
     - TV On The Radio
-    - 
+    - '3'
     - '2015-12-29 19:08:50.396658'
-    - '2016-01-07 02:44:59.537861'
+    - '2016-01-07 20:18:41.06805'
     - SOFWULJ147FF465F75
     - |
       ---
@@ -58830,9 +58662,9 @@ tracks:
     - TRICVTO144D12C8DEA
     - Sun
     - Two Door Cinema Club
-    - 
+    - '5'
     - '2015-12-29 19:09:14.783729'
-    - '2016-01-07 02:44:59.991099'
+    - '2016-01-07 20:18:34.936862'
     - SODYUOC13A18D2AC5F
     - |
       ---
@@ -58858,9 +58690,9 @@ tracks:
     - TRXGVQM144D112A946
     - Sleep Alone
     - Two Door Cinema Club
-    - 
+    - '5'
     - '2015-12-29 19:09:15.442542'
-    - '2016-01-07 02:45:00.448252'
+    - '2016-01-07 20:18:29.927614'
     - SOMABJU144EE494105
     - |
       ---
@@ -58886,9 +58718,9 @@ tracks:
     - TRABMFQ144D1BB1697
     - What You Know
     - Two Door Cinema Club
-    - 
+    - '5'
     - '2015-12-29 19:09:16.155702'
-    - '2016-01-07 02:45:00.895696'
+    - '2016-01-07 20:18:21.587307'
     - SOTEIFJ144EE660420
     - |
       ---
@@ -58914,9 +58746,9 @@ tracks:
     - TRKZVOA144D0C8ED4D
     - Caesar
     - Ty Segall
-    - 
+    - '2'
     - '2015-12-29 19:09:25.177267'
-    - '2016-01-07 02:45:01.335193'
+    - '2016-01-07 20:17:50.302484'
     - SOFLCWS12AF72A6CCA
     - |
       ---
@@ -58942,9 +58774,9 @@ tracks:
     - TRFLKZG144D1953D2B
     - Girlfriend
     - Ty Segall
-    - 
+    - '2'
     - '2015-12-29 19:09:25.837784'
-    - '2016-01-07 02:45:01.785826'
+    - '2016-01-07 20:17:49.46674'
     - SOMHYIW1312A8AAA2F
     - |
       ---
@@ -58970,9 +58802,9 @@ tracks:
     - TRXGYJP1497FD3D07B
     - Sloppy Joes
     - Vomitface
-    - 
+    - '1'
     - '2015-12-29 19:09:26.602508'
-    - '2016-01-07 02:45:02.242153'
+    - '2016-01-07 20:17:39.570389'
     - SOZZYES149A708282C
     - |
       ---
@@ -58998,9 +58830,9 @@ tracks:
     - TRRTFDU144D0B1833F
     - Swim and Sleep (Like a Shark)
     - Unknown Mortal Orchestra
-    - 
+    - '3'
     - '2015-12-29 19:09:27.445076'
-    - '2016-01-07 02:45:02.701982'
+    - '2016-01-07 20:17:18.43002'
     - SOCYIIK13A5BCB7BD3
     - |
       ---
@@ -59026,9 +58858,9 @@ tracks:
     - TRQENUN144D0FABD10
     - I Wear Black
     - Ty Segall
-    - 
+    - '1'
     - '2015-12-29 19:09:28.09554'
-    - '2016-01-07 02:45:03.160777'
+    - '2016-01-07 20:16:46.717202'
     - SOFGWUT1411B584032
     - |
       ---
@@ -59054,9 +58886,9 @@ tracks:
     - TRDWHBW147BAFA6549
     - Killin The Planet
     - The Vines
-    - 
+    - '2'
     - '2015-12-29 19:09:28.744095'
-    - '2016-01-07 02:43:53.703715'
+    - '2016-01-07 20:17:09.185436'
     - SOHCJMS147F5F20460
     - |
       ---
@@ -59082,9 +58914,9 @@ tracks:
     - TRJSWZI144D0FBB661
     - The Rat
     - The Walkmen
-    - 
+    - '4'
     - '2015-12-29 19:09:30.797264'
-    - '2016-01-07 02:45:03.607413'
+    - '2016-01-07 20:16:26.061566'
     - SOAYDUD1312FE00C1F
     - |
       ---
@@ -59110,9 +58942,9 @@ tracks:
     - TRBRORE144D0D5A5DA
     - Love Is Luck
     - The Walkmen
-    - 
+    - '4'
     - '2015-12-29 19:09:32.357134'
-    - '2016-01-07 02:45:04.065737'
+    - '2016-01-07 20:16:22.708351'
     - SOYYSJU1393A145E96
     - |
       ---
@@ -59138,9 +58970,9 @@ tracks:
     - TRGMJAV144D09B136F
     - Suffering
     - The War On Drugs
-    - 
+    - '4'
     - '2015-12-29 19:09:41.167941'
-    - '2016-01-07 02:45:04.521319'
+    - '2016-01-07 20:15:18.173037'
     - SOJXQCA14565C663BA
     - |
       ---
@@ -59166,9 +58998,9 @@ tracks:
     - TROOIHY14E4D3C64C1
     - No Life for Me
     - Wavves
-    - 
+    - '2'
     - '2015-12-29 19:09:42.682923'
-    - '2016-01-07 02:45:04.979368'
+    - '2016-01-07 20:15:06.359373'
     - SOACHUR14E889132D0
     - |
       ---
@@ -59194,9 +59026,9 @@ tracks:
     - TRDPCST144D1B8A331
     - Billie Holiday
     - Warpaint
-    - 
+    - '3'
     - '2015-12-29 19:09:43.300305'
-    - '2016-01-07 02:45:05.424803'
+    - '2016-01-07 20:14:34.289664'
     - SOSLYMK12AAA8C6CAE
     - |
       ---
@@ -59222,9 +59054,9 @@ tracks:
     - TRAXOBA14E92D241AB
     - Ashes to Ashes
     - Warpaint
-    - 
+    - '4'
     - '2015-12-29 19:09:43.951396'
-    - '2016-01-07 02:45:05.860934'
+    - '2016-01-07 20:14:45.541499'
     - SOMAJUG1315CD41CC6
     - |
       ---
@@ -59250,9 +59082,9 @@ tracks:
     - TREZIVT14F7C7B719F
     - My Head Hurts
     - Wavves
-    - 
+    - '3'
     - '2015-12-29 19:09:44.591937'
-    - '2016-01-07 02:45:06.403998'
+    - '2016-01-07 20:14:12.086363'
     - SOOKSMC14E89C1BF73
     - |
       ---
@@ -59278,9 +59110,9 @@ tracks:
     - TRWKRVI144D14AA69C
     - An Ocean In Between The Waves
     - The War On Drugs
-    - 
+    - '3'
     - '2015-12-29 19:09:45.238508'
-    - '2016-01-07 02:45:06.861757'
+    - '2016-01-07 20:13:41.94457'
     - SOXLLLR1445234FC28
     - |
       ---
@@ -59300,43 +59132,15 @@ tracks:
       :valence: 0.811768
       :danceability: 0.463462
     - '0.827485'
-  - - '2319'
-    - '4'
-    - 4YPhn26bIFm2KUkL1VLzQG
-    - TRCCXMO144D14F61BE
-    - Say It Ain't So
-    - Weezer
-    - 
-    - '2015-12-29 19:09:45.931686'
-    - '2016-01-07 02:45:07.296926'
-    - SOJPHZO1376210AFE5
-    - |
-      ---
-      :key: 3
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/r_L9VQ81Gjay6HXp4Ap3WWZ-7mwK6KR1FzDSg4S288sQCBevOsva_BVD58hilCw27Ea75H6UwfUtkBK4s%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135307&Signature=Z%2BXmPiJVVzleffmKEy2/XCuQOqg%3D
-      :energy: 0.550839
-      :liveness: 0.070016
-      :tempo: 151.779
-      :speechiness: 0.03522
-      :acousticness: 0.007367
-      :instrumentalness: 1.8e-05
-      :mode: 1
-      :time_signature: 4
-      :duration: 258.82667
-      :loudness: -7.136
-      :audio_md5: ''
-      :valence: 0.440316
-      :danceability: 0.63425
-    - '0.550839'
   - - '2320'
     - '4'
     - 4CiDwAfT3mpxuAP6R5yWbv
     - TRZZGFO144D144A7A8
     - At Night in Dreams
     - White Denim
-    - 
+    - '3'
     - '2015-12-29 19:09:57.484696'
-    - '2016-01-07 02:45:07.743524'
+    - '2016-01-07 20:13:13.394594'
     - SOABVNV1416201A24E
     - |
       ---
@@ -59362,9 +59166,9 @@ tracks:
     - TRQCZTT144D1506745
     - Come Back
     - White Denim
-    - 
+    - '2'
     - '2015-12-29 19:09:58.180551'
-    - '2016-01-07 03:26:41.905845'
+    - '2016-01-07 20:13:06.860306'
     - SOUFGEP141F89CA7AB
     - |
       ---
@@ -59390,9 +59194,9 @@ tracks:
     - TRTZOEG144D19471E5
     - Corsicana Lemonade
     - White Denim
-    - 
+    - '3'
     - '2015-12-29 19:10:16.065933'
-    - '2016-01-07 02:46:08.317324'
+    - '2016-01-07 20:12:51.271255'
     - SOGOGZW141F89CACC8
     - |
       ---
@@ -59418,9 +59222,9 @@ tracks:
     - TRXUDUD144D12B35FC
     - Seven Nation Army
     - The White Stripes
-    - 
+    - '5'
     - '2015-12-29 19:10:16.750042'
-    - '2016-01-07 02:46:08.780341'
+    - '2016-01-07 20:12:42.031448'
     - SOAUFOF12AB0180C65
     - |
       ---
@@ -59446,9 +59250,9 @@ tracks:
     - TRWNYZR144D0E65C22
     - Pretty Green
     - White Denim
-    - 
+    - '3'
     - '2015-12-29 19:10:17.393256'
-    - '2016-01-07 02:46:09.238652'
+    - '2016-01-07 20:12:30.234522'
     - SOAXCLZ14619BF741B
     - |
       ---
@@ -59474,9 +59278,9 @@ tracks:
     - TRKWUPQ144D0B9AF79
     - A Place to Start
     - White Denim
-    - 
+    - '3'
     - '2015-12-29 19:10:18.027329'
-    - '2016-01-07 02:46:09.725753'
+    - '2016-01-07 20:12:23.608083'
     - SOOJQRO145B0AF84FF
     - |
       ---
@@ -59502,9 +59306,9 @@ tracks:
     - TRSYKZA144D13BCC97
     - If You're Changing
     - White Denim
-    - 
+    - '2'
     - '2015-12-29 19:10:20.26258'
-    - '2016-01-07 02:46:10.161887'
+    - '2016-01-07 20:12:18.553233'
     - SOYRPCM1374123AF93
     - |
       ---
@@ -59530,9 +59334,9 @@ tracks:
     - TRLWGJS144D0C50716
     - Ball And Biscuit
     - The White Stripes
-    - 
+    - '5'
     - '2015-12-29 19:10:20.918512'
-    - '2016-01-07 02:46:10.733064'
+    - '2016-01-07 20:12:04.834555'
     - SOHLNLY13152A70A8A
     - |
       ---
@@ -59558,9 +59362,9 @@ tracks:
     - TRURIPD14F0344A544
     - All Yours
     - Widowspeak
-    - 
+    - '3'
     - '2015-12-29 19:10:30.685171'
-    - '2016-01-07 02:46:11.291261'
+    - '2016-01-07 20:11:45.406268'
     - SOYFAKM14DF5B0FDEB
     - |
       ---
@@ -59586,9 +59390,9 @@ tracks:
     - TREAHHL144D1A43203
     - Harsh Realm
     - Widowspeak
-    - 
+    - '3'
     - '2015-12-29 19:10:31.397615'
-    - '2016-01-07 02:46:11.732942'
+    - '2016-01-07 20:11:32.601237'
     - SOEZPJE1367931627A
     - |
       ---
@@ -59614,9 +59418,9 @@ tracks:
     - TRGFVZA144D0C759EA
     - White Unicorn
     - Wolfmother
-    - 
+    - '3'
     - '2015-12-29 19:10:32.063714'
-    - '2016-01-07 02:46:12.169299'
+    - '2016-01-07 20:10:08.799501'
     - SOVHCZU1460998907D
     - |
       ---
@@ -59642,9 +59446,9 @@ tracks:
     - TRARNTH144D1DE2438
     - Dimension
     - Wolfmother
-    - 
+    - '3'
     - '2015-12-29 19:10:32.71588'
-    - '2016-01-07 02:46:12.763486'
+    - '2016-01-07 20:10:12.099914'
     - SOXHOOI1461E8B3E61
     - |
       ---
@@ -59670,9 +59474,9 @@ tracks:
     - TRLMWBI14F0347E228
     - Narrows
     - Widowspeak
-    - 
+    - '2'
     - '2015-12-29 19:10:33.355808'
-    - '2016-01-07 02:46:13.223655'
+    - '2016-01-07 20:09:36.343964'
     - SOBFEEM14F3552F1C3
     - |
       ---
@@ -59698,9 +59502,9 @@ tracks:
     - TRBPWQK144D1D197D6
     - Joker And The Thief
     - Wolfmother
-    - 
+    - '3'
     - '2015-12-29 19:10:33.965999'
-    - '2016-01-07 02:46:13.670269'
+    - '2016-01-07 20:10:05.589412'
     - SOUKZEC146128EABB4
     - |
       ---
@@ -59726,9 +59530,9 @@ tracks:
     - TRWMEBP144D096E451
     - Eyesore
     - Women
-    - 
+    - '2'
     - '2015-12-29 19:10:43.761708'
-    - '2016-01-07 02:46:14.180069'
+    - '2016-01-07 20:09:00.822523'
     - SOISUGA13152A71FBB
     - |
       ---
@@ -59754,9 +59558,9 @@ tracks:
     - TRSLKTQ14E0F80BDDD
     - Renegades
     - X Ambassadors
-    - 
+    - '4'
     - '2015-12-29 19:10:44.483583'
-    - '2016-01-07 02:46:14.627408'
+    - '2016-01-07 20:06:31.287023'
     - SOMNIUE14C034F83E0
     - |
       ---
@@ -59782,9 +59586,9 @@ tracks:
     - TRWPWRP14C960A2ADA
     - Smile
     - Yak
-    - 
+    - '1'
     - '2015-12-29 19:10:45.159785'
-    - '2016-01-07 02:46:15.060905'
+    - '2016-01-07 20:07:07.130511'
     - SOGLVMM14C99244778
     - |
       ---
@@ -59810,9 +59614,9 @@ tracks:
     - TRDWGSR144D146EE52
     - Maps
     - Yeah Yeah Yeahs
-    - 
+    - '4'
     - '2015-12-29 19:10:46.268569'
-    - '2016-01-07 02:46:15.49913'
+    - '2016-01-07 20:06:52.513616'
     - SOOWNSV135C3145BFE
     - |
       ---
@@ -59838,9 +59642,9 @@ tracks:
     - TRZUHXJ14E0F831F3D
     - Jungle
     - X Ambassadors
-    - 
+    - '4'
     - '2015-12-29 19:10:47.709507'
-    - '2016-01-07 02:46:15.955516'
+    - '2016-01-07 20:05:59.022641'
     - SOGBCYU1430CC37F03
     - |
       ---
@@ -59866,9 +59670,9 @@ tracks:
     - TRSGEEX144D0BDE846
     - Apartment
     - Young the Giant
-    - 
+    - '5'
     - '2015-12-29 19:10:48.351495'
-    - '2016-01-07 02:46:16.392767'
+    - '2016-01-07 20:05:35.779342'
     - SOUKEQJ12DA593EE87
     - |
       ---
@@ -59894,9 +59698,9 @@ tracks:
     - TRBQJCP144D0C7490D
     - My Body
     - Young the Giant
-    - 
+    - '5'
     - '2015-12-29 19:11:24.992575'
-    - '2016-01-07 02:46:16.859601'
+    - '2016-01-07 20:05:28.344569'
     - SOGTQNP13FAF24D888
     - |
       ---
@@ -59922,9 +59726,9 @@ tracks:
     - TRKBNKI144D0CE81A3
     - Cough Syrup
     - Young the Giant
-    - 
+    - '5'
     - '2015-12-29 19:11:25.638702'
-    - '2016-01-07 02:46:17.315282'
+    - '2016-01-07 20:05:23.741916'
     - SOYHKGJ1315CD4B077
     - |
       ---
@@ -59950,9 +59754,9 @@ tracks:
     - TRSHGBK14E04C89CCD
     - Make U Mine
     - Yukon Blonde
-    - 
+    - '2'
     - '2015-12-29 19:11:31.873554'
-    - '2016-01-07 03:26:42.343295'
+    - '2016-01-07 20:05:04.034664'
     - SOLLVNG14D9B3612C1
     - |
       ---
@@ -59972,43 +59776,15 @@ tracks:
       :valence: 0.585557
       :danceability: 0.59305
     - '0.738911'
-  - - '2345'
-    - '4'
-    - 57s2DXtw6W5AfOF3q9Gpw2
-    - TRRSWUV144D16FEA95
-    - For LA
-    - Yukon Blonde
-    - 
-    - '2015-12-29 19:11:33.732644'
-    - '2016-01-07 02:47:17.806545'
-    - SOJRCLU137A5395CCA
-    - |
-      ---
-      :key: 2
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/aPhZeQn-J4jltiOJlSzh0UQPfLx_AuA3iqX531TWB0YyaC3Mj45qgIBqx34h1-EX3Ec9dlqELbxRteVKs%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135437&Signature=0LXF5vYntBqiJuvZRrE5sL%2BQkcM%3D
-      :energy: 0.955505
-      :liveness: 0.293586
-      :tempo: 129.586
-      :speechiness: 0.062036
-      :acousticness: 0.000579
-      :instrumentalness: 0.504072
-      :mode: 0
-      :time_signature: 4
-      :duration: 214.61333
-      :loudness: -4.678
-      :audio_md5: ''
-      :valence: 0.456526
-      :danceability: 0.51323
-    - '0.955505'
   - - '2346'
     - '4'
     - 5qHPCEqdCcNCfh9eMe5pdh
     - TRCBMXD14E04CC2DE7
     - Hannah
     - Yukon Blonde
-    - 
+    - '2'
     - '2015-12-29 19:11:34.383619'
-    - '2016-01-07 02:47:18.348983'
+    - '2016-01-07 20:04:52.062092'
     - SOQXTQW14D9B66DDE0
     - |
       ---
@@ -60034,9 +59810,9 @@ tracks:
     - TRWLGHR14E04CBC6FA
     - I Wanna Be Your Man
     - Yukon Blonde
-    - 
+    - '3'
     - '2015-12-29 19:11:35.050504'
-    - '2016-01-07 02:47:18.845645'
+    - '2016-01-07 20:04:42.732895'
     - SOVZQGF14D9B62CB85
     - |
       ---
@@ -60062,9 +59838,9 @@ tracks:
     - TREKYDQ14E04CAF9AF
     - Favourite People
     - Yukon Blonde
-    - 
+    - '2'
     - '2015-12-29 19:11:40.78516'
-    - '2016-01-07 02:47:19.324'
+    - '2016-01-07 20:04:35.710293'
     - SOXSBJY14D9B6812E3
     - |
       ---
@@ -60090,9 +59866,9 @@ tracks:
     - TRSGUJF144D18F3147
     - Kumiko Song
     - Yukon Blonde
-    - 
+    - '2'
     - '2015-12-29 19:11:41.408659'
-    - '2016-01-07 02:47:19.793399'
+    - '2016-01-07 20:04:34.749779'
     - SODKFMJ1312FDFB6BB
     - |
       ---
@@ -60314,9 +60090,9 @@ tracks:
     - TRFCZAU14FADEA8AF0
     - Heart Of The Matter
     - The Libertines
-    - 
+    - '3'
     - '2016-01-05 01:31:56.11836'
-    - '2016-01-07 02:48:27.639857'
+    - '2016-01-07 20:03:36.352229'
     - SOXNWUZ14F96955269
     - |
       ---
