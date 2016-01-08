@@ -1365,34 +1365,6 @@ tracks:
       :valence: 0.521663
       :danceability: 0.541195
     - '0.7689009999999999'
-  - - '56'
-    - '4'
-    - 1AdzdEpJUgfAjEoawncljQ
-    - TRYCZZB144D0C14AB2
-    - It's Real
-    - Real Estate
-    - '3'
-    - '2015-11-14 00:20:01.052376'
-    - '2016-01-06 20:26:17.334083'
-    - SOMMFBZ132C02BE162
-    - |
-      ---
-      :key: 2
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/dCFNkQupjjwXKPOVsArPL8LfjOGTHXcKGHZvwy8VfrntBwpqCWOmzP42Oguda-Uj4uOn5v5CRQZcULJC4%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452112577&Signature=9fKKYW9urNanPX958cdcZrZyZMs%3D
-      :energy: 0.87133
-      :liveness: 0.11644
-      :tempo: 151.975
-      :speechiness: 0.030079
-      :acousticness: 0.009802
-      :instrumentalness: 0.115107
-      :mode: 1
-      :time_signature: 4
-      :duration: 168.49333
-      :loudness: -5.451
-      :audio_md5: ''
-      :valence: 0.735902
-      :danceability: 0.423928
-    - '0.87133'
   - - '57'
     - '4'
     - 18ztWAZG1RCysnYJY76Ox4
@@ -1455,9 +1427,9 @@ tracks:
     - TRRYBOE14A6BA81A95
     - Sledgehammer
     - Evans The Death
-    - '3'
+    - '1'
     - '2015-11-14 00:20:16.417043'
-    - '2016-01-06 20:26:18.714145'
+    - '2016-01-08 00:35:51.593659'
     - SOIURWO14A7DEAD3C2
     - |
       ---
@@ -1589,34 +1561,6 @@ tracks:
       :valence: 0.864575
       :danceability: 0.541049
     - '0.894641'
-  - - '64'
-    - '4'
-    - 57i3M29DWoo7RDk0Tf0LZG
-    - TRPFUED14FDF72935C
-    - Daylight
-    - Matt and Kim
-    - '5'
-    - '2015-11-14 00:21:01.842166'
-    - '2016-01-06 20:26:21.038159'
-    - SONTQBA1312A8AABB8
-    - |
-      ---
-      :key: 9
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/f1zCtgEFvfsPOIsqXMr-81rLsVJ7z0IJakYuzReS5osPO3fwVL5o1Q_dPKQctQaPjAr0X6ZRoa2UNM_Vc%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452112580&Signature=8zfUeDcEvQikmXg9LkmpZ2xIr7g%3D
-      :energy: 0.810523
-      :liveness: 0.217337
-      :tempo: 103.119
-      :speechiness: 0.032684
-      :acousticness: 0.088675
-      :instrumentalness: 0.000384
-      :mode: 1
-      :time_signature: 4
-      :duration: 177.74667
-      :loudness: -4.911
-      :audio_md5: ''
-      :valence: 0.629759
-      :danceability: 0.557649
-    - '0.810523'
   - - '65'
     - '4'
     - 24IFYXPYaX813hEOwnaJlr
@@ -1791,9 +1735,9 @@ tracks:
     - TRLCZWK144D18EE9B5
     - The Plan
     - Built To Spill
-    - '4'
+    - '2'
     - '2015-11-14 00:21:22.2878'
-    - '2016-01-06 20:27:24.03272'
+    - '2016-01-08 00:59:41.211947'
     - SOKRRZM12AF72A053B
     - |
       ---
@@ -5369,34 +5313,6 @@ tracks:
       :valence: 0.787677
       :danceability: 0.606139
     - '0.93898'
-  - - '224'
-    - '3'
-    - 61EJLMPL9gvLYeM3vBJrQh
-    - TRRSXJE15026EDC052
-    - Horizon Line
-    - Future Thieves
-    - '3'
-    - '2015-11-23 22:58:19.243041'
-    - '2016-01-06 20:36:10.059991'
-    - SOQMBZC150D105C5D8
-    - |
-      ---
-      :key: 4
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/hzvbMA32iQD-9IHHHouQlBMZOK5RK8Zvli_ecPrAxX5C6PnkpG_5N-GFsfz79sjy0qj38csfp0FZnqVds%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452113169&Signature=dmDmrkFShZtb8EpdIUBmcAX9OGg%3D
-      :energy: 0.762264
-      :liveness: 0.588653
-      :tempo: 142.066
-      :speechiness: 0.039898
-      :acousticness: 0.600759
-      :instrumentalness: 0.007504
-      :mode: 1
-      :time_signature: 4
-      :duration: 182.58667
-      :loudness: -7.561
-      :audio_md5: ''
-      :valence: 0.439653
-      :danceability: 0.583823
-    - '0.7622640000000001'
   - - '225'
     - '3'
     - 41X9To0bQ4fpoSRri4NHiI
@@ -12607,9 +12523,9 @@ tracks:
     - TRGQASK144D13FCD70
     - Standing in the Safety Zone
     - Bobby Womack
-    - '3'
+    - '1'
     - '2015-11-25 23:27:17.050335'
-    - '2016-01-06 20:51:14.468506'
+    - '2016-01-08 18:29:28.611504'
     - SORYLXQ14789B3BE61
     - |
       ---
@@ -13711,9 +13627,9 @@ tracks:
     - TRWHLFJ144D150D122
     - Something's Got A Hold On Me - Single Version
     - Etta James
-    - '3'
+    - '4'
     - '2015-11-25 23:36:36.378468'
-    - '2016-01-06 20:53:32.172507'
+    - '2016-01-08 18:26:26.379605'
     - SODCXKN144BCF3C3EE
     - |
       ---
@@ -16551,9 +16467,9 @@ tracks:
     - TRAOUFP144D14E8A5D
     - Give Up The Funk (Tear The Roof Off The Sucker)
     - Parliament
-    - '2'
+    - '3'
     - '2015-11-25 23:53:28.550856'
-    - '2016-01-06 20:59:27.582861'
+    - '2016-01-08 02:10:18.759766'
     - SOSEJAH14618D78C61
     - |
       ---
@@ -17391,9 +17307,9 @@ tracks:
     - TRQVWKK144D1D165B7
     - Twistin' the Night Away
     - Sam Cooke
-    - '5'
+    - '4'
     - '2015-11-25 23:55:19.089302'
-    - '2016-01-06 21:00:41.962056'
+    - '2016-01-08 02:09:54.456842'
     - SOEHHAT1372F2669EE
     - |
       ---
@@ -50598,9 +50514,9 @@ tracks:
     - TRCAVAK144D1075048
     - Never, Never Gonna Give Ya Up - Alternate Version
     - Barry White
-    - '2'
+    - '1'
     - '2015-12-28 19:09:30.229232'
-    - '2016-01-06 22:22:21.273303'
+    - '2016-01-08 18:25:53.849002'
     - SOBLPCA131634A6E11
     - |
       ---
@@ -50710,9 +50626,9 @@ tracks:
     - TRDERTW144D1C3164C
     - ABC
     - The Jackson 5
-    - '4'
+    - '5'
     - '2015-12-28 19:13:46.94931'
-    - '2016-01-06 22:23:22.80419'
+    - '2016-01-08 18:45:53.224902'
     - SOBAOLK14605A2EC35
     - |
       ---
@@ -51012,34 +50928,6 @@ tracks:
       :valence: 0.724727
       :danceability: 0.488115
     - '0.464999'
-  - - '1976'
-    - '5'
-    - 1DDtWi1okfETi1GlDI2tuV
-    - 
-    - Rockin' Robin
-    - Michael Jackson
-    - '5'
-    - '2015-12-28 19:24:11.121196'
-    - '2016-01-06 22:23:27.701904'
-    - SOAMAKT144CD2EA1D2
-    - |
-      ---
-      :key: 10
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/mRJwJgvYPXMeH0-bu377ZMQs-Vzdi3ZDcxcrRRK_eePI82gkZ8heB2vJKupHkhfAmzmema51f1ZIcDEOo%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452119607&Signature=vqMEMWn0ZJj2mabdXWWGyzycxxY%3D
-      :energy: 0.810293
-      :liveness: 0.303986
-      :tempo: 173.027
-      :speechiness: 0.146821
-      :acousticness: 0.304713
-      :instrumentalness: 9.0e-06
-      :mode: 1
-      :time_signature: 4
-      :duration: 151.77333
-      :loudness: -5.429
-      :audio_md5: ''
-      :valence: 0.965108
-      :danceability: 0.619683
-    - '0.810293'
   - - '1977'
     - '5'
     - 4fIEesrnluGgGsfKcD7HLu
@@ -52894,9 +52782,9 @@ tracks:
     - TRJZJPG144D0AB0C58
     - Strange Times
     - The Black Keys
-    - '3'
+    - '2'
     - '2015-12-29 18:50:51.653451'
-    - '2016-01-07 02:31:24.42772'
+    - '2016-01-08 00:10:52.048712'
     - SOOEFKD1311AFE5F11
     - |
       ---
@@ -54070,9 +53958,9 @@ tracks:
     - TRTVLUD14EB91AC03C
     - Hey Me Israeli
     - Earl Burrows
-    - '2'
+    - '1'
     - '2015-12-29 18:53:16.177127'
-    - '2016-01-07 02:33:55.920546'
+    - '2016-01-07 23:54:33.537494'
     - SOCJISV14EF54B5340
     - |
       ---
@@ -54372,34 +54260,6 @@ tracks:
       :valence: 0.873229
       :danceability: 0.549777
     - '0.855227'
-  - - '2109'
-    - '4'
-    - 0OdNZXNkVr2NXEmMcgnNaV
-    - TRMNAMD144D0A0DD65
-    - Frankie's Gun!
-    - The Felice Brothers
-    - '3'
-    - '2015-12-29 18:53:52.868868'
-    - '2016-01-07 02:47:22.749056'
-    - SOHXLAN12A8C137C88
-    - |
-      ---
-      :key: 5
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/sjj53Q1FuPGTsBBetNdRhvuSdaa2wUxT65_x5a82gdqfKrJEfCQu8F0ojkw5FJeh6a5wFjRYySBmt0FYI%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135442&Signature=TvuKCWI07bac8t%2Bmph33X1WIFA4%3D
-      :energy: 0.748899
-      :liveness: 0.074457
-      :tempo: 78.024
-      :speechiness: 0.038478
-      :acousticness: 0.563538
-      :instrumentalness: 2.1e-05
-      :mode: 1
-      :time_signature: 4
-      :duration: 246.14667
-      :loudness: -4.481
-      :audio_md5: ''
-      :valence: 0.565162
-      :danceability: 0.369157
-    - '0.748899'
   - - '2110'
     - '4'
     - 1L7qfEhPBn3qUVzyqnoCTx
@@ -54568,34 +54428,6 @@ tracks:
       :valence: 0.618764
       :danceability: 0.465691
     - '0.822187'
-  - - '2117'
-    - '4'
-    - 5QYMW9TryrGHQpTJqzDYzS
-    - TRJSRTD14F630107DF
-    - Underwater
-    - Foxtrax
-    - '2'
-    - '2015-12-29 18:54:59.657899'
-    - '2016-01-07 02:36:47.283793'
-    - SOTSXEL14F9A7F7D45
-    - |
-      ---
-      :key: 3
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/_dYAjA5v4gFAWy6lwiBgiFSrUR-P9lgbyHWnr7Ai-Q0XFbLkzWmMMKZj5P4JpVa8LMcg-Y8XfgqbtbMmc%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452134807&Signature=aYz%2Bs0OSCAXDG%2BoLQNpt8QFcPWQ%3D
-      :energy: 0.72781
-      :liveness: 0.089766
-      :tempo: 134.796
-      :speechiness: 0.043925
-      :acousticness: 0.018397
-      :instrumentalness: 2.5e-05
-      :mode: 1
-      :time_signature: 4
-      :duration: 222.3498
-      :loudness: -7.053
-      :audio_md5: ''
-      :valence: 0.363451
-      :danceability: 0.525906
-    - '0.72781'
   - - '2118'
     - '4'
     - 2bbRXduStlyFlvAdPnMgic
@@ -54938,9 +54770,9 @@ tracks:
     - TRMJGJV144D1A7A796
     - Cleaver Lever
     - The Growl
-    - '3'
+    - '2'
     - '2015-12-29 18:55:59.917323'
-    - '2016-01-07 02:36:51.800039'
+    - '2016-01-08 00:27:05.551069'
     - SOGROJJ13DC0F8235C
     - |
       ---
@@ -55136,7 +54968,7 @@ tracks:
     - Houndmouth
     - '3'
     - '2015-12-29 18:56:18.570524'
-    - '2016-01-07 02:37:54.551848'
+    - '2016-01-08 00:44:48.7171'
     - SOACURB14C02D850B8
     - |
       ---
@@ -55274,9 +55106,9 @@ tracks:
     - TRQJNRW14BBC3183CA
     - Honey
     - Kid Wave
-    - '3'
+    - '1'
     - '2015-12-29 18:56:35.512804'
-    - '2016-01-07 02:37:57.859163'
+    - '2016-01-08 00:33:17.240248'
     - SOHTXBD14BAABBBFD3
     - |
       ---
@@ -55834,9 +55666,9 @@ tracks:
     - TRRNIBU144D0D4BE28
     - Goddess On A Hiway - Remastered
     - Mercury Rev
-    - '4'
+    - '2'
     - '2015-12-29 19:01:25.497021'
-    - '2016-01-07 02:39:07.33637'
+    - '2016-01-08 00:46:29.37255'
     - SOUUJAE1311AFE2AB7
     - |
       ---
@@ -56444,34 +56276,6 @@ tracks:
       :valence: 0.386355
       :danceability: 0.155763
     - '0.551721'
-  - - '2201'
-    - '4'
-    - 4NkVFeg3a7smSHJAEq5d9v
-    - TRTQHAK144D14CD127
-    - Holdin On To Black Metal
-    - My Morning Jacket
-    - '4'
-    - '2015-12-29 19:02:40.839049'
-    - '2016-01-07 02:47:24.58245'
-    - SONUBXU130516E24E8
-    - |
-      ---
-      :key: 9
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/8ftXRwqLeLgDONRC9KFgQzTfoD6U7leiUojM_z-pzjlcz8Oq3Zju-JPcWadvr1LLWX0dC-c8QOVcGVPsg%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135444&Signature=Elb/bOx4klXqbktbXCU9hhnRcrE%3D
-      :energy: 0.862803
-      :liveness: 0.268959
-      :tempo: 109.022
-      :speechiness: 0.031527
-      :acousticness: 0.066695
-      :instrumentalness: 6.0e-06
-      :mode: 0
-      :time_signature: 4
-      :duration: 258.50667
-      :loudness: -3.848
-      :audio_md5: ''
-      :valence: 0.845897
-      :danceability: 0.449042
-    - '0.862803'
   - - '2202'
     - '4'
     - 6BK9yOCMZebh7vNvQpglX8
@@ -56592,7 +56396,7 @@ tracks:
     - Nathaniel Rateliff & The Night Sweats
     - '3'
     - '2015-12-29 19:03:08.163412'
-    - '2016-01-07 02:40:17.649569'
+    - '2016-01-08 00:31:17.740464'
     - SOVVJKX14DB5226379
     - |
       ---
@@ -57094,9 +56898,9 @@ tracks:
     - TRGCDKH144D0DA60C2
     - Creep In A T-Shirt
     - Portugal. The Man
-    - '4'
+    - '3'
     - '2015-12-29 19:04:32.946948'
-    - '2016-01-07 02:41:32.417836'
+    - '2016-01-08 01:05:21.242181'
     - SOORXCC13F271BB5BE
     - |
       ---
@@ -57284,34 +57088,6 @@ tracks:
       :valence: 0.236655
       :danceability: 0.343025
     - '0.92665'
-  - - '2241'
-    - '4'
-    - 3zZOpQAx17ZyenpGl5H8XQ
-    - TRFSPCK144D13BB967
-    - Shapeshifters
-    - Sam Roberts Band
-    - '3'
-    - '2015-12-29 19:05:13.042157'
-    - '2016-01-07 02:41:33.815161'
-    - SOSWWVZ143DBB9C289
-    - |
-      ---
-      :key: 9
-      :analysis_url: http://echonest-analysis.s3.amazonaws.com/TR/AXmA-wtu_bWU-7_u5WdqDEJKD82Kow-TZXy93HZCc0OcIN2LVSefXG3YrsBcT9XYjxlnamM25DWm5lh88%3D/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1452135093&Signature=2TO4fhYnjnNl0fQkRn7Ox6zek6A%3D
-      :energy: 0.853761
-      :liveness: 0.101301
-      :tempo: 110.935
-      :speechiness: 0.06639
-      :acousticness: 0.0107
-      :instrumentalness: 1.0e-06
-      :mode: 0
-      :time_signature: 4
-      :duration: 267.92
-      :loudness: -5.346
-      :audio_md5: ''
-      :valence: 0.666474
-      :danceability: 0.563229
-    - '0.853761'
   - - '2242'
     - '4'
     - 5oUV6yWdDM0R9Q2CizRhIt
@@ -57682,9 +57458,9 @@ tracks:
     - TRCXYVA144D127FA41
     - Is Love Forever?
     - Spoon
-    - '4'
+    - '2'
     - '2015-12-29 19:06:49.597031'
-    - '2016-01-07 02:42:40.702378'
+    - '2016-01-08 00:58:15.762969'
     - SOIOITI12AB018AEED
     - |
       ---
@@ -58046,9 +57822,9 @@ tracks:
     - TREZOKZ14883CE4F4B
     - Rocks / Rolls
     - Strange Americans
-    - '4'
+    - '3'
     - '2015-12-29 19:07:15.478826'
-    - '2016-01-07 02:43:48.431866'
+    - '2016-01-08 00:51:10.012459'
     - SOVGQQA1488470F933
     - |
       ---
