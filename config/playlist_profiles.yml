@@ -1,215 +1,215 @@
 mellow:
-  randomness: 0.8
+  randomness: 0.885
   energy_multiplier: 4.0
-  undergroundness_muliplier: 1.0
+  undergroundness_muliplier: 2.0
   tracks:
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
-    - energy:           { target: 0.3, min: 0, max: 1 }
+    - energy:           { target: 0.4, min: 0, max: .49 }
+    - energy:           { target: 0.70, min: 0, max: .75 }
+    - energy:           { target: 0.54, min: 0, max: .59 }
+    - energy:           { target: 0.52, min: 0, max: .57 }
+    - energy:           { target: 0.72, min: 0, max: .77 }
+    - energy:           { target: 0.62, min: 0, max: .67 }
+    - energy:           { target: 0.46, min: 0, max: .52 }
+    - energy:           { target: 0.56, min: 0, max: .64 }
+    - energy:           { target: 0.66, min: 0, max: .74 }
+    - energy:           { target: 0.64, min: 0, max: .70 }
+    - energy:           { target: 0.65, min: 0, max: .71 }
+    - energy:           { target: 0.67, min: 0, max: .75 }
+    - energy:           { target: 0.79, min: 0, max: .80 }
+    - energy:           { target: 0.82, min: 0, max: .88 }
+    - energy:           { target: 0.72, min: 0, max: .80 }
+    - energy:           { target: 0.59, min: 0, max: .67 }
+    - energy:           { target: 0.72, min: 0, max: .79 }
+    - energy:           { target: 0.73, min: 0, max: .80 }
+    - energy:           { target: 0.70, min: 0, max: .77 }
+    - energy:           { target: 0.79, min: 0, max: .86 }
+    - energy:           { target: 0.76, min: 0, max: .83 }
+    - energy:           { target: 0.73, min: 0, max: .63 }
+    - energy:           { target: 0.70, min: 0, max: .76 }
+    - energy:           { target: 0.66, min: 0, max: .72 }
+    - energy:           { target: 0.74, min: 0, max: .80 }
+    - energy:           { target: 0.76, min: 0, max: .82 }
+    - energy:           { target: 0.83, min: 0, max: .89 }
+    - energy:           { target: 0.79, min: 0, max: .86 }
+    - energy:           { target: 0.84, min: 0, max: .89 }
+    - energy:           { target: 0.50, min: .0, max: 0.60 }
 
 chill:
-  randomness: 0.8
+  randomness: 0.885
   energy_multiplier: 4.0
-  undergroundness_muliplier: 1.0
+  undergroundness_muliplier: 2.0
   tracks:
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
-    - energy:           { target: 0.4, min: 0, max: 1 }
+    - energy:           { target: 0.65, min: .58, max: .70 }
+    - energy:           { target: 0.78, min: .70, max: .83 }
+    - energy:           { target: 0.60, min: .55, max: .68 }
+    - energy:           { target: 0.58, min: .53, max: .66 }
+    - energy:           { target: 0.72, min: .67, max: .80 }
+    - energy:           { target: 0.62, min: .57, max: .70 }
+    - energy:           { target: 0.36, min: .41, max: .56 }
+    - energy:           { target: 0.60, min: .55, max: .70 }
+    - energy:           { target: 0.70, min: .65, max: .78 }
+    - energy:           { target: 0.68, min: .62, max: .78 }
+    - energy:           { target: 0.68, min: .60, max: .78 }
+    - energy:           { target: 0.70, min: .60, max: .80 }
+    - energy:           { target: 0.79, min: .69, max: .89 }
+    - energy:           { target: 0.82, min: .72, max: .71 }
+    - energy:           { target: 0.72, min: .64, max: .80 }
+    - energy:           { target: 0.59, min: 0, max: .67 }
+    - energy:           { target: 0.72, min: .62, max: .78 }
+    - energy:           { target: 0.76, min: .68, max: .84 }
+    - energy:           { target: 0.73, min: .65, max: .81 }
+    - energy:           { target: 0.82, min: .74, max: .90 }
+    - energy:           { target: 0.79, min: .71, max: .87 }
+    - energy:           { target: 0.77, min: .70, max: .84 }
+    - energy:           { target: 0.74, min: .67, max: .81 }
+    - energy:           { target: 0.70, min: .63, max: .77 }
+    - energy:           { target: 0.78, min: .71, max: .85 }
+    - energy:           { target: 0.81, min: .74, max: .88 }
+    - energy:           { target: 0.83, min: .76, max: .90 }
+    - energy:           { target: 0.79, min: .72, max: .86 }
+    - energy:           { target: 0.84, min: .79, max: .89 }
+    - energy:           { target: 0.70, min: .0, max: 0.79 }
 
 vibes:
-  randomness: 0.8
+  randomness: 0.885
   energy_multiplier: 4.0
-  undergroundness_muliplier: 1.0
+  undergroundness_muliplier: 2.0
   tracks:
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
-    - energy:           { target: 0.5, min: 0, max: 1 }
+    - energy:           { target: 0.83, min: .78, max: .93 }
+    - energy:           { target: 0.68, min: .63, max: .83 }
+    - energy:           { target: 0.70, min: .65, max: .77 }
+    - energy:           { target: 0.68, min: .63, max: .75 }
+    - energy:           { target: 0.82, min: .77, max: .90 }
+    - energy:           { target: 0.72, min: .64, max: .80 }
+    - energy:           { target: 0.46, min: .50, max: .64 }
+    - energy:           { target: 0.68, min: .60, max: .76 }
+    - energy:           { target: 0.78, min: .70, max: .86 }
+    - energy:           { target: 0.70, min: .62, max: .78 }
+    - energy:           { target: 0.70, min: .62, max: .78 }
+    - energy:           { target: 0.75, min: .68, max: .83 }
+    - energy:           { target: 0.84, min: .76, max: .92 }
+    - energy:           { target: 0.79, min: .71, max: .71 }
+    - energy:           { target: 0.72, min: .64, max: .80 }
+    - energy:           { target: 0.59, min: .52, max: .67 }
+    - energy:           { target: 0.70, min: .62, max: .78 }
+    - energy:           { target: 0.76, min: .68, max: .84 }
+    - energy:           { target: 0.73, min: .65, max: .81 }
+    - energy:           { target: 0.82, min: .74, max: .90 }
+    - energy:           { target: 0.79, min: .71, max: .87 }
+    - energy:           { target: 0.77, min: .70, max: .84 }
+    - energy:           { target: 0.74, min: .67, max: .81 }
+    - energy:           { target: 0.70, min: .63, max: .77 }
+    - energy:           { target: 0.78, min: .71, max: .85 }
+    - energy:           { target: 0.81, min: .74, max: .88 }
+    - energy:           { target: 0.83, min: .76, max: .90 }
+    - energy:           { target: 0.79, min: .72, max: .86 }
+    - energy:           { target: 0.84, min: .79, max: .89 }
+    - energy:           { target: 0.70, min: .0, max: 0.79 }
 
 lounge:
-  randomness: 0.8
+  randomness: 0.885
   energy_multiplier: 4.0
-  undergroundness_muliplier: 1.0
+  undergroundness_muliplier: 2.0
   tracks:
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
-    - energy:           { target: 0.6, min: 0, max: 1 }
+    - energy:           { target: 0.88, min: .81, max: .93 }
+    - energy:           { target: 0.73, min: .66, max: .8 }
+    - energy:           { target: 0.70, min: .63, max: .77 }
+    - energy:           { target: 0.73, min: .66, max: .8 }
+    - energy:           { target: 0.84, min: .77, max: .91 }
+    - energy:           { target: 0.77, min: .70, max: .84 }
+    - energy:           { target: 0.62, min: .55, max: .69 }
+    - energy:           { target: 0.73, min: .66, max: .80 }
+    - energy:           { target: 0.83, min: .76, max: .90 }
+    - energy:           { target: 0.75, min: .68, max: .82 }
+    - energy:           { target: 0.74, min: .67, max: .81 }
+    - energy:           { target: 0.79, min: .72, max: .86 }
+    - energy:           { target: 0.89, min: .82, max: .96 }
+    - energy:           { target: 0.83, min: .76, max: .90 }
+    - energy:           { target: 0.76, min: .69, max: .83 }
+    - energy:           { target: 0.59, min: .52, max: .66 }
+    - energy:           { target: 0.73, min: .66, max: .80 }
+    - energy:           { target: 0.79, min: .72, max: .86 }
+    - energy:           { target: 0.76, min: .69, max: .83 }
+    - energy:           { target: 0.85, min: .78, max: .92 }
+    - energy:           { target: 0.81, min: .74, max: .73 }
+    - energy:           { target: 0.77, min: .70, max: .84 }
+    - energy:           { target: 0.74, min: .67, max: .81 }
+    - energy:           { target: 0.70, min: .63, max: .77 }
+    - energy:           { target: 0.78, min: .71, max: .85 }
+    - energy:           { target: 0.81, min: .74, max: .88 }
+    - energy:           { target: 0.83, min: .76, max: .90 }
+    - energy:           { target: 0.79, min: .72, max: .86 }
+    - energy:           { target: 0.90, min: .83, max: .97 }
+    - energy:           { target: 0.70, min: .0, max: 0.79 }
 
 club:
-  randomness: 0.8
+  randomness: .885
   energy_multiplier: 4.0
-  undergroundness_muliplier: 1.0
+  undergroundness_muliplier: 2.0
   tracks:
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
-    - energy:           { target: 0.7, min: 0, max: 1 }
+    - energy:           { target: 0.92, min: .87, max: 1 }
+    - energy:           { target: 0.79, min: .7, max: .83 }
+    - energy:           { target: 0.75, min: .80, max: .7 }
+    - energy:           { target: 0.78, min: .73, max: .84 }
+    - energy:           { target: 0.89, min: .83, max: .94 }
+    - energy:           { target: 0.82, min: .77, max: .82 }
+    - energy:           { target: 0.62, min: .59, max: .67 }
+    - energy:           { target: 0.77, min: .72, max: .82 }
+    - energy:           { target: 0.88, min: .85, max: .85 }
+    - energy:           { target: 0.80, min: .76, max: .83 }
+    - energy:           { target: 0.79, min: .74, max: .9 }
+    - energy:           { target: 0.84, min: .79, max: .89 }
+    - energy:           { target: 0.94, min: .9, max: 1 }
+    - energy:           { target: 0.88, min: .82, max: .92 }
+    - energy:           { target: 0.81, min: .77, max: .87 }
+    - energy:           { target: 0.59, min: .55, max: .63 }
+    - energy:           { target: 0.78, min: .73, max: .83 }
+    - energy:           { target: 0.84, min: .79, max: .89 }
+    - energy:           { target: 0.81, min: .76, max: .86 }
+    - energy:           { target: 0.90, min: .85, max: .95 }
+    - energy:           { target: 0.86, min: .81, max: .91 }
+    - energy:           { target: 0.82, min: .77, max: .87 }
+    - energy:           { target: 0.79, min: .74, max: .84 }
+    - energy:           { target: 0.75, min: .70, max: .80 }
+    - energy:           { target: 0.83, min: .79, max: .87 }
+    - energy:           { target: 0.86, min: .82, max: .90 }
+    - energy:           { target: 0.88, min: .84, max: .92 }
+    - energy:           { target: 0.84, min: .80, max: .88 }
+    - energy:           { target: 0.96, min: .92, max: 1 }
+    - energy:           { target: 0.75, min: .0, max: 0.79 }
 
 bangin:
-  randomness: 0.8
+  randomness: .885
   energy_multiplier: 4.0
-  undergroundness_muliplier: 1.0
+  undergroundness_muliplier: 2.0
   tracks:
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
-    - energy:           { target: 0.8, min: 0, max: 1 }
+    - energy:           { target: 0.96, min: .87, max: 1 }
+    - energy:           { target: 0.84, min: .7, max: 1 }
+    - energy:           { target: 0.80, min: .80, max: 1 }
+    - energy:           { target: 0.78, min: .73, max: 1 }
+    - energy:           { target: 0.67, min: .59, max: .75 }
+    - energy:           { target: 0.84, min: .77, max: 1 }
+    - energy:           { target: 0.90, min: .85, max: 1 }
+    - energy:           { target: 0.82, min: .72, max: 1 }
+    - energy:           { target: 0.93, min: .85, max: 1 }
+    - energy:           { target: 0.85, min: .76, max: 1 }
+    - energy:           { target: 0.83, min: .74, max: 1 }
+    - energy:           { target: 0.88, min: .79, max: 1 }
+    - energy:           { target: 0.98, min: .9, max: 1 }
+    - energy:           { target: 0.88, min: .82, max: 1 }
+    - energy:           { target: 0.81, min: .77, max: 1 }
+    - energy:           { target: 0.74, min: .55, max: 1 }
+    - energy:           { target: 0.82, min: .73, max: 1 }
+    - energy:           { target: 0.88, min: .79, max: 1 }
+    - energy:           { target: 0.84, min: .76, max: 1 }
+    - energy:           { target: 0.93, min: .85, max: 1 }
+    - energy:           { target: 0.89, min: .81, max: 1 }
+    - energy:           { target: 0.83, min: .77, max: 1 }
+    - energy:           { target: 0.83, min: .74, max: 1 }
+    - energy:           { target: 0.78, min: .70, max: 1 }
+    - energy:           { target: 0.86, min: .79, max: 1 }
+    - energy:           { target: 0.89, min: .82, max: 1 }
+    - energy:           { target: 0.91, min: .84, max: 1 }
+    - energy:           { target: 0.87, min: .80, max: 1 }
+    - energy:           { target: 0.96, min: .92, max: 1 }
+    - energy:           { target: 0.70, min: .0, max: 0.79 }
