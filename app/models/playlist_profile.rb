@@ -94,8 +94,7 @@ class PlaylistProfile
   attr_reader :slot_profiles, :size
 
   def initialize(options = {})
-    #data = PLAYLIST_PROFILES[options[:name]].dup
-    data = PLAYLIST_PROFILES[:mellow].dup
+    data = PLAYLIST_PROFILES[options[:name]].dup
 
     if undergroundness = options[:undergroundness]
       data[:slots].each do |slot_data|

@@ -1,2 +1,6 @@
-PLAYLIST_PROFILES = YAML.load_file("#{Rails.root}/config/playlist_profiles.yml").with_indifferent_access
+PLAYLIST_PROFILES ||= {}.with_indifferent_access
 
+Dir["#{Rails.root}/config/playlist_profiles/*.yml"].each do |file|
+  data = YAML.load_file(file)
+  PLAYLIST_PROFILES.merge!(data)
+end
