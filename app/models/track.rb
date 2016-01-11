@@ -56,7 +56,8 @@ class Track < ActiveRecord::Base
         echo_nest_id: echo_track.id,
         echo_nest_song_id: echo_track.song_id,
         audio_summary: echo_track.audio_summary.attrs,
-        energy: echo_track.audio_summary.attrs[:energy]
+        energy: echo_track.audio_summary.attrs[:energy],
+        valence: echo_track.audio_summary.attrs[:valence]
       })
     else
       echo_song = echo_song_from_spotify_id(spotify_id)
@@ -68,7 +69,8 @@ class Track < ActiveRecord::Base
           spotify_id: spotify_id,
           echo_nest_song_id: echo_song.id,
           audio_summary: echo_song.audio_summary.attrs,
-          energy: echo_song.audio_summary.attrs[:energy]
+          energy: echo_song.audio_summary.attrs[:energy],
+          valence: echo_song.audio_summary.attrs[:valence]
         })
       else
         raise "no echonest song found"
@@ -151,7 +153,7 @@ class Track < ActiveRecord::Base
   #   audio_summary[:energy].to_f
   # end
 
-  def valence
-    audio_summary[:valence].to_f
-  end
+  # def valence
+  #   audio_summary[:valence].to_f
+  # end
 end
