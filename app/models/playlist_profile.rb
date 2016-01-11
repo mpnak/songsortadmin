@@ -1,5 +1,51 @@
 class PlaylistProfile
 
+  WEATHER_SCORES = {
+    rain: 2,
+    snow: 6,
+    sleet: 3,
+    fog: 4,
+    cloudy: 4,
+    partly_cloudy: 5,
+    clear: 10,
+    windy: 6
+  }
+
+  DAY_TIME_SCORES = [
+    # 5:7   7:9   9:11 11:13 13:17 17:19 19:21 21:00 00:3   3:5
+    [1,    3,    4,    6,    7,    6,    6,    5,    7,    6], # Monday
+    [1,    3,    4,    6,    7,    7,    6,    5,    7,    6], # Tuesday
+    [1,    3,    5,    6,    7,    7,    6,    5,    7,    6], # Wednesday
+    [3,    4,    6,    7,    7,    8,    8,    7,    10,    7], # Thursday
+    [5,    5,    6,    7,    6,    9,    8,    9,    10,    7], # Friday
+    [5,    6,    6,    7,    7,    8,    8,    10,    10,    7], # Saturday
+    [5,    7,    6,    7,    7,    6,    6,    7,    9,    6], # Sunday
+  ]
+
+  DAY_INDEXES = {
+    mon: 0,
+    tue: 1,
+    wed: 2,
+    thu: 3,
+    fri: 4,
+    sat: 5,
+    sun: 6
+  }
+
+  TIME_LOWER_BOUND_AND_INDEXES = [
+    [0, 8],
+    [3, 9],
+    [5, 0],
+    [7, 1],
+    [9, 2],
+    [11, 3],
+    [13, 4],
+    [17, 5],
+    [19, 6],
+    [21, 7]
+  ]
+
+
   # Params (all optional):
   #   name
   #   undergroundness
@@ -7,199 +53,111 @@ class PlaylistProfile
   #   weather
   #
   def self.choose(options = {})
+
+    options[:weather] ||= :clear
+    options[:day] ||= :sat
+    options[:time] ||= 12
+
+    weather_score = WEATHER_SCORES[options[:weather]]
+    day_index = DAY_INDEXES[options[:day]]
+    hour = options[:time].floor
+    time_index = TIME_LOWER_BOUND_AND_INDEXES.bsearch {|(lbound, _)|  hour > lbound }.last
+    day_time_score = DAY_TIME_SCORES[day_index][time_index]
+    total_score = (weather_score + day_time_score) / 2.0
+    playlist_name = playlist_name(total_score)
+
+    options[:name] ||= (playlist_name || :mellow)
+    options[:undergroundness] ||= 3
+
     new(options)
   end
 
-  attr_reader :track_profiles,
-    :randomness,
-    :energy_multiplier,
-    :undergroundness_multiplier,
-    :min_undergroundness,
-    :max_undergroundness,
-    :min_energy,
-    :max_energy,
-    :size
+  def self.playlist_name(score)
+    case
+    when score <= 2.5
+      :mellow
+    when score <= 3
+      :chill
+    when score <= 5.5
+      :vibes
+    when score <= 7
+      :lounge
+    when score <= 8.5
+      :club
+    when score <= 10
+      :bangin
+    else
+      :vibes
+    end
+  end
+
+  attr_reader :slot_profiles, :size
 
   def initialize(options = {})
-    profile_name = options[:name] || :mellow
-    undergroundness = options[:undergroundness] || 3
+    #data = PLAYLIST_PROFILES[options[:name]].dup
+    data = PLAYLIST_PROFILES[:mellow].dup
 
-    data = PLAYLIST_PROFILES[profile_name].dup
-
-    data[:tracks].each do |td|
-      td[:undergroundness] ||= {}
-      td[:undergroundness][:target] = undergroundness
-      td[:undergroundness][:min] = [undergroundness - 1, 0].max
-      td[:undergroundness][:max] = [undergroundness + 1, 5].min
-
-      td[:energy] ||= {}
-      td[:energy][:target] ||= 0.5
-      td[:energy][:min] ||= 0
-      td[:energy][:max] ||= 1.0
-    end
-
-    if s = options[:randomness]
-      data[:randomness] = s
-    end
-
-    @randomness = data[:randomness] || 0.8
-    @energy_multiplier = data[:energy_multiplier] || 1.0
-    @undergroundness_multiplier = data[:undergroundness_multiplier] || 1.0
-    @min_undergroundness = data[:min_undergroundness] || 1
-    @max_undergroundness = data[:max_undergroundness] || 5
-    @min_energy = data[:min_energy] || 0.0
-    @max_energy = data[:max_energy] || 1.0
-    @track_profiles = data[:tracks].map {|x| TrackProfile.new(x) }
-    @size = @track_profiles.count
-  end
-
-  def playlist(tracks)
-    # Each track is associated with an array of weights for a given target vecor
-    track_weights = tracks.map { |track| TrackWeight.new(track, self) }
-    Playlist.new(select_track_weights(track_weights), self)
-  end
-
-  def select_track_weights(track_weights)
-    size.times.reduce([]) do |memo,n|
-      selected = track_weights.each_with_index.max_by(1) do |tw, i|
-        TrackWeight::Weight.random_calibrated_weight(tw.weights[n].total, randomness)
-      end.first
-
-      track_weights.delete_at(selected.last)
-
-      memo << selected.first
-    end
-  end
-
-  class Playlist
-    def initialize(track_weights, playlist_profile)
-      @playlist_profile = playlist_profile
-      @track_weights = track_weights
-    end
-
-    def tracks
-      @track_weights.map(&:track)
-    end
-
-    def print_summary
-      variance = @playlist_profile.size.times.reduce(0) do |memo, n|
-        track_weight = @track_weights[n]
-        track = track_weight.track
-        t_en = @playlist_profile.track_profiles[n].energy.target
-        en = track.energy
-
-        weight = track_weight.weights[n].total
-
-        puts "target energy: #{t_en}, actual energy: #{en.round(2)}, weight: #{weight}, #{track.title}"
-
-        memo += ( en - t_en ).abs ** 2
-      end / @playlist_profile.size.to_f
-
-      puts "variance: #{variance}"
-    end
-  end
-
-  class TrackProfile
-    attr_reader :energy, :undergroundness
-
-    def initialize(data)
-      @energy = Criteria.new(data[:energy])
-      @undergroundness = Criteria.new(data[:undergroundness])
-    end
-
-    class Criteria
-      attr_accessor :target, :min, :max
-
-      def initialize(data)
-        @target = data[:target]
-        @min = data[:min]
-        @max = data[:max]
+    if undergroundness = options[:undergroundness]
+      data[:slots].each do |slot_data|
+        slot_data[:criteria][:undergroundness] ||= {}
+        slot_data[:criteria][:undergroundness][:target] = undergroundness
       end
     end
 
+    @slot_profiles = data[:slots].each_with_index.map {|x, i| SlotProfile.new(data, i) }
+    @size = @slot_profiles.count
   end
 
-  class TrackWeight
-    attr_reader :track, :weights
+  def playlist(tracks)
+    Playlist.new(self, tracks)
+  end
 
-    def initialize(track, playlist_profile)
-      @track = track
-      @weights = playlist_profile.size.times.map { |n| Weight.new(n, playlist_profile, track) }
+  class SlotProfile
+    attr_reader :criteria, :randomness
+
+    def initialize(data, slot_index)
+      @randomness = data[:randomness] || 0.8
+
+      @criteria = {}
+
+      data[:criteria].each do |name, criteria_data|
+        slot_criteria_data = data[:slots][slot_index][:criteria][name] || {}
+
+        cr = Criteria.new
+
+        cr.name = name
+        cr.multiplier = slot_criteria_data[:multiplier] || criteria_data[:multiplier] || 1.0
+        cr.global_min = criteria_data[:min] || 0
+        cr.global_max = criteria_data[:max] || 1
+        cr.target = slot_criteria_data[:target]
+
+        cr.min_filter = slot_criteria_data[:min] || if criteria_data[:slot_min_delta] && cr.target
+        [cr.target - criteria_data[:slot_min_delta], cr.global_min].max
+        else
+          cr.global_min
+        end
+
+        cr.max_filter = slot_criteria_data[:max] || if criteria_data[:slot_max_delta] && cr.target
+        [cr.target + criteria_data[:slot_max_delta], cr.global_max].min
+        else
+          cr.global_max
+        end
+
+        @criteria[name] = cr
+      end
     end
 
-    class Weight
+    class Criteria
+      attr_accessor :name, :target, :min_filter, :max_filter, :global_min, :global_max, :multiplier
 
       # A value from 0 - 1 indicating how close the value is to the target.
       # In a range 0 to 20, and a target of 10. A value of 10 would yield a normalized weight of 1.0. A value of 0 would yield a value of 0.5.
       # Given a target of 20, a value of 0 would yield a normalaized_weight of 0.0.
       #
-      def self.normalize(target, value, min, max)
-        1 - ((target - value).abs / (max - min).to_f)
-      end
-
-      # A value of 0 - 1 indicating how close the value is to the target. Can be short circuted with target_min and target_max values which will produce a weight of 0 if they are not met.
-      #
-      def self.normalize_with_limits(value, target, global_min, global_max, target_min, target_max)
-        if value < target_min || value > target_max
-          0
-        else
-          normalize(target, value, global_min, global_max)
-        end
-      end
-
-      # A value of 0 - 1 obtained by from combining 0 - 1 values and associated weights/factors.
-      # Factors should have a sum total of 1.0, this is not strictly enforced and they will be normalized anyway.
-      # combine_weights([value1, value2], [factor1, factor2])
-      #
-      def self.combine_weights(values, factors)
-        values.each {|value| raise ArgumentError unless (value >= 0 && value <= 1) }
-
-        total_factors = factors.reduce(&:+).to_f
-
-        normalized_factors = factors.map { |factor| factor / total_factors }
-
-        values.each_with_index.reduce(0) do |memo, (value, i)|
-          memo += value * normalized_factors[i]
-        end
-      end
-
-      # A value of 0 - 1 obtained by adding a random element to weight from 0-1.
-      #
-      def self.random_calibrated_weight(value, randomness, random_number = rand)
-        value * (1 - randomness) + random_number * randomness
-      end
-
-      attr_reader :energy, :undergroundness, :total
-
-      def initialize(n, playlist_profile, track)
-        track_profile = playlist_profile.track_profiles[n]
-
-        @undergroundness = self.class.normalize_with_limits(
-          track.undergroundness || 3,
-          track_profile.undergroundness.target,
-          playlist_profile.min_undergroundness,
-          playlist_profile.max_undergroundness,
-          track_profile.undergroundness.min,
-          track_profile.undergroundness.max
-        )
-
-        @energy = self.class.normalize_with_limits(
-          track.energy,
-          track_profile.energy.target,
-          playlist_profile.min_energy,
-          playlist_profile.max_energy,
-          track_profile.energy.min,
-          track_profile.energy.max
-        )
-
-        @total = self.class.combine_weights(
-          [@undergroundness, @energy],
-          [playlist_profile.undergroundness_multiplier, playlist_profile.energy_multiplier]
-        )
+      def normalized_score(value)
+        self.target ? 1 - ((self.target - value).abs / (self.global_max - self.global_min).to_f) : 0
       end
 
     end
   end
-
 end
-

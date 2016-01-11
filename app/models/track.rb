@@ -150,4 +150,8 @@ class Track < ActiveRecord::Base
   # def energy
   #   audio_summary[:energy].to_f
   # end
+
+  def valence
+    audio_summary[:valence].to_f
+  end
 end
