@@ -48,7 +48,7 @@ class Track < ActiveRecord::Base
   def self.build_from_spotify_id(spotify_id)
     echo_track = Echowrap.track_profile(:id => "spotify:track:#{spotify_id}", bucket: ['audio_summary'])
 
-    if track.id
+    if echo_track.id
       Track.new({
         title: echo_track.title,
         artist: echo_track.artist,

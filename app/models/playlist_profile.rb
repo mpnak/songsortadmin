@@ -66,7 +66,7 @@ class PlaylistProfile
     total_score = (weather_score + day_time_score) / 2.0
     playlist_name = playlist_name(total_score)
 
-    options[:name] ||= (playlist_name || :mellow)
+    options[:name] ||= (playlist_name || :vibes)
     options[:undergroundness] ||= 3
 
     new(options)
