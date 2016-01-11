@@ -12,10 +12,6 @@ class Track < ActiveRecord::Base
 
   attr_accessor :favorited
 
-  #before_create :create_in_taste_profile
-  #before_destroy :destroy_from_taste_profile
-  #before_update :update_taste_profile
-
   # set favorited = true if there is a TrackFavorite relation for that station and user
   # tracks is an array or relation of track models.
   def self.decorate_with_favorited(user_id, station_id, tracks)
@@ -79,20 +75,6 @@ class Track < ActiveRecord::Base
 
   end
 
-  def self.delete_from_taste_profile(taste_profile_id, track_ids)
-    data = track_ids.map do |track_id|
-      {
-        action: "delete",
-        item: { track_id: track_id }
-      }
-    end
-
-    Echowrap.taste_profile_update(
-      :id => taste_profile_id,
-      :data => JSON.generate(data)
-    )
-  end
-
   def get_audio_summary!
     echo_song = if self.echo_nest_song_id
                   Echowrap.song_profile(id: self.echo_nest_song_id, bucket: [:audio_summary])
@@ -106,47 +88,6 @@ class Track < ActiveRecord::Base
       self.energy = echo_song.audio_summary.attrs[:energy]
       self.save
     end
-  end
-
-  def create_in_taste_profile
-    data = [
-      {
-        action: "update",
-        item: { track_id: self.echo_nest_id }
-      }
-    ]
-
-    Echowrap.taste_profile_update(
-      :id => self.station.taste_profile_id,
-      :data => JSON.generate(data)
-    )
-  end
-
-  def destroy_from_taste_profile
-    Track.delete_from_taste_profile(self.station.taste_profile_id, [self.echo_nest_id])
-  end
-
-  # Here we are only concerned with setting the undergroundness on the taste
-  # profile
-  def update_taste_profile
-    return unless self.undergroundness
-
-    data = [
-      {
-        action: "update",
-        item: {
-          track_id: self.echo_nest_id,
-          item_keyvalues: {
-            undergoundness: self.undergroundness
-          }
-        }
-      }
-    ]
-
-    Echowrap.taste_profile_update(
-      :id => self.station.taste_profile_id,
-      :data => JSON.generate(data)
-    )
   end
 
   # def energy
