@@ -131,7 +131,7 @@ class PlaylistProfile
         cr.target = slot_criteria_data[:target]
 
         cr.min_filter = slot_criteria_data[:min] || if criteria_data[:slot_min_delta] && cr.target
-        [cr.target - criteria_data[:slot_min_delta], cr.global_min].max
+          [cr.target + criteria_data[:slot_min_delta], cr.global_min].max
         else
           cr.global_min
         end

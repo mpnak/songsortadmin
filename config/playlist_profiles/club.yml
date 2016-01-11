@@ -9,8 +9,8 @@ club:
       multiplier: 1.0
       min: 1
       max: 5
-      track_min_delta: -1.0
-      track_max_delta: 1.0
+      slot_min_delta: -1.0
+      slot_max_delta: 1.0
     valence:
       multiplier: 1.0
   slots:
