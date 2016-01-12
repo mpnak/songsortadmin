@@ -34,7 +34,9 @@ class Playlist
 
         sum_differences[criteria_name] += target ? (value - target).abs : 0
 
-        "#{criteria_name}: #{value.round(2)} (#{target})"
+        weight = track_weight.weights[n].criteria_weights[criteria_name].round(2)
+
+        "#{criteria_name}: #{value.round(2)} - #{target} (#{weight})"
       end.join(", ")
 
       weight = track_weight.weights[n].total.round(2)
@@ -81,7 +83,7 @@ class Playlist
         value * (1 - randomness) + random_number * randomness
       end
 
-      attr_reader :energy, :undergroundness, :total, :random_calibrated
+      attr_reader :total, :random_calibrated, :criteria_weights
 
       def initialize(n, playlist_profile, track)
 
