@@ -107,12 +107,13 @@ class Playlist
 
         @random_calibrated = self.class.random_calibrated_weight(@total, slot_profile.randomness)
 
-        slot_profile.criteria.each do |criteria_name, slot_criteria|
+        out_of_bounds = slot_profile.criteria.map do |criteria_name, slot_criteria|
           value = track.send(criteria_name)
+          value < slot_criteria.min_filter || value > slot_criteria.max_filter
+        end.reduce(:|)
 
-          if value < slot_criteria.min_filter || value > slot_criteria.max_filter
-            @random_calibrated = -(1.0 / @random_calibrated)
-          end
+        if out_of_bounds
+          @random_calibrated = -(1.0 / @random_calibrated)
         end
       end
     end
