@@ -67,7 +67,6 @@ class PlaylistProfile
     playlist_name = playlist_name(total_score)
 
     options[:name] ||= (playlist_name || :vibes)
-    options[:undergroundness] ||= 3
 
     new(options)
   end

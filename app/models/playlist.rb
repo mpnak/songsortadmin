@@ -20,7 +20,7 @@ class Playlist
 
   def print_summary
 
-    sum_differences = {}
+    sum_differences = Hash.new(0.0)
 
     @playlist_profile.size.times.reduce(0) do |memo, n|
       track_weight = @track_weights[n]
@@ -32,7 +32,7 @@ class Playlist
         target = criteria.target
         value = track.send(criteria_name)
 
-        sum_differences[criteria_name] = target ? (value - target)**2 : 0
+        sum_differences[criteria_name] += target ? (value - target).abs : 0
 
         "#{criteria_name}: #{value.round(2)} (#{target})"
       end.join(", ")
@@ -43,8 +43,7 @@ class Playlist
     end
 
     @playlist_profile.slot_profiles[0].criteria.each do |criteria_name, criteria|
-
-      puts "#{criteria_name} variance: #{(sum_differences[criteria_name]/@playlist_profile.size).round(4)}"
+      puts "#{criteria_name} avg. difference: #{(sum_differences[criteria_name]/@playlist_profile.size).round(4)}"
     end
 
     true
