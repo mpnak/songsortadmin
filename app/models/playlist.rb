@@ -45,7 +45,8 @@ class Playlist
       end.join(", ")
 
       weight = track_weight.weights[n].total.round(2)
-      output += ", Weight: #{weight}, #{track.title}, #{track.id}"
+      rweight = track_weight.weights[n].random_calibrated.round(4)
+      output += ", Weight: #{weight} | #{rweight}, #{track.title}, #{track.id}"
       puts output
     end
 
