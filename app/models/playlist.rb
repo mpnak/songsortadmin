@@ -3,7 +3,8 @@ class Playlist
   def initialize(playlist_profile, tracks)
     @playlist_profile = playlist_profile
     all_track_weights = tracks.map { |track| TrackWeight.new(track, playlist_profile) }
-    @track_weights = select_track_weights(all_track_weights)
+
+    @track_weights = tracks.count < playlist_profile.size ?  [] : select_track_weights(all_track_weights)
   end
 
   def select_track_weights(track_weights)
@@ -19,6 +20,10 @@ class Playlist
   end
 
   def print_summary
+    if @track_weights.empty?
+      puts "There are not enough tracks available to fill the playlist"
+      return
+    end
 
     sum_differences = Hash.new(0.0)
 

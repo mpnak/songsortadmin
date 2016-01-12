@@ -22,7 +22,13 @@ class Station < ActiveRecord::Base
       tracks
     else
       playlist_profile = PlaylistProfile.choose(options)
-      playlist = playlist_profile.playlist(self.tracks.where.not(energy: nil))
+
+      cleaned_tracks = self.tracks
+        .where.not(energy: nil)
+        .where.not(undergroundness: nil)
+        .where.not(valence: nil)
+
+      playlist = playlist_profile.playlist(cleaned_tracks)
 
       if options[:print]
         playlist.print_summary
