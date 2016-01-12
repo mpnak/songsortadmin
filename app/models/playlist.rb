@@ -41,7 +41,7 @@ class Playlist
 
         weight = track_weight.weights[n].criteria_weights[criteria_name].round(2)
 
-        "#{criteria_name}: #{value.round(2)} - #{target} (#{weight})"
+        "#{criteria_name}: #{value.round(2)} <#{criteria.min_filter} - #{target} - #{criteria.max_filter}> #{weight}"
       end.join(", ")
 
       weight = track_weight.weights[n].total.round(2)
