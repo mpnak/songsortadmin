@@ -32,9 +32,10 @@ class Station < ActiveRecord::Base
 
       if options[:print]
         playlist.print_summary
-      else
-        playlist.tracks
+        return nil
       end
+
+      playlist.tracks
     end
   end
 end
