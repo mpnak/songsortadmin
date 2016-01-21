@@ -1,26 +1,27 @@
 class PlaylistProfileChooser
   SCORE_FOR_FORECASTIO_ICONS = {
-    "clear-day" => 10,
-    "clear-night" => 10,
+    "clear-day" => 9,
+    "clear-night" => 7,
     "rain" => 2,
     "snow" => 6,
-    "sleet" => 3,
-    "wind" => 6,
-    "fog" => 4,
-    "cloudy" => 4,
-    "partly-cloudy-day" => 5,
-    "partly-cloudy-night" => 5
+    "sleet" => 1,
+    "wind" => 5,
+    "fog" => 3,
+    "cloudy" => 3,
+    "partly-cloudy-day" => 6,
+    "partly-cloudy-night" => 5,
+    "partly-cloudy" => 5
   }
 
   DAY_TIME_SCORES = [
-    # 5:7   7:9   9:11 11:13 13:17 17:19 19:21 21:00 00:3   3:5
-    [5,    7,    6,    7,    7,    6,    6,    7,    9,    6], # Sunday
-    [1,    3,    4,    6,    7,    6,    6,    5,    7,    6], # Monday
-    [1,    3,    4,    6,    7,    7,    6,    5,    7,    6], # Tuesday
-    [1,    3,    5,    6,    7,    7,    6,    5,    7,    6], # Wednesday
-    [3,    4,    6,    7,    7,    8,    8,    7,    10,    7], # Thursday
-    [5,    5,    6,    7,    6,    9,    8,    9,    10,    7], # Friday
-    [5,    6,    6,    7,    7,    8,    8,    10,    10,    7], # Saturday
+    # 5:7 7:9  9:11  11:13 13:17 17:19 19:21 21:23 23:02  03:05
+    [5,    5,    4,    7,    7,    6,    6,    7,    4,    5], # Sunday
+    [1,    3,    3,    6,    7,    6,    6,    5,    4,    6], # Monday
+    [1,    3,    3,    6,    7,    7,    6,    5,    4,    6], # Tuesday
+    [1,    3,    5,    6,    7,    7,    6,    5,    5,    6], # Wednesday
+    [3,    4,    5,    7,    7,    8,    8,    7,    7,    7], # Thursday
+    [5,    5,    5,    7,    6,    7,    7,    8,    9,    7], # Friday
+    [5,    6,    5,    7,    7,    8,    8,    10,    10,    7], # Saturday
   ]
 
   TIME_LOWER_BOUND_AND_INDEXES = [
@@ -33,15 +34,16 @@ class PlaylistProfileChooser
     [13, 4],
     [17, 5],
     [19, 6],
-    [21, 7]
+    [21, 7],
+    [24, 8]
   ]
 
   PLAYLIST_SCORES = {
     mellow: 2.5,
-    chill: 3.0,
-    vibes: 5.5,
+    chill: 3.5,
+    vibes: 5.9,
     lounge: 7.0,
-    club: 8.5,
+    club: 8.4,
     bangin: 10
   }
 

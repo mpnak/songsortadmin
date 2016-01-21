@@ -15,10 +15,10 @@ lounge:
       multiplier: 0
   slots:
     - criteria:
-        energy: { target: 0.88, min: .3, max: 1 }
+        energy: { target: 0.68, min: .3, max: 1 }
         valence: { target: 0.3 }
     - criteria:
-        energy: { target: 0.73, min: .3, max: 1 }
+        energy: { target: 0.66, min: .3, max: 1 }
         valence: { target: 0.3 }
     - criteria:
         energy: { target: 0.70, min: .3, max: 1 }
@@ -27,7 +27,7 @@ lounge:
         energy: { target: 0.73, min: .3, max: 1 }
         valence: { target: 0.3 }
     - criteria:
-        energy: { target: 0.84, min: .3, max: 1 }
+        energy: { target: 0.78, min: .3, max: 1 }
         valence: { target: 0.3 }
     - criteria:
         energy: { target: 0.77, min: .3, max: 1 }
