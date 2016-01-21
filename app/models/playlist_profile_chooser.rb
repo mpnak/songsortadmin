@@ -33,7 +33,8 @@ class PlaylistProfileChooser
     [13, 4],
     [17, 5],
     [19, 6],
-    [21, 7]
+    [21, 7],
+    [24, 8]
   ]
 
   PLAYLIST_SCORES = {
