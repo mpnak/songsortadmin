@@ -2,7 +2,7 @@ class PlaylistProfileChooser
   SCORE_FOR_FORECASTIO_ICONS = {
     "clear-day" => 9,
     "clear-night" => 7,
-    "rain" => 2,
+    "rain" => 1,
     "snow" => 6,
     "sleet" => 1,
     "wind" => 5,
@@ -14,14 +14,14 @@ class PlaylistProfileChooser
   }
 
   DAY_TIME_SCORES = [
-    # 5:7 7:9  9:11  11:13 13:17 17:19 19:21 21:23 23:02  03:05
+  #03:05  5:7   7:9  9:11  11:13 13:17 17:19 19:21 21:23 23:02  
     [5,    5,    4,    7,    7,    6,    6,    7,    4,    5], # Sunday
-    [1,    3,    3,    6,    7,    6,    6,    5,    4,    6], # Monday
+    [1,    1,    3,    6,    6,    5,    6,    4,    4,    6], # Monday
     [1,    3,    3,    6,    7,    7,    6,    5,    4,    6], # Tuesday
-    [1,    3,    5,    6,    7,    7,    6,    5,    5,    6], # Wednesday
-    [3,    4,    5,    7,    7,    8,    8,    7,    7,    7], # Thursday
-    [5,    5,    5,    7,    6,    7,    7,    8,    9,    7], # Friday
-    [5,    6,    5,    7,    7,    8,    8,    10,    10,    7], # Saturday
+    [1,    3,    4,    6,    7,    7,    6,    5,    5,    6], # Wednesday
+    [3,    4,    4,    7,    7,    8,    8,    7,    7,    7], # Thursday
+    [5,    5,    5,    7,    7,    8,    7,    8,    9,    7], # Friday
+    [5,    4,    5,    7,    7,    8,    8,    10,    10,    7], # Saturday
   ]
 
   TIME_LOWER_BOUND_AND_INDEXES = [
@@ -42,7 +42,7 @@ class PlaylistProfileChooser
     mellow: 2.5,
     chill: 3.5,
     vibes: 5.9,
-    lounge: 7.0,
+    lounge: 6.9,
     club: 8.4,
     bangin: 10
   }

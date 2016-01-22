@@ -21,23 +21,23 @@ class Station < ActiveRecord::Base
     if ["featured", "sponsored"].include?(station_type)
       tracks
     else
-      tracks.sample(30)
+      # tracks.sample(30)
 
-      # playlist_profile = PlaylistProfile.choose(options)
-      #
-      # cleaned_tracks = self.tracks
-      #   .where.not(energy: nil)
-      #   .where.not(undergroundness: nil)
-      #   .where.not(valence: nil)
-      #
-      # playlist = playlist_profile.playlist(cleaned_tracks)
-      #
-      # if options[:print]
-      #   playlist.print_summary
-      #   return nil
-      # end
-      #
-      # playlist.tracks
+      playlist_profile = PlaylistProfile.choose(options)
+      
+      cleaned_tracks = self.tracks
+        .where.not(energy: nil)
+        .where.not(undergroundness: nil)
+        .where.not(valence: nil)
+      
+      playlist = playlist_profile.playlist(cleaned_tracks)
+      
+      if options[:print]
+        playlist.print_summary
+        return nil
+      end
+      
+      playlist.tracks
     end
   end
 end

@@ -15,7 +15,7 @@ lounge:
       multiplier: 0
   slots:
     - criteria:
-        energy: { target: 0.68, min: .3, max: 1 }
+        energy: { target: 0.68, min: .6, max: .7 }
         valence: { target: 0.3 }
     - criteria:
         energy: { target: 0.66, min: .3, max: 1 }

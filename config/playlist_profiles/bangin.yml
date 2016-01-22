@@ -1,8 +1,8 @@
 bangin:
-  randomness: 0.885
+  randomness: 0.3
   criteria:
     energy:
-      multiplier: 5.0
+      multiplier: 10.0
       min: 0
       max: 1.0
     undergroundness:
@@ -15,19 +15,19 @@ bangin:
       multiplier: 0
   slots:
     - criteria:
-        energy: { target: 0.96, min: .5, max: 1 }
+        energy: { target: 1, min: .9, max: 1 }
         valence: { target: 0.96 }
     - criteria:
-        energy: { target: 0.84, min: .5, max: 1 }
+        energy: { target: 0.86, min: .5, max: 1 }
         valence: { target: 0.84 }
     - criteria:
-        energy: { target: 0.80, min: .5, max: 1 }
+        energy: { target: 0.87, min: .5, max: 1 }
         valence: { target: 0.8 }
     - criteria:
-        energy: { target: 0.78, min: .5, max: 1 }
+        energy: { target: 0.84, min: .5, max: 1 }
         valence: { target: 0.78 }
     - criteria:
-        energy: { target: 0.67, min: .5, max: .75 }
+        energy: { target: 0.82, min: .5, max: .75 }
         valence: { target: 0.67 }
     - criteria:
         energy: { target: 0.84, min: .5, max: 1 }
@@ -42,7 +42,7 @@ bangin:
         energy: { target: 0.93, min: .5, max: 1 }
         valence: { target: 0.93 }
     - criteria:
-        energy: { target: 0.85, min: .5, max: 1 }
+        energy: { target: 0.90, min: .5, max: 1 }
         valence: { target: 0.85 }
     - criteria:
         energy: { target: 0.83, min: .5, max: 1 }
