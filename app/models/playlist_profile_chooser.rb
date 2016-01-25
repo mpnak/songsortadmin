@@ -20,7 +20,7 @@ class PlaylistProfileChooser
     [1,    3,    3,    6,    7,    7,    6,    5,    4,    6], # Tuesday
     [1,    3,    4,    6,    7,    7,    6,    5,    5,    6], # Wednesday
     [3,    4,    4,    7,    7,    8,    8,    7,    7,    7], # Thursday
-    [5,    5,    5,    7,    7,    8,    7,    8,    9,    7], # Friday
+    [5,    5,    5,    7,    8,    8,    7,    9,    9,    7], # Friday
     [5,    4,    5,    7,    7,    8,    8,    10,    10,    7], # Saturday
   ]
 

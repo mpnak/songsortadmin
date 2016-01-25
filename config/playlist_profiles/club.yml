@@ -1,5 +1,5 @@
 club:
-  randomness: 0.885
+  randomness: 0.7
   criteria:
     energy:
       multiplier: 2.0
@@ -18,13 +18,13 @@ club:
         energy: { target: 0.84, min: .79, max: 1 }
         valence: { target: 0.9 }
     - criteria:
-        energy: { target: 0.79, min: .40, max: 1 }
+        energy: { target: 0.79, min: .7, max: 1 }
         valence: { target: 0.79 }
     - criteria:
-        energy: { target: 0.75, min: .40, max: 1 }
+        energy: { target: 0.75, min: .65, max: 1 }
         valence: { target: 0.75 }
     - criteria:
-        energy: { target: 0.78, min: .40, max: 1  }
+        energy: { target: 0.78, min: .68, max: 1  }
         valence: { target: 0.7 }
     - criteria:
         energy: { target: 0.89, min: .40, max: 1  }
