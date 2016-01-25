@@ -1,6 +1,6 @@
 class PlaylistProfileChooser
   SCORE_FOR_FORECASTIO_ICONS = {
-    "clear-day" => 9,
+    "clear-day" => 8,
     "clear-night" => 7,
     "rain" => 1,
     "snow" => 6,
@@ -15,8 +15,8 @@ class PlaylistProfileChooser
 
   DAY_TIME_SCORES = [
   #03:05  5:7   7:9  9:11  11:13 13:17 17:19 19:21 21:23 23:02  
-    [5,    5,    4,    7,    7,    6,    6,    7,    4,    5], # Sunday
-    [1,    1,    3,    6,    6,    5,    6,    4,    4,    6], # Monday
+    [5,    5,    4,    7,    5,    6,    6,    7,    4,    5], # Sunday
+    [1,    1,    3,    5,    5,    5,    6,    4,    4,    6], # Monday
     [1,    3,    3,    6,    7,    7,    6,    5,    4,    6], # Tuesday
     [1,    3,    4,    6,    7,    7,    6,    5,    5,    6], # Wednesday
     [3,    4,    4,    7,    7,    8,    8,    7,    7,    7], # Thursday
