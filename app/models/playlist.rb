@@ -9,7 +9,9 @@ class Playlist
 
   def select_track_weights(track_weights)
     @playlist_profile.size.times.reduce([]) do |memo,n|
-      selected = track_weights.each_with_index.max_by(1) { |tw, i| tw.weights[n].random_calibrated }.first
+      selected = track_weights.each_with_index.max_by(1) do |tw, i|
+        tw.weights[n].random_calibrated
+      end.first
       track_weights.delete_at(selected.last)
       memo << selected.first
     end
