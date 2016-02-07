@@ -41,10 +41,6 @@ gem 'spring',        group: :development
 
 gem 'bundler'
 
-group :development do
-  gem 'better_errors'
-end
-
 gem 'binding_of_caller'
 gem 'simple_form'
 gem 'omniauth'
@@ -66,6 +62,12 @@ gem "encrypted_strings"
 gem 'rspotify', git: "https://github.com/vaughankg/rspotify.git"
 gem 'timezone'
 gem 'forecast_io'
+
+group :development do
+  gem 'better_errors'
+  gem 'rack-mini-profiler'
+end
+
 
 group :development, :test do
   gem 'rspec-rails'

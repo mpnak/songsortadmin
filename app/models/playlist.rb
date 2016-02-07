@@ -21,6 +21,7 @@ class Playlist
     @track_weights.map(&:track)
   end
 
+  # chainable
   def print_summary
     if @track_weights.empty?
       puts "There are not enough tracks available to fill the playlist"
@@ -56,9 +57,9 @@ class Playlist
       puts "#{criteria_name} avg. difference: #{(sum_differences[criteria_name]/@playlist_profile.size).round(4)}"
     end
 
-    true
-
+    self
   end
+
   class TrackWeight
     attr_reader :track, :weights
 

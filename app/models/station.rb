@@ -32,6 +32,9 @@ class Station < ActiveRecord::Base
 
       playlist = playlist_profile.playlist(cleaned_tracks)
 
+
+      playlist.print_summary
+
       if options[:print]
         playlist.print_summary
         return nil
