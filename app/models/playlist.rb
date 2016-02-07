@@ -75,7 +75,7 @@ class Playlist
       # combine_weights([value1, value2], [factor1, factor2])
       #
       def self.combine_weights(values, factors)
-        values.each {|value| raise ArgumentError unless (value >= 0 && value <= 1) }
+        values.each {|value| raise ArgumentError.new("value must be [0,1]. value: #{value}") unless (value >= 0 && value <= 1) }
 
         total_factors = factors.reduce(&:+).to_f
 

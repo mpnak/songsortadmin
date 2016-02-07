@@ -5,6 +5,9 @@ class SavedStation < ActiveRecord::Base
   has_many :tracks, through: :saved_station_tracks
 
   validates :user, :station, presence: true
+  validates :undergroundness, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
+
+  before_save :set_undergroundness
 
   def playlist_options
     {
@@ -17,5 +20,11 @@ class SavedStation < ActiveRecord::Base
   def generate_tracks(options = {})
     self.touch
     self.tracks = self.station.generate_tracks(playlist_options.merge(options))
+  end
+
+  private
+
+  def set_undergroundness
+    self.undergroundness ||= 3
   end
 end

@@ -8,7 +8,7 @@ class Station < ActiveRecord::Base
   validates :name, presence: true
 
   DEFAULT_PLAYLIST_OPTIONS = {
-    undergroundness: nil,
+    undergroundness: 3,
     use_weather: true,
     use_time_of_day: true
   }
