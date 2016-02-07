@@ -6,8 +6,16 @@ class SavedStation < ActiveRecord::Base
 
   validates :user, :station, presence: true
 
+  def playlist_options
+    {
+      undergroundness: self.undergroundness,
+      use_weather: true,
+      use_time_of_day: true
+    }
+  end
+
   def generate_tracks(options = {})
     self.touch
-    self.tracks = self.station.generate_tracks(options)
+    self.tracks = self.station.generate_tracks(playlist_options.merge(options))
   end
 end

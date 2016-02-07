@@ -48,6 +48,9 @@ class PlaylistProfileChooser
   }
 
   def self.choose_name(options = {})
+
+    ap options
+
     # Get local weather
     options[:ll] ||= "33.985488,-118.475250" # Venice beach
 

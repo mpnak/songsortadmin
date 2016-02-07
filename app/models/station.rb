@@ -7,6 +7,12 @@ class Station < ActiveRecord::Base
 
   validates :name, presence: true
 
+  DEFAULT_PLAYLIST_OPTIONS = {
+    undergroundness: nil,
+    use_weather: true,
+    use_time_of_day: true
+  }
+
   def self.from_params(params)
     q = Station.all
 
@@ -17,11 +23,16 @@ class Station < ActiveRecord::Base
     return q
   end
 
+  def playlist_options
+    DEFAULT_PLAYLIST_OPTIONS
+  end
+
   def generate_tracks(options = {})
     if ["featured", "sponsored"].include?(station_type)
       tracks
     else
       # tracks.sample(30)
+      options = playlist_options.merge(options)
 
       playlist_profile = PlaylistProfile.choose(options)
 
@@ -31,7 +42,6 @@ class Station < ActiveRecord::Base
         .where.not(valence: nil)
 
       playlist = playlist_profile.playlist(cleaned_tracks)
-
 
       playlist.print_summary
 

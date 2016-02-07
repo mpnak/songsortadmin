@@ -16,7 +16,8 @@ class Api::V1::StationsController < ApplicationController
 
   def generate_tracks
     @station = Station.find(params[:id])
-    @tracks = @station.generate_tracks
+
+    @tracks = @station.generate_tracks({ ll: params[:ll] })
 
     if params[:user_id]
       # Cache the tracks so we can GET them
@@ -27,7 +28,6 @@ class Api::V1::StationsController < ApplicationController
 
       # Add favorited flag
       Track.decorate_with_favorited(params[:user_id], @station.id, @tracks)
-
     end
 
     render json: @tracks, root: "tracks"

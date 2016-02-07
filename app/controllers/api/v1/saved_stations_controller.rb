@@ -41,7 +41,8 @@ class Api::V1::SavedStationsController < ApplicationController
 
   def generate_tracks
     @saved_station = SavedStation.find(params[:id])
-    @tracks = @saved_station.generate_tracks
+
+    @tracks = @saved_station.generate_tracks({ ll: params[:ll] })
 
     if params[:user_id]
       Track.decorate_with_favorited(params[:user_id], @saved_station.station_id, @tracks)
