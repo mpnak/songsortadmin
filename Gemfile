@@ -63,6 +63,7 @@ gem "encrypted_strings"
 gem 'rspotify', git: "https://github.com/vaughankg/rspotify.git"
 gem 'timezone'
 gem 'forecast_io'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'better_errors'
