@@ -13,4 +13,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  after_filter do
+    begin
+      if request.format.json? && response
+        puts "response:"
+        ap JSON.parse(response.body)
+      end
+    rescue
+    end
+  end
+
 end
