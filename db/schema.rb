@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111232140) do
+ActiveRecord::Schema.define(version: 20160209181833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 20160111232140) do
     t.boolean  "use_timeofday"
     t.boolean  "autoupdate"
   end
+
+  add_index "saved_stations", ["user_id", "station_id"], name: "index_saved_stations_on_user_id_and_station_id", unique: true, using: :btree
+  add_index "saved_stations", ["user_id"], name: "index_saved_stations_on_user_id", using: :btree
 
   create_table "songs", force: true do |t|
     t.integer  "station_id"
@@ -101,6 +104,8 @@ ActiveRecord::Schema.define(version: 20160111232140) do
     t.decimal  "energy"
     t.decimal  "valence"
   end
+
+  add_index "tracks", ["station_id"], name: "index_tracks_on_station_id", using: :btree
 
   create_table "user_station_links", force: true do |t|
     t.integer  "user_id"

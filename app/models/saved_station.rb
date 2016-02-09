@@ -5,6 +5,7 @@ class SavedStation < ActiveRecord::Base
   has_many :tracks, through: :saved_station_tracks
 
   validates :user, :station, presence: true
+  validates :station, uniqueness: { scope: :user }
   validates :undergroundness, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
 
   before_save :set_undergroundness
