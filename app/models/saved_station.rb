@@ -8,7 +8,7 @@ class SavedStation < ActiveRecord::Base
   validates :station, uniqueness: { scope: :user }
   validates :undergroundness, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
 
-  before_save :set_undergroundness
+  before_validation :set_undergroundness
 
   def playlist_options
     {
