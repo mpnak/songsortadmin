@@ -29,7 +29,7 @@ class Station < ActiveRecord::Base
 
   def generate_tracks(options = {})
     if ["featured", "sponsored"].include?(station_type)
-      tracks.where(created_at: :asc)
+      tracks.order(created_at: :asc)
     else
       # tracks.sample(30)
       options = playlist_options.merge(options)
