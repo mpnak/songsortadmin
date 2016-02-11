@@ -10,7 +10,7 @@ class StationsController < ApplicationController
 
   def show
     gon.push({ :station_id => @station.id })
-    @tracks = @station.tracks
+    @tracks = @station.tracks.order(created_at: :desc)
     respond_with(@station)
   end
 
