@@ -1,7 +1,6 @@
-class Api::V1::TracksController < ApplicationController
-  respond_to :json
+class Api::V1::TracksController < Api::V1::ApiController
 
-  protect_from_forgery with: :null_session
+  before_action :authenticate_with_token!
 
   def play
     @track = Track.find(params[:track_id])
@@ -14,7 +13,7 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def favorited
-    @track_favorite = TrackFavorite.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first_or_initialize
+    @track_favorite = TrackFavorite.where(user_id: current_user.id, station_id: params[:station_id], track_id: params[:id]).first_or_initialize
 
     if @track_favorite.save
       render json: { success: true }
@@ -24,7 +23,7 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def unfavorited
-    @track_favorite = TrackFavorite.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first
+    @track_favorite = TrackFavorite.where(user_id: current_user.id, station_id: params[:station_id], track_id: params[:id]).first
 
     if @track_favorite && @track_favorite.destroy
       head 204
@@ -35,12 +34,12 @@ class Api::V1::TracksController < ApplicationController
 
   def banned
     if params[:saved_station_id]
-      @saved_station = SavedStation.find(params[:saved_station_id])
+      @saved_station = current_user.saved_stations.find(params[:saved_station_id])
       @saved_station_track = @saved_station.saved_station_tracks.where(track_id: params[:id]).first
       @saved_station_track.destroy if @saved_station_track
     end
 
-    @track_ban = TrackBan.where(user_id: params[:user_id], station_id: params[:station_id], track_id: params[:id]).first_or_initialize
+    @track_ban = TrackBan.where(user_id: current_user.id, station_id: params[:station_id], track_id: params[:id]).first_or_initialize
 
     if @track_ban.save
       render json: { success: true }
@@ -49,17 +48,4 @@ class Api::V1::TracksController < ApplicationController
     end
   end
 
-  private
-
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
-  def set_station
-    @station = Station.find(params[:station_id])
-  end
-
-  def set_track
-    @track = Track.find(params[:track_id])
-  end
 end

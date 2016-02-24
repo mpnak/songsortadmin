@@ -1,7 +1,4 @@
-class Api::V1::SpotifyController < ApplicationController
-  respond_to :json
-
-  protect_from_forgery with: :null_session
+class Api::V1::SpotifyController < Api::V1::ApiController
 
   CLIENT_ID = ENV["spotify_client_id"]
   CLIENT_SECRET = ENV["spotify_client_secret"]
