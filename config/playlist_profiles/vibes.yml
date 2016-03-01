@@ -18,10 +18,10 @@ vibes:
         energy: { target: 0.59, min: .2, max: .87 }
         valence: { target: 0.5 }
     - criteria:
-        energy: { target: 0.62, min: .2, max: .87 }
+        energy: { target: 0.67, min: .2, max: .87 }
         valence: { target: 0.6 }
     - criteria:
-        energy: { target: 0.67, min: .2, max: .87 }
+        energy: { target: 0.70, min: .2, max: .87 }
         valence: { target: 0.6 }
     - criteria:
         energy: { target: 0.68, min: .2, max: .87 }
@@ -33,7 +33,7 @@ vibes:
         energy: { target: 0.72, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.46, min: .2, max: .87 }
+        energy: { target: 0.20, min: .2, max: .87 }
         valence: { target: 0.4 }
     - criteria:
         energy: { target: 0.68, min: .2, max: .87 }
@@ -42,7 +42,7 @@ vibes:
         energy: { target: 0.78, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.70, min: .2, max: .87 }
+        energy: { target: 0.82, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
         energy: { target: 0.70, min: .2, max: .87 }
@@ -51,13 +51,13 @@ vibes:
         energy: { target: 0.75, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.80, min: .2, max: .87 }
+        energy: { target: 0.40, min: .2, max: .87 }
         valence: { target: 0.8 }
     - criteria:
-        energy: { target: 0.79, min: .2, max: .87 }
+        energy: { target: 0.72, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.72, min: .2, max: .87 }
+        energy: { target: 0.75, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
         energy: { target: 0.59, min: .2, max: .87 }
@@ -78,10 +78,10 @@ vibes:
         energy: { target: 0.79, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.77, min: .2, max: .87 }
+        energy: { target: 0.31, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.74, min: .2, max: .87 }
+        energy: { target: 0.68, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
         energy: { target: 0.70, min: .2, max: .87 }
@@ -96,10 +96,10 @@ vibes:
         energy: { target: 0.83, min: .2, max: .87 }
         valence: { target: 0.8 }
     - criteria:
-        energy: { target: 0.79, min: .2, max: .87 }
+        energy: { target: 0.40, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
-        energy: { target: 0.84, min: .2, max: .87 }
+        energy: { target: 0.72, min: .2, max: .87 }
         valence: { target: 0.7 }
     - criteria:
         energy: { target: 0.70, min: .2, max: .87 }

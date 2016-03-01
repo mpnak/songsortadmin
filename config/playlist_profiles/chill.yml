@@ -21,7 +21,7 @@ chill:
         energy: { target: 0.58, min: 0, max: 1}
         valence: { target: 0.6 }
     - criteria:
-        energy: { target: 0.60, min: 0, max: 1}
+        energy: { target: 0.67, min: 0, max: 1}
         valence: { target: 0.6 }
     - criteria:
         energy: { target: 0.58, min: 0, max: 1}
@@ -39,13 +39,13 @@ chill:
         energy: { target: 0.60, min: 0, max: 1}
         valence: { target: 0.60 }
     - criteria:
-        energy: { target: 0.70, min: 0, max: 1}
+        energy: { target: 0.76, min: 0, max: 1}
         valence: { target: 0.70 }
     - criteria:
         energy: { target: 0.68, min: 0, max: 1}
         valence: { target: 0.68 }
     - criteria:
-        energy: { target: 0.68, min: 0, max: 1}
+        energy: { target: 0.64, min: 0, max: 1}
         valence: { target: 0.68 }
     - criteria:
         energy:  { target: 0.70, min: 0, max: 1}
