@@ -26,6 +26,7 @@ class StationsController < ApplicationController
   end
 
   def update
+    @station.touch
     @station.update(station_params)
     respond_with(@station)
   end

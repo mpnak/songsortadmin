@@ -20,6 +20,8 @@ class Station < ActiveRecord::Base
       q = q.where(station_type: params[:station_type])
     end
 
+    q = q.order(updated_at: :desc)
+
     return q
   end
 
