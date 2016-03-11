@@ -8,8 +8,8 @@ class PlaylistProfileChooser
     "wind" => 5,
     "fog" => 3,
     "cloudy" => 6,
-    "partly-cloudy-day" => 6,
-    "partly-cloudy-night" => 5,
+    "partly-cloudy-day" => 8,
+    "partly-cloudy-night" => 6,
     "partly-cloudy" => 5
   }
 
@@ -18,8 +18,8 @@ class PlaylistProfileChooser
     [5,    5,    4,    7,    5,    6,    6,    7,    4,    5], # Sunday
     [1,    1,    3,    5,    5,    5,    6,    4,    3,    4], # Monday
     [1,    3,    3,    5,    5,    5,    6,    4,    3,    4], # Tuesday
-    [1,    3,    4,    5,    6,    5,    6,    4,    3,    4], # Wednesday
-    [3,    4,    4,    5,    6,    6,    7,    5,    4,    3], # Thursday
+    [1,    3,    4,    5,    6,    5,    7,    4,    3,    4], # Wednesday
+    [3,    4,    4,    5,    6,    8,    8,    7,    4,    3], # Thursday
     [5,    5,    5,    7,    8,    8,    9,    8,    6,    5], # Friday
     [5,    4,    5,    7,    7,    8,    8,    8,    10,    7], # Saturday
   ]
