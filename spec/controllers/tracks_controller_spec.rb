@@ -30,11 +30,13 @@ RSpec.describe TracksController, type: :controller do
     context "with valid params" do
       it "creates a new Track" do
         expect {
-          post :create, {:track => {spotify_id: spotify_id, station_id: @station.id} }, valid_session
+          stationdose_auth
+          post(:create, track: {spotify_id: spotify_id, station_id: @station.id})
         }.to change(Track, :count).by(1)
       end
 
       it "assigns a newly created track as @track" do
+        stationdose_auth
         post :create, {:track => {spotify_id: spotify_id, station_id: @station.id} }, valid_session
         expect(assigns(:track)).to be_a(Track)
         expect(assigns(:track)).to be_persisted
@@ -48,6 +50,7 @@ RSpec.describe TracksController, type: :controller do
 
     context "with invalid params" do
       it "assigns a newly created but unsaved track as @track" do
+        stationdose_auth
         post :create, {:track => invalid_attributes}, valid_session
         expect(assigns(:track)).to be_a_new(Track)
       end
@@ -67,6 +70,7 @@ RSpec.describe TracksController, type: :controller do
 
       it "updates the requested station" do
         track = FactoryGirl.create(:track)
+        stationdose_auth
         put :update, {:id => track.to_param, :track => new_attributes}, valid_session
         track.reload
         expect(track.undergroundness).to eq 4
@@ -74,12 +78,14 @@ RSpec.describe TracksController, type: :controller do
 
       it "assigns the requested track as @track" do
         track = Track.create! valid_attributes
+        stationdose_auth
         put :update, {:id => track.to_param, :track => valid_attributes}, valid_session
         expect(assigns(:track)).to eq(track)
       end
 
       it "redirects to the station" do
         track = Track.create! valid_attributes
+        stationdose_auth
         put :update, {:id => track.to_param, :track => valid_attributes}, valid_session
         expect(response).to redirect_to(track)
       end
@@ -88,6 +94,7 @@ RSpec.describe TracksController, type: :controller do
     context "with invalid params" do
       it "assigns the track as @track" do
         track = Track.create! valid_attributes
+        stationdose_auth
         put :update, {:id => track.to_param, :track => invalid_attributes}, valid_session
         expect(assigns(:track)).to eq(track)
       end
@@ -99,6 +106,7 @@ RSpec.describe TracksController, type: :controller do
     it "destroys the requested track" do
       track = Track.create! valid_attributes
       expect {
+        stationdose_auth
         delete :destroy, {:id => track.to_param}, valid_session
       }.to change(Track, :count).by(-1)
     end

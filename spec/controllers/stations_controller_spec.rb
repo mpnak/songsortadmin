@@ -36,6 +36,10 @@ RSpec.describe StationsController, type: :controller do
   # StationsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before(:each) do
+    stationdose_auth
+  end
+
   describe "GET #index" do
     it "assigns all stations as @stations" do
       station = Station.create! valid_attributes
