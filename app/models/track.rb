@@ -3,8 +3,8 @@ class Track < ActiveRecord::Base
   serialize :audio_summary, Hash
 
   belongs_to :station
-  has_many :saved_station_tracks
-  has_many :saved_stations, through: :saved_station_tracks
+  #has_many :saved_station_tracks
+  #has_many :saved_stations, through: :saved_station_tracks
   has_many :track_bans
   has_many :track_favorites
 
