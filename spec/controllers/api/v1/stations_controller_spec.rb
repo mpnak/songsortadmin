@@ -37,15 +37,16 @@ RSpec.describe Api::V1::StationsController, type: :controller do
 
     it "should generate tracks without a user" do
       post :generate_tracks, id: @station.id, format: :json
-      _response = json_response[:tracks]
-      expect(_response.count).to be 30
+      _response = json_response[:station]
+      expect(_response[:tracks].count).to be 30
     end
 
     it "should generate tracks for a user" do
       request.headers['Authorization'] =  @user.auth_token
       post :generate_tracks, id: @station.id, format: :json
-      _response = json_response[:tracks]
-      expect(_response.count).to be 30
+      _response = json_response[:station]
+      expect(_response[:tracks].count).to be 30
+      expect(_response[:tracks_updated_at]).not_to be nil
 
       @station.reload
 
@@ -63,11 +64,11 @@ RSpec.describe Api::V1::StationsController, type: :controller do
       request.headers['Authorization'] =  @user.auth_token
       post :generate_tracks, id: @station.id, format: :json
 
-      generated_tracks = json_response[:tracks]
+      generated_tracks = json_response[:station][:tracks]
 
       get :get_tracks, id: @station.id, format: :json
 
-      get_tracks = json_response[:tracks]
+      get_tracks = json_response[:station][:tracks]
 
       expect(generated_tracks).to eq get_tracks
     end
@@ -84,7 +85,7 @@ RSpec.describe Api::V1::StationsController, type: :controller do
       station_link.undergroundness = 2
       station_link.save
 
-      station_params = { id: @station.id, undergroundness: 4 }
+      station_params = { id: @station.id, undergroundness: 4, saved_station: "1" }
       request.headers['Authorization'] =  @user.auth_token
       put :update, id: @station.id, station: station_params, format: :json
 
@@ -92,6 +93,7 @@ RSpec.describe Api::V1::StationsController, type: :controller do
 
       expect(station_link.undergroundness).to eq 4
       expect(json_response[:station][:undergroundness]).to eq 4
+      expect(json_response[:station][:saved_station]).to eq true
     end
 
     it "should 401 if there is no user" do

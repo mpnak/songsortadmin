@@ -14,21 +14,26 @@ class Api::V1::StationsController < Api::V1::ApiController
   def generate_tracks
     @station = Station.find_with_user!(params[:id], current_user)
 
-    @tracks = @station.generate_tracks({ ll: params[:ll]})
+    tracks = @station.generate_tracks({ ll: params[:ll]})
+    @station.generated_tracks = tracks
 
-    render json: @tracks, root: "tracks"
+    #render json: @tracks, root: "tracks"
+    render json: @station, serializer: StationWithTracksSerializer
   end
 
   def get_tracks
     @station = Station.find_with_user(params[:id], current_user)
 
-    @tracks = if @station.user_station_link
+    tracks = if @station.user_station_link
                 @station.user_station_link.tracks_with_user_info
               else
                 []
               end
 
-    render json: @tracks, root: "tracks"
+    @station.generated_tracks = tracks
+
+    #render json: @tracks, root: "tracks"
+    render json: @station, serializer: StationWithTracksSerializer
   end
 
 
@@ -50,6 +55,6 @@ class Api::V1::StationsController < Api::V1::ApiController
   private
 
   def station_params
-    params.require(:station).permit(:undergroundness, :use_weather, :use_timeofday)
+    params.require(:station).permit(:undergroundness, :use_weather, :use_timeofday, :saved_station)
   end
 end

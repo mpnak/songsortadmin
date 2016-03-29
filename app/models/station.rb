@@ -1,6 +1,5 @@
 class Station < ActiveRecord::Base
   has_many :tracks
-  #has_many :saved_stations
   has_many :track_bans
   has_many :track_favorites
   has_many :user_station_links
@@ -16,6 +15,8 @@ class Station < ActiveRecord::Base
 
   # attach a user_station_link here to delegate playlist options
   attr_accessor :user_station_link
+
+  attr_accessor :generated_tracks
 
   def self.find_with_user(id, user=nil)
     Station.find(id).decorate_with_user_info(user)
@@ -73,6 +74,7 @@ class Station < ActiveRecord::Base
 
       if @user_station_link
         @user_station_link.tracks = playlist.tracks
+        @user_station_link.tracks_updated_at = DateTime.now
         @user_station_link.save
 
         # Note this will decorate with user information like favorited
@@ -113,6 +115,10 @@ class Station < ActiveRecord::Base
 
   def saved_station
     user_station_link ? user_station_link.saved_station : DEFAULT_STATION_OPTIONS[:saved_station]
+  end
+
+  def tracks_updated_at
+    user_station_link ? user_station_link.tracks_updated_at : nil
   end
   #
 
