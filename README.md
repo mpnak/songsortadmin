@@ -98,6 +98,12 @@ example data:
 }
 ```
 
+Get the energy profile
+```
+GET /api/stations/playlist_profile_chooser
+params:
+  ll // e.g. "37.1,45.63"
+```
 
 ### Saved Stations
 
