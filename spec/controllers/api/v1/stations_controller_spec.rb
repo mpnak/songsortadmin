@@ -28,6 +28,20 @@ RSpec.describe Api::V1::StationsController, type: :controller do
 
   end
 
+  describe "#playlist_profile_chooser" do
+    it "should choose a plsylsit_profile from a ll" do
+      ll = "33.985488,-118.475250"
+      get :playlist_profile_chooser, ll: ll
+      _response = json_response[:playlist_profile_chooser]
+      expect(_response).not_to be nil
+      expect(_response[:weather]).not_to be nil
+      expect(_response[:localtime]).not_to be nil
+      expect(_response[:day]).not_to be nil
+      expect(_response[:name]).not_to be nil
+    end
+
+  end
+
   describe "#generate_tracks" do
 
     before(:each) do

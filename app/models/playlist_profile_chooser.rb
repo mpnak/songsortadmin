@@ -47,35 +47,40 @@ class PlaylistProfileChooser
     bangin: 10
   }
 
-  def self.choose_name(options = {})
+  include ActiveModel::SerializerSupport
+
+  attr_accessor :ll, :forecast, :timezone, :localtime, :weather, :hour, :day, :name
+
+  def initialize(options = {})
 
     ap options
+    @print = options[:print] || false
 
     # Get local weather
-    options[:ll] ||= "33.985488,-118.475250" # Venice beach
+    @ll = options[:ll] || "33.985488,-118.475250" # Venice beach
 
-    latlng = options[:ll].split(',').map(&:to_f)
-    forecast = ForecastIO.forecast(*latlng)
-    options[:timezone] = forecast["timezone"]
-    localtime = ActiveSupport::TimeZone[options[:timezone]].now
+    latlng = @ll.split(',').map(&:to_f)
+    @forecast = ForecastIO.forecast(*latlng)
+    @timezone = forecast["timezone"]
+    @localtime = ActiveSupport::TimeZone[@timezone].now
 
-    options[:weather] ||= forecast["currently"]["icon"]
-    options[:hour] ||= localtime.hour
-    options[:day] ||= localtime.wday
+    @weather = options[:weather] || forecast["currently"]["icon"]
+    @hour = options[:hour] || @localtime.hour
+    @day = options[:day] || @localtime.wday
 
-    choose_name_by_values(options[:weather], options[:day], options[:hour], options)
+    @name = choose_name_by_values(@weather, @day, @hour)
   end
 
-  def self.choose_name_by_values(weather, day, hour, options = {})
+  def choose_name_by_values(weather, day, hour)
     weather_score = score_for_forecastio_icon(weather)
     day_time_score = score_for_day_index_time_index(day, time_index_from_hour(hour))
     total_score = (weather_score + day_time_score) / 2.0
 
     name = playlist_name(total_score)
 
-    if options[:print]
-      puts "=========== PlaylistProfileChooser.choose ============="
-      puts "Location: #{options[:ll]}, Timezone: #{options[:timezone]}"
+    if @print
+      puts "=========== PlaylistProfileChooser.new ============="
+      puts "Location: #{@ll}, Timezone: #{@timezone}"
       puts "Weather: #{weather}, Score: #{weather_score}"
       puts "Hour: #{hour}, Day: #{day}, Score: #{day_time_score}"
       puts "Name: #{name}, Score: #{total_score}"
@@ -87,21 +92,21 @@ class PlaylistProfileChooser
 
   private
 
-  def self.score_for_forecastio_icon(icon_name)
+  def score_for_forecastio_icon(icon_name)
     SCORE_FOR_FORECASTIO_ICONS.fetch(icon_name) { rand(10) +1 }
   end
 
-  def self.playlist_name(score)
+  def playlist_name(score)
     PLAYLIST_SCORES.each do |name, value|
       return name if score <= value
     end
   end
 
-  def self.score_for_day_index_time_index(day_index, time_index)
+  def score_for_day_index_time_index(day_index, time_index)
     DAY_TIME_SCORES[day_index][time_index]
   end
 
-  def self.time_index_from_hour(hour)
+  def time_index_from_hour(hour)
     TIME_LOWER_BOUND_AND_INDEXES.bsearch {|(lbound, _)| hour <= lbound }.last
   end
 end

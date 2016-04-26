@@ -11,6 +11,11 @@ class Api::V1::StationsController < Api::V1::ApiController
     respond_with Station.find_with_user(params[:id], current_user)
   end
 
+  def playlist_profile_chooser
+    playlist_profile_chooser = PlaylistProfileChooser.new(params)
+    render json: playlist_profile_chooser
+  end
+
   def generate_tracks
     @station = Station.find_with_user!(params[:id], current_user)
 
