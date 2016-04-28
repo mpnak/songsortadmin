@@ -27,6 +27,11 @@ Rails.application.routes.draw do
           post "tracks" => "stations#generate_tracks"
           get "tracks", action: "get_tracks"
         end
+
+        collection do
+          get "playlist_profile_chooser", action: "playlist_profile_chooser"
+        end
+
       end
 
       resources :users, only: [] do

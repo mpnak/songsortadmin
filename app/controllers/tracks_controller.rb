@@ -14,6 +14,8 @@ class TracksController < ApplicationController
   end
 
   def update
+    @track = Track.find(params[:id])
+
     if @track.update(track_update_params)
       render json: @track, status: 201, location: @track
     else
@@ -22,6 +24,8 @@ class TracksController < ApplicationController
   end
 
   def destroy
+    @track = Track.find(params[:id])
+
     if @track.destroy
       head :no_content
     else
@@ -31,7 +35,6 @@ class TracksController < ApplicationController
 
   private
   def set_track
-    @track = Track.find(params[:id])
   end
 
   def track_params

@@ -3,18 +3,18 @@ class Track < ActiveRecord::Base
   serialize :audio_summary, Hash
 
   belongs_to :station
-  has_many :saved_station_tracks
-  has_many :saved_stations, through: :saved_station_tracks
+  #has_many :saved_station_tracks
+  #has_many :saved_stations, through: :saved_station_tracks
   has_many :track_bans
   has_many :track_favorites
 
-  validates :station, :title, :spotify_id, :artist, presence: true
+  validates :station, :title, :spotify_id, :echo_nest_song_id, :artist, presence: true
 
   attr_accessor :favorited
 
   # set favorited = true if there is a TrackFavorite relation for that station and user
   # tracks is an array or relation of track models.
-  def self.decorate_with_favorited(user_id, station_id, tracks)
+  def self.decorate_with_user_info(user_id, station_id, tracks)
     favs = TrackFavorite.where(
       track_id: tracks,
       station_id: station_id,
@@ -49,7 +49,7 @@ class Track < ActiveRecord::Base
         title: echo_track.title,
         artist: echo_track.artist,
         spotify_id: spotify_id,
-        echo_nest_id: echo_track.id,
+        #echo_nest_id: echo_track.id,
         echo_nest_song_id: echo_track.song_id,
         audio_summary: echo_track.audio_summary.attrs,
         energy: echo_track.audio_summary.attrs[:energy],

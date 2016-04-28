@@ -1,13 +1,13 @@
 class PlaylistProfile
   def self.choose(options = {})
-    options[:name] ||= (PlaylistProfileChooser.choose_name(options))
-    new(options)
+    name = options[:name] || PlaylistProfileChooser.new(options).name
+    new(name, options)
   end
 
   attr_reader :slot_profiles, :size
 
-  def initialize(options = {})
-    data = PLAYLIST_PROFILES[options[:name]].dup
+  def initialize(name, options = {})
+    data = PLAYLIST_PROFILES[name].dup
 
     if undergroundness = options[:undergroundness]
       data[:slots].each do |slot_data|

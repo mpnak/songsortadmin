@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209181833) do
+ActiveRecord::Schema.define(version: 20160329181550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,11 @@ ActiveRecord::Schema.define(version: 20160209181833) do
     t.text     "track_ids"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "undergroundness",   default: 3
+    t.boolean  "saved_station",     default: false
+    t.boolean  "use_weather",       default: true
+    t.boolean  "use_timeofday",     default: true
+    t.datetime "tracks_updated_at"
   end
 
   add_index "user_station_links", ["station_id"], name: "index_user_station_links_on_station_id", using: :btree
