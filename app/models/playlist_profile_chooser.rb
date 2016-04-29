@@ -38,6 +38,10 @@ class PlaylistProfileChooser
     [24, 8]
   ]
 
+  ENERGY_PROFILE_NAMES = [
+    :mellow, :chill, :vibes, :lounge, :club, :bangin
+  ]
+
   PLAYLIST_SCORES = {
     mellow: 2.5,
     chill: 3.5,
@@ -69,6 +73,10 @@ class PlaylistProfileChooser
     @day = options[:day] || @localtime.wday
 
     @name = choose_name_by_values(@weather, @day, @hour)
+  end
+
+  def all_names
+    ENERGY_PROFILE_NAMES
   end
 
   def choose_name_by_values(weather, day, hour)

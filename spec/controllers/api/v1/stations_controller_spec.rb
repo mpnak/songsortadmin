@@ -36,8 +36,10 @@ RSpec.describe Api::V1::StationsController, type: :controller do
       expect(_response).not_to be nil
       expect(_response[:weather]).not_to be nil
       expect(_response[:localtime]).not_to be nil
+      expect(_response[:timezone]).not_to be nil
       expect(_response[:day]).not_to be nil
       expect(_response[:name]).not_to be nil
+      expect(_response[:all_names]).to include("mellow", "lounge", "club")
     end
 
   end

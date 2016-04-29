@@ -104,6 +104,24 @@ Get the energy profile
 GET /api/stations/playlist_profile_chooser
 params:
   ll // e.g. "37.1,45.63"
+example data:
+{
+  "playlist_profile_chooser": {
+    "name": "club",
+    "weather": "partly-cloudy-day",
+    "localtime": "2016-04-29T16:14:17+03:00",
+    "day": 5,
+    "all_names": [
+      "mellow",
+      "chill",
+      "vibes",
+      "lounge",
+      "club",
+      "bangin"
+    ],
+    "timezone": "Europe/Kiev"
+  }
+}
 ```
 
 ### Saved Stations
