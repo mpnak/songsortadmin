@@ -137,14 +137,20 @@ PUT /api/station/:station_id
 example data:
 {
   station: {
-    saved_station: true
+    saved_station: true // or "1"
   }
 }
 ```
 
-Unfavorite a station
+Unsave a station
 ```
-DELETE /api/stations/:station_id
+PUT /api/station/:station_id
+example data:
+{
+  station: {
+    saved_station: false // or "0"
+  }
+}
 ```
 
 ### Tracks
