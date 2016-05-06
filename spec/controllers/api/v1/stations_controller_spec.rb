@@ -112,6 +112,24 @@ RSpec.describe Api::V1::StationsController, type: :controller do
       expect(json_response[:station][:saved_station]).to eq true
     end
 
+    it "should unsave a statiob" do
+      @station = FactoryGirl.create :station
+      @user = FactoryGirl.create :user
+      station_link = @station.user_station_links.where(user: @user).first_or_create
+      station_link.undergroundness = 2
+      station_link.saved_station = true
+      station_link.save
+
+      station_params = { id: @station.id, saved_station: "0" }
+      request.headers['Authorization'] =  @user.auth_token
+      put :update, id: @station.id, station: station_params, format: :json
+
+      station_link.reload
+
+      expect(json_response[:station][:saved_station]).to eq false
+    end
+
+
     it "should 401 if there is no user" do
       @station = FactoryGirl.create :station
       put :update, id: @station.id, format: :json

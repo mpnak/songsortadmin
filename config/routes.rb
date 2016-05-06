@@ -34,17 +34,6 @@ Rails.application.routes.draw do
 
       end
 
-      resources :users, only: [] do
-        resources :saved_stations, only: [:index, :new, :create]
-      end
-
-      resources :saved_stations, only: [:show, :edit, :update, :destroy] do
-        member do
-          post "tracks", action: "generate_tracks"
-          get "tracks"
-        end
-      end
-
       resources :tracks, only: [] do
         member do
           post "play"
