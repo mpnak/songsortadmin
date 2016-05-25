@@ -18,89 +18,89 @@ mellow:
         energy:  { target: 0.16, min: 0, max: .4 }
         valence: { target: 0.3 }
     - criteria:
-        energy: { target: 0.23, min: 0, max: .55 }
-        valence: { target: 0.48 }
-    - criteria:
-        energy: { target: 0.30, min: 0, max: .54 }
+        energy: { target: 0.17, min: 0, max: .55 }
         valence: { target: 0.4 }
     - criteria:
-        energy: { target: 0.44, min: 0, max: .64 }
-        valence: { target: 0.52 }
+        energy: { target: 0.24, min: 0, max: .54 }
+        valence: { target: 0.2 }
     - criteria:
-        energy: { target: 0.48, min: 0, max: .71 }
+        energy: { target: 0.32, min: 0, max: .64 }
+        valence: { target: 0.19 }
+    - criteria:
+        energy: { target: 0.10, min: 0, max: .71 }
         valence: { target: 0.46 }
     - criteria:
-        energy: { target: 0.32, min: 0, max: .78 }
+        energy: { target: 0.26, min: 0, max: .78 }
+        valence: { target: 0.2 }
+    - criteria:
+        energy: { target: 0.18, min: 0, max: .9 }
+        valence: { target: 0.22 }
+    - criteria:
+        energy: { target: 0.41, min: 0, max: .80 }
+        valence: { target: 0.05 }
+    - criteria:
+        energy: { target: 0.34, min: 0, max: .9 }
+        valence: { target: 0.3 }
+    - criteria:
+        energy: { target: 0.40, min: 0, max: .9 }
+        valence: { target: 0.04 }
+    - criteria:
+        energy: { target: 0.39, min: 0, max: .9 }
         valence: { target: 0.4 }
     - criteria:
         energy: { target: 0.36, min: 0, max: .9 }
-        valence: { target: 0.36 }
+        valence: { target: 0.2 }
     - criteria:
-        energy: { target: 0.51, min: 0, max: .80 }
-        valence: { target: 0.3 }
-    - criteria:
-        energy: { target: 0.44, min: 0, max: .9 }
-        valence: { target: 0.3 }
-    - criteria:
-        energy: { target: 0.51, min: 0, max: .9 }
-        valence: { target: 0.3 }
-    - criteria:
-        energy: { target: 0.49, min: 0, max: .9 }
-        valence: { target: 0.4 }
+        energy: { target: 0.43, min: 0, max: .9 }
+        valence: { target: 0.28 }
     - criteria:
         energy: { target: 0.42, min: 0, max: .9 }
-        valence: { target: 0.39 }
-    - criteria:
-        energy: { target: 0.49, min: 0, max: .9 }
-        valence: { target: 0.4 }
-    - criteria:
-        energy: { target: 0.52, min: 0, max: .9 }
         valence: { target: 0.3 }
     - criteria:
         energy: { target: 0.45, min: 0, max: .9 }
-        valence: { target: 0.5 }
+        valence: { target: 0.3 }
     - criteria:
         energy: { target: 0.39, min: 0, max: .9 }
-        valence: { target: 0.42 }
+        valence: { target: 0.32 }
     - criteria:
         energy: { target: 0.28, min: 0, max: .9 }
-        valence: { target: 0.6 }
-    - criteria:
-        energy: { target: 0.51, min: 0, max: .9 }
-        valence: { target: 0.55 }
-    - criteria:
-        energy: { target: 0.44, min: 0, max: .9 }
-        valence: { target: 0.6 }
+        valence: { target: 0.06 }
     - criteria:
         energy: { target: 0.36, min: 0, max: .9 }
-        valence: { target: 0.75 }
+        valence: { target: 0.22 }
     - criteria:
-        energy: { target: 0.25, min: 0, max: .9 }
+        energy: { target: 0.32, min: 0, max: .9 }
+        valence: { target: 0.18 }
+    - criteria:
+        energy: { target: 0.26, min: 0, max: .9 }
+        valence: { target: 0.18 }
+    - criteria:
+        energy: { target: 0.15, min: 0, max: .9 }
         valence: { target: 0.1 }
     - criteria:
         energy: { target: 0.32, min: 0, max: .9 }
-        valence: { target: 0.4 }
+        valence: { target: 0.15 }
     - criteria:
-        energy: { target: 0.50, min: 0, max: .9 }
+        energy: { target: 0.40, min: 0, max: .9 }
         valence: { target: 0.3 }
     - criteria:
-        energy: { target: 0.45, min: 0, max: .9 }
-        valence: { target: 0.46 }
+        energy: { target: 0.39, min: 0, max: .9 }
+        valence: { target: 0.39 }
     - criteria:
-        energy: { target: 0.48, min: 0, max: .9 }
+        energy: { target: 0.38, min: 0, max: .9 }
         valence: { target: 0.4 }
-    - criteria:
-        energy: { target: 0.46, min: 0, max: .9 }
-        valence: { target: 0.2 }
-    - criteria:
-        energy: { target: 0.48, min: 0, max: .9 }
-        valence: { target: 0.4 }
-    - criteria:
-        energy: { target: 0.41, min: 0, max: .9 }
-        valence: { target: 0.4 }
-    - criteria:
-        energy: { target: 0.21, min: 0, max: .9 }
-        valence: { target: 0.2 }
     - criteria:
         energy: { target: 0.36, min: 0, max: .9 }
+        valence: { target: 0.2 }
+    - criteria:
+        energy: { target: 0.38, min: 0, max: .9 }
         valence: { target: 0.4 }
+    - criteria:
+        energy: { target: 0.32, min: 0, max: .9 }
+        valence: { target: 0.3 }
+    - criteria:
+        energy: { target: 0.16, min: 0, max: .9 }
+        valence: { target: 0.2 }
+    - criteria:
+        energy: { target: 0.24, min: 0, max: .9 }
+        valence: { target: 0.2 }
