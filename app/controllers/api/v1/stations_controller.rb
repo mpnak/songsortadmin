@@ -19,10 +19,15 @@ class Api::V1::StationsController < Api::V1::ApiController
   def generate_tracks
     @station = Station.find_with_user!(params[:id], current_user)
 
-    tracks = @station.generate_tracks({ ll: params[:ll]})
+    tracks = @station.generate_tracks({ ll: params[:ll] })
     @station.generated_tracks = tracks
 
-    #render json: @tracks, root: "tracks"
+    # Update users undergroundness setting if needed. For the moment, we assume
+    # success and don't bother with error responses
+    if (@user_station_link = @station.user_station_link) && params[:undergroundness]
+      @user_station_link.update(undergroundness: params[:undergroundness])
+    end
+
     render json: @station, serializer: StationWithTracksSerializer
   end
 
@@ -37,10 +42,8 @@ class Api::V1::StationsController < Api::V1::ApiController
 
     @station.generated_tracks = tracks
 
-    #render json: @tracks, root: "tracks"
     render json: @station, serializer: StationWithTracksSerializer
   end
-
 
   def update
     @station = Station.find_with_user!(params[:id], current_user)
@@ -60,6 +63,6 @@ class Api::V1::StationsController < Api::V1::ApiController
   private
 
   def station_params
-    params.require(:station).permit(:undergroundness, :use_weather, :use_timeofday, :saved_station)
+    params.require(:station).permit(:undergroundness, :saved_station)
   end
 end

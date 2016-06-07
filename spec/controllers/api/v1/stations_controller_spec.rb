@@ -49,6 +49,9 @@ RSpec.describe Api::V1::StationsController, type: :controller do
     before(:each) do
       @station = FactoryGirl.create :station
       @user = FactoryGirl.create :user
+      @station_link = @station.user_station_links.where(user: @user).first_or_create
+      @station_link.undergroundness = 2
+      @station_link.save
     end
 
     it "should generate tracks without a user" do
@@ -69,6 +72,22 @@ RSpec.describe Api::V1::StationsController, type: :controller do
       station_link = @station.user_station_links.where(user: @user).first
       expect(station_link).not_to be nil
       expect(station_link.tracks.count).to be 30
+    end
+
+    it "should persist undergroundness for a user" do
+      request.headers['Authorization'] =  @user.auth_token
+      post :generate_tracks, id: @station.id, name: "mellow", undergroundness: 3, format: :json
+      _response = json_response[:station]
+      expect(_response[:tracks].count).to be 30
+      expect(_response[:tracks_updated_at]).not_to be nil
+      expect(_response[:undergroundness]).to be 3
+
+      @station.reload
+
+      station_link = @station.user_station_links.where(user: @user).first
+      expect(station_link).not_to be nil
+      expect(station_link.tracks.count).to be 30
+      expect(station_link.undergroundness).to be 3
     end
   end
 

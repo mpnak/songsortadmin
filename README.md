@@ -75,6 +75,7 @@ POST /api/stations/:station_id/tracks
 params:
   ll // (optional) location string in the format "latitude,longitude" e.g. "37.1,45.63"
   name // (optional) the name of the energy profile e.g. "mellow". If name is supplied it will ignore the ll paramater and short cut to using the name
+  undergroundness // (optional) if supplied, the users undergroundness setting will be updated
 ```
 
 Read existing tracks
