@@ -60,7 +60,8 @@ gem 'awesome_print'
 gem "yaml_db"
 gem 'active_model_serializers', '~> 0.8.3'
 gem "encrypted_strings"
-gem 'rspotify', git: "https://github.com/vaughankg/rspotify.git"
+#gem 'rspotify', git: "https://github.com/vaughankg/rspotify.git"
+gem 'rspotify'
 gem 'timezone'
 gem 'forecast_io'
 gem 'newrelic_rpm'
