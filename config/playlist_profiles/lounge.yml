@@ -30,7 +30,7 @@ lounge:
         energy: { target: 0.41, min: .3, max: .9 }
         valence: { target: 0.3 }
     - criteria:
-        energy: { target: 0.62t, min: .3, max: 1 }
+        energy: { target: 0.62, min: .3, max: 1 }
         valence: { target: 0.3 }
     - criteria:
         energy: { target: 0.60, min: .3, max: 1 }
