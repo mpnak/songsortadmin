@@ -16,13 +16,16 @@ RSpec.describe Station, type: :model do
     expect(station.tracks.count).to be > 0
   end
 
-  describe "#generate_tracks" do
-    it "should generate some tracks" do
+  describe "#generate_playlist" do
+    it "should generate a playlist" do
       station = FactoryGirl.create :station
 
-      tracks = station.generate_tracks
+      playlist = station.generate_playlist
 
-      expect(tracks.count).to be > 0
+      expect(playlist.tracks.count).to be > 0
+      expect(playlist.undergroundness).to eq 3
+      expect(playlist.profile_name).not_to be(nil)
+      expect(playlist.station).to eq station
     end
 
   end

@@ -4,9 +4,12 @@ class PlaylistProfile
     new(name, options)
   end
 
-  attr_reader :slot_profiles, :size
+  attr_reader :slot_profiles, :size, :name, :undergroundness
 
   def initialize(name, options = {})
+    @name = name
+    @undergroundness = options[:undergroundness]
+
     data = PLAYLIST_PROFILES[name].dup
 
     if undergroundness = options[:undergroundness]
@@ -18,10 +21,6 @@ class PlaylistProfile
 
     @slot_profiles = data[:slots].each_with_index.map {|x, i| SlotProfile.new(data, i) }
     @size = @slot_profiles.count
-  end
-
-  def playlist(tracks)
-    Playlist.new(self, tracks)
   end
 
   class SlotProfile

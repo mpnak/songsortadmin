@@ -5,6 +5,7 @@ class StationWithTracksSerializer < ActiveModel::Serializer
   has_many :tracks
 
   def tracks
-    object.generated_tracks
+    object.playlist_tracks
   end
+
 end

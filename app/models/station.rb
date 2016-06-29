@@ -3,20 +3,19 @@ class Station < ActiveRecord::Base
   has_many :track_bans
   has_many :track_favorites
   has_many :user_station_links
+  has_many :playlists
 
   validates :name, presence: true
 
   DEFAULT_STATION_OPTIONS = {
     undergroundness: 3,
-    use_weather: true,
-    use_timeofday: true,
     saved_station: false
   }
 
   # attach a user_station_link here to delegate playlist options
   attr_accessor :user_station_link
 
-  attr_accessor :generated_tracks
+  attr_accessor :playlist
 
   def self.find_with_user(id, user=nil)
     Station.find(id).decorate_with_user_info(user)
@@ -46,42 +45,40 @@ class Station < ActiveRecord::Base
     return q.map {|s| s.decorate_with_user_info(user) }
   end
 
-  def generate_tracks(options = {})
+  def generate_playlist(options = {})
     if ["featured", "sponsored"].include?(station_type)
       tracks.order(created_at: :asc)
     else
       # tracks.sample(30)
 
-      options[:undergroundness] = undergroundness
-      options[:use_weather] = use_weather
-      options[:use_timeofday] = use_timeofday
+      if options[:undergroundness]
+        options[:undergroundness] = options[:undergroundness].to_i
+      end
+      options[:undergroundness] ||= undergroundness
+
 
       playlist_profile = PlaylistProfile.choose(options)
 
-      cleaned_tracks = self.tracks
-        .where.not(energy: nil)
-        .where.not(undergroundness: nil)
-        .where.not(valence: nil)
-
-      playlist = playlist_profile.playlist(cleaned_tracks)
-
-      playlist.print_summary
+      # for the moment print the summary each time
+      @playlist = Playlist.generate(playlist_profile, self, { print_summary: options[:print] })
 
       if options[:print]
-        playlist.print_summary
+        puts playlist.summary[:text]
         return nil
       end
 
       if @user_station_link
-        @user_station_link.tracks = playlist.tracks
-        @user_station_link.tracks_updated_at = DateTime.now
+        #@user_station_link.tracks = playlist.tracks
+        #@user_station_link.tracks_updated_at = DateTime.now
+        @user_station_link.playlist = @playlist
+        @user_station_link.undergroundness = options[:undergroundness]
         @user_station_link.save
 
         # Note this will decorate with user information like favorited
-        @user_station_link.tracks_with_user_info
-      else
-        playlist.tracks
+        #@user_station_link.tracks_with_user_info
       end
+
+      @playlist
     end
   end
 
@@ -101,16 +98,17 @@ class Station < ActiveRecord::Base
 
   # Delegated methods
 
+  # use a local cache if present, otherwise look at the user_station_link
+  def playlist
+    return @playlist if @playlist
+
+    return nil unless user_station_link.try(:playlist)
+
+    return user_station_link.playlist
+  end
+
   def undergroundness
     user_station_link ? user_station_link.undergroundness : DEFAULT_STATION_OPTIONS[:undergroundness]
-  end
-
-  def use_weather
-    user_station_link ? user_station_link.use_weather : DEFAULT_STATION_OPTIONS[:use_weather]
-  end
-
-  def use_timeofday
-    user_station_link ? user_station_link.use_timeofday : DEFAULT_STATION_OPTIONS[:use_timeofday]
   end
 
   def saved_station
@@ -118,8 +116,14 @@ class Station < ActiveRecord::Base
   end
 
   def tracks_updated_at
-    user_station_link ? user_station_link.tracks_updated_at : nil
+    return nil unless playlist
+    return playlist.created_at
   end
-  #
+
+  def playlist_tracks
+    return [] unless playlist
+    return playlist.tracks unless user_station_link
+    return playlist.tracks_with_user_info(user_station_link.user.id)
+  end
 
 end

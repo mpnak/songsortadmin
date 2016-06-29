@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329181550) do
+ActiveRecord::Schema.define(version: 20160629210031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20160329181550) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+  create_table "playlists", force: true do |t|
+    t.integer  "station_id"
+    t.string   "profile_name"
+    t.integer  "undergroundness"
+    t.text     "tracks"
+    t.text     "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "saved_station_tracks", force: true do |t|
     t.integer  "saved_station_id"
@@ -118,6 +128,7 @@ ActiveRecord::Schema.define(version: 20160329181550) do
     t.boolean  "use_weather",       default: true
     t.boolean  "use_timeofday",     default: true
     t.datetime "tracks_updated_at"
+    t.integer  "playlist_id"
   end
 
   add_index "user_station_links", ["station_id"], name: "index_user_station_links_on_station_id", using: :btree

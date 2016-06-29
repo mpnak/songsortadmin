@@ -1,0 +1,57 @@
+<h1><%= @user.uid %> <em><%= @station.name %></em></h1>
+
+<h2>Settings</h2>
+
+<table class="table table-striped">
+  <tr><th>Undergroundness</th><td><%= @link.undergroundness %><td></tr>
+  <tr><th>Saved Station</th><td><%= @link.saved_station %><td></tr>
+  <tr><th>Playlist Updated</th><td><%= @link.tracks_updated_at %><td></tr>
+</table>
+
+<h2>Current Playlist</h2>
+
+<% if @playlist %>
+
+  <h3>Info</h3>
+
+  <table class="table table-striped">
+    <tr><th>Undergroundness</th><td><%= @playlist.undergroundness %><td></tr>
+    <tr><th>Profile Name</th><td><%= @playlist.profile_name %><td></tr>
+    <tr><th>Created</th><td><%= @playlist.created_at %><td></tr>
+  </table>
+
+  <h3>Tracks</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>artist</th>
+      <th>undergroundness</th>
+      <th>energy</th>
+      <th>valence</th>
+      <th>favorited</th>
+    </tr>
+
+    <% @playlist.tracks_with_user_info(@link.user.id).each do |track| %>
+      <tr>
+        <td><%= track.id %></td>
+        <td><%= track.title %></td>
+        <td><%= track.artist %></td>
+        <td><%= track.undergroundness %></td>
+        <td><%= track.energy %></td>
+        <td><%= track.valence %></td>
+        <td><%= track.favorited %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <h3>Summary</h3>
+  <div><%= @playlist.summary[:text] %></div>
+
+<% else %>
+
+  <h4>No playlist</h4>
+
+<% end %>
+
+

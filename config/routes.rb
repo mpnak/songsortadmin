@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get '/auth/spotify/callback', to: 'api/v1/spotify#callback'
   get '/api/spotify/callback', to: 'api/v1/spotify#swap'
 
+  resources :users, only: [:index, :show] do
+    member do
+      get "station/:station_id", action: "station", as: "station"
+    end
+  end
+
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
 
