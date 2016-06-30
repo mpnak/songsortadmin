@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def station
     @user = User.find(params[:id])
-    @station = Station.find_with_user(params[:station_id], params[:id])
+    @station = Station.find_with_user!(params[:station_id], params[:id])
     @link = @station.user_station_link
     @playlist = @link.playlist
   end
