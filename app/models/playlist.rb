@@ -1,14 +1,38 @@
-class Playlist
+# profile_name
+# undergroundness
+# tracks, array
+# summary, hash
+# station_id, belongs_to
 
-  def initialize(playlist_profile, tracks)
-    @playlist_profile = playlist_profile
+class Playlist < ActiveRecord::Base
+
+  belongs_to :station
+  serialize :tracks, Array
+  serialize :summary, Hash
+
+  def self.generate(playlist_profile, station, options = {})
+
+    tracks = station.tracks
+        .where.not(energy: nil)
+        .where.not(undergroundness: nil)
+        .where.not(valence: nil)
+
     all_track_weights = tracks.map { |track| TrackWeight.new(track, playlist_profile) }
 
-    @track_weights = tracks.count < playlist_profile.size ?  [] : select_track_weights(all_track_weights)
+    track_weights = tracks.count < playlist_profile.size ?  [] : select_track_weights(all_track_weights, playlist_profile)
+
+    Playlist.create(
+      station: station,
+      profile_name: playlist_profile.name,
+      undergroundness: playlist_profile.undergroundness,
+      tracks: track_weights.map(&:track),
+      summary: options[:print_summary] ? { text: print_summary(track_weights, playlist_profile) } : {}
+    )
+
   end
 
-  def select_track_weights(track_weights)
-    @playlist_profile.size.times.reduce([]) do |memo,n|
+  def self.select_track_weights(track_weights, playlist_profile)
+    playlist_profile.size.times.reduce([]) do |memo,n|
       selected = track_weights.each_with_index.max_by(1) do |tw, i|
         tw.weights[n].random_calibrated
       end.first
@@ -17,26 +41,23 @@ class Playlist
     end
   end
 
-  def tracks
-    @track_weights.map(&:track)
-  end
-
-  # chainable
-  def print_summary
-    if @track_weights.empty?
+  def self.print_summary(track_weights, playlist_profile)
+    if track_weights.empty?
       puts "There are not enough tracks available to fill the playlist"
       return
     end
 
+    output = ""
+
     sum_differences = Hash.new(0.0)
 
-    @playlist_profile.size.times.reduce(0) do |memo, n|
-      track_weight = @track_weights[n]
+    playlist_profile.size.times.reduce(0) do |memo, n|
+      track_weight = track_weights[n]
       track = track_weight.track
 
-      output = "Slot #{n}, "
+      row_output = "Slot #{n}, "
 
-      output += @playlist_profile.slot_profiles[n].criteria.map do |criteria_name, criteria|
+      row_output += playlist_profile.slot_profiles[n].criteria.map do |criteria_name, criteria|
         target = criteria.target
         value = track.send(criteria_name)
 
@@ -49,15 +70,19 @@ class Playlist
 
       weight = track_weight.weights[n].total.round(2)
       rweight = track_weight.weights[n].random_calibrated.round(4)
-      output += ", Weight: #{weight} | #{rweight}, #{track.title}, #{track.id}"
-      puts output
+      row_output += ", Weight: #{weight} | #{rweight}, #{track.title}, #{track.id}"
+      output += row_output + "\n"
     end
 
-    @playlist_profile.slot_profiles[0].criteria.each do |criteria_name, criteria|
-      puts "#{criteria_name} avg. difference: #{(sum_differences[criteria_name]/@playlist_profile.size).round(4)}"
+    playlist_profile.slot_profiles[0].criteria.each do |criteria_name, criteria|
+      output += "#{criteria_name} avg. difference: #{(sum_differences[criteria_name]/playlist_profile.size).round(4)}"
     end
 
-    self
+    output
+  end
+
+  def tracks_with_user_info(user_id)
+    Track.decorate_with_user_info(user_id, station.id, tracks)
   end
 
   class TrackWeight

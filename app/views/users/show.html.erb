@@ -1,0 +1,10 @@
+<table class="table table-striped">
+  <tr><th>Id</th><td><%= @user.id %><td></tr>
+  <tr><th>Spotify Id</th><td><%= @user.uid %><td></tr>
+  <tr><th>Created</th><td><%= @user.created_at %><td></tr>
+</table>
+
+<h3>Stations</h3>
+<% @stations.each do |station| %>
+  <div><%= link_to station.name, station_user_path(@user, station) %></div>
+<% end %>

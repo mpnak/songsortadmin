@@ -1,0 +1,3 @@
+<% @users.each do |user| %>
+  <div><%= link_to "id: #{user.id}, spotify id: #{user.uid}",  user_path(user) %></div>
+<% end %>
