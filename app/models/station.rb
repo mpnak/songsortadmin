@@ -47,7 +47,13 @@ class Station < ActiveRecord::Base
 
   def generate_playlist(options = {})
     if ["featured", "sponsored"].include?(station_type)
-      tracks.order(created_at: :asc)
+      @playlist = Playlist.new(
+        station: self,
+        profile_name: station_type,
+        undergroundness: nil,
+        tracks: tracks.order(created_at: :asc),
+        summary: {}
+      )
     else
       # tracks.sample(30)
 
