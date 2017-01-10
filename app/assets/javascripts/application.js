@@ -140,7 +140,9 @@ $(function() {
         data: track_data
       })
       .done(function(data) {
-        $('#tracks').mixItUp('prepend', $(data));
+        //$('#tracks').mixItUp('prepend', $(data));
+        mixer.prepend('#tracks'[true],[$(data)]);
+
       })
       .fail(function() {
         alert("There was an error while importing the song: " + match[1]);
