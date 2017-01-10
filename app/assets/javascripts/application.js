@@ -33,7 +33,11 @@ $(function () {
     },
     animation: {
       enable: false
-    }
+    },
+    pagination: {
+        limit: 100 // impose a limit of 8 targets per page
+
+    } 
   })
 
   $('#tracks').on('click', '.rating-item', function () {
@@ -152,8 +156,12 @@ $(function () {
         data: track_data
       })
       .done(function (data) {
+        // $('.container').mixItUp('append', $users , {filter: 'all', sort: 'name:asc'});
         // $('#tracks').mixItUp('prepend', $(data));
-        mixer.prepend('#tracks'[true], [$(data)])
+
+        //mixer.prepend(newElement)
+        //mixer.prepend(('#tracks'),[true])
+        
       })
       .fail(function () {
         alert('There was an error while importing the song: ' + match[1])

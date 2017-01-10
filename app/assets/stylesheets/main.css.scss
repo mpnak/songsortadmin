@@ -188,7 +188,7 @@ $track-height: 48px;
 
 .rating-labels {
   float: right;
-  height: 3em;
+  height: 4em;
   font-size: 0.8em;
   color: $star-dust;
   width: $track-height * 5 + 4;
@@ -211,6 +211,7 @@ $track-height: 48px;
 
 #tracks {
   width: 100%;
+  padding-top:20px;
 }
 
 .track {
