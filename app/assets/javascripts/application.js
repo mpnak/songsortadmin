@@ -10,16 +10,18 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// = require jquery
-// = require jquery_ujs
-// = require underscore
+//= require jquery
+//= require jquery_ujs
+//= require underscore
 // no turbolinks
-// = require bootstrap
-
-// = require_tree .
+//= require bootstrap
+//= require ./mixitup-3/dist/mixitup
+//= require ./mixitup-3/dist/mixitup-pagination
+//X= require_tree .
 
 $(function () {
   // Undergroundess rating
+
 
   var mixer = mixitup('#tracks', {
     selectors: {
