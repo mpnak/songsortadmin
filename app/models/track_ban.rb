@@ -1,4 +1,4 @@
-class TrackBan < ActiveRecord::Base
+class TrackBan < ApplicationRecord
   belongs_to :user
   belongs_to :station
   belongs_to :track

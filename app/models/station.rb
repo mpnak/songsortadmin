@@ -1,4 +1,4 @@
-class Station < ActiveRecord::Base
+class Station < ApplicationRecord
   has_many :tracks
   has_many :track_bans
   has_many :track_favorites

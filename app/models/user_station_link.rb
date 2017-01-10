@@ -1,4 +1,4 @@
-class UserStationLink < ActiveRecord::Base
+class UserStationLink < ApplicationRecord
   belongs_to :user
   belongs_to :station
   belongs_to :playlist
