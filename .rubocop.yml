@@ -107,7 +107,7 @@ Style/SpaceInsideParens:
 # Check quotes usage according to lint rule below.
 Style/StringLiterals:
   Enabled: true
-  EnforcedStyle: double_quotes
+  # EnforcedStyle: double_quotes
 
 # Detect hard tabs, no hard tabs.
 Style/Tab:

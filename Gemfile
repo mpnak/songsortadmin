@@ -75,12 +75,13 @@ group :development, :test do
   gem 'faker' # , '~>1.5.0'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rspec-rails'
 end
 
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
 

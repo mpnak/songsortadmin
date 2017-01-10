@@ -21,13 +21,13 @@ RSpec.describe Track, type: :model do
 
   it { should belong_to(:station) }
 
-  describe "::build_from_spotify_id" do
-    it "should build a track" do
-      @track = Track.build_from_spotify_id("0ng5s1sqaQ3K0NhMDN7WSL")
+  describe '::build_from_spotify_id' do
+    it 'should build a track' do
+      @track = Track.build_from_spotify_id('0ng5s1sqaQ3K0NhMDN7WSL')
 
-      expect(@track.title).to eq "No Ordinary Herb"
-      expect(@track.artist).to eq "Fantan Mojah"
-      expect(@track.spotify_id).to eq "0ng5s1sqaQ3K0NhMDN7WSL"
+      expect(@track.title).to eq 'No Ordinary Herb'
+      expect(@track.artist).to eq 'Fantan Mojah'
+      expect(@track.spotify_id).to eq '0ng5s1sqaQ3K0NhMDN7WSL'
       expect(@track.energy).not_to be(nil)
     end
   end
