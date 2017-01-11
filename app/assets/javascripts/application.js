@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require ./mixitup-3/dist/mixitup
 //= require ./mixitup-3/dist/mixitup-pagination
+//= require ./mixitup-3/dist/mixitup-multifilter
 //X= require_tree .
 
 $(function () {
@@ -40,7 +41,10 @@ $(function () {
     pagination: {
         limit: 100 // impose a limit of 8 targets per page
 
-    } 
+    }, 
+    multifilter: {
+        enable:true
+    }   
   })
 
   $('#tracks').on('click', '.rating-item', function () {
@@ -160,7 +164,7 @@ $(function () {
       })
       .done(function (data) {
 
-        mixer.prepend(data,true)
+        mixer.prepend('data',true)
         
       })
       .fail(function () {
