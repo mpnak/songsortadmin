@@ -11,13 +11,13 @@ RSpec.describe Station, type: :model do
   it { should validate_presence_of(:name) }
   it { should have_many(:tracks) }
 
-  it "should come with some tracks" do
+  it 'should come with some tracks' do
     station = FactoryGirl.create :station
     expect(station.tracks.count).to be > 0
   end
 
-  describe "#generate_playlist" do
-    it "should generate a playlist" do
+  describe '#generate_playlist' do
+    it 'should generate a playlist' do
       station = FactoryGirl.create :station
 
       playlist = station.generate_playlist
@@ -28,6 +28,11 @@ RSpec.describe Station, type: :model do
       expect(playlist.station).to eq station
     end
 
-  end
+    it 'should generate a featured or sponsored playlist' do
+      station = FactoryGirl.create(:station, station_type: 'featured')
+      playlist = station.generate_playlist
 
+      expect(playlist.tracks.count).to be > 0
+    end
+  end
 end
