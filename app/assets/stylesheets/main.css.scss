@@ -171,18 +171,37 @@ section.margin-bottom {
 .list-functions {
 	width:100%;
 	height: 50px;
+	vertical-align:top;
 
 	.mixitup-page-list {
 		text-align:center;
 		display:inline-block;
-		float:right;
+		float:left;
 		width:200px;
 	}
 	.mixitup-page-stats {
 		display:inline-block;
-		float:right;
 		text-align:right;
-		width:200px;
+		float:left;
+		
+	}
+	input[type="text"]:focus {
+  		outline: 0 none;
+  		border-color: #e4e4e4;
+  		width:250px;
+	}
+	fieldset{
+  		display: inline-block;
+  		float:right;
+  		text-align: right;
+  		vertical-align: top;
+  		padding:0 20px 0 20px;
+  		width:25%;
+	}
+	h4{
+		font-size: 1em;
+		display: inline-block;
+		padding:0 20px 0 20px;
 	}
 }
 

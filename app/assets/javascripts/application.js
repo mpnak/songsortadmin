@@ -32,7 +32,10 @@ $(function () {
       sort: 'created_at:desc' /* default:asc */
     },
     animation: {
-      enable: false
+      "duration": 250,
+        "nudge": true,
+        "reverseOut": false,
+        "effects": "fade translateX(20%)"
     },
     pagination: {
         limit: 100 // impose a limit of 8 targets per page
