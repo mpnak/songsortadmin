@@ -477,9 +477,7 @@
                     value           = '';
 
                 if (input.type.match(/text|search|password/g)) {
-                    attributeName = input.getElementsByName('data-search-attribute');
-
-                    attributeName = input ('data-search-attribute')
+                    attributeName = input.getAttribute('data-search-attribute');
 
                     if (!attributeName) {
                         throw new Error('[MixItUp MultiFilter] A valid `data-search-attribute` must be present on text inputs');

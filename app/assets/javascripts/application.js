@@ -164,7 +164,8 @@ $(function () {
       })
       .done(function (data) {
 
-        mixer.prepend('data',true)
+        mixer.prepend(data, true)
+        console.log('track loaded')
         
       })
       .fail(function () {
