@@ -156,11 +156,8 @@ $(function () {
         data: track_data
       })
       .done(function (data) {
-        // $('.container').mixItUp('append', $users , {filter: 'all', sort: 'name:asc'});
-        // $('#tracks').mixItUp('prepend', $(data));
 
-        //mixer.prepend(newElement)
-        //mixer.prepend(('#tracks'),[true])
+        mixer.prepend(data,true)
         
       })
       .fail(function () {

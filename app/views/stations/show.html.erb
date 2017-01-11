@@ -37,8 +37,10 @@
   </div>
 </section>
 
-<div class="mixitup-page-list"></div>
-<div class="mixitup-page-stats"></div>
+<section class = "list-functions">
+    <div class="mixitup-page-list"></div>
+    <div class="mixitup-page-stats"></div>
+</section>
 
 <div class="filters">
   <div class="filter-btn" data-filter="all">
@@ -55,11 +57,11 @@
 </div>
 
 <div class="rating-labels">
-  <div class="less-popular">
-    LESS POPULAR
-  </div>
   <div class="more-popular">
     MORE POPULAR
+  </div>
+  <div class="less-popular">
+    LESS POPULAR
   </div>
 </div>
 
@@ -68,5 +70,6 @@
     <%= render 'tracks/track', track: track %>
   <% end %>
 </div>
+
 <div class="mixitup-page-list"></div>
 <div class="mixitup-page-stats"></div>
