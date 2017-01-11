@@ -37,6 +37,20 @@
   </div>
 </section>
 
+<section class = "list-functions">
+    
+    
+    <form class="controls">
+      <fieldset data-filter-group>
+        <input type="text" data-search-attribute="track-cell" placeholder="Search..."/>
+      </fieldset>
+    </form>
+
+    <div class="mixitup-page-stats"></div>
+
+    <div class="mixitup-page-list"></div>
+</section>
+
 <div class="filters">
   <div class="filter-btn" data-filter="all">
     All
@@ -65,3 +79,6 @@
     <%= render 'tracks/track', track: track %>
   <% end %>
 </div>
+
+<div class="mixitup-page-list"></div>
+<div class="mixitup-page-stats"></div>

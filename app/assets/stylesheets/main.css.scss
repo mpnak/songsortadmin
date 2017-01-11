@@ -29,12 +29,12 @@ html {
   text-align: right;
   margin-bottom: 2%;
   .btn {
-    margin-left: 2%;
-    background-color: $lima;
-    border-radius: 0;
-    &:hover {
-      background-color: $deep-magenta;
-    }
+	margin-left: 2%;
+	background-color: $lima;
+	border-radius: 0;
+	&:hover {
+	  background-color: $deep-magenta;
+	}
   }
 }
 
@@ -55,58 +55,58 @@ section.margin-bottom {
   color: $text-color;
 
   &:hover {
-    background-color: $deep-magenta;
-    color: $text-color;
+	background-color: $deep-magenta;
+	color: $text-color;
   }
 
   &:nth-of-type(4n+1) {
-    margin-left: 0;
+	margin-left: 0;
   }
 
   &:nth-of-type(4n+4) {
-    margin-right: 0;
+	margin-right: 0;
   }
 
   .station-art {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
   }
 
   .active-status {
-    border-radius: 4px;
-    padding: 4px 6px;
+	border-radius: 4px;
+	padding: 4px 6px;
 
-    position: absolute;
-    top: 5%;
-    left: 5%;
+	position: absolute;
+	top: 5%;
+	left: 5%;
 
-    &.active {
-      background-color: $ronchi;
-    }
+	&.active {
+	  background-color: $ronchi;
+	}
 
-    &.inactive {
-      background-color: $dove-gray;
-      color: $iron;
-    }
+	&.inactive {
+	  background-color: $dove-gray;
+	  color: $iron;
+	}
   }
 
   &.show-page {
-    margin: 0;
-    width: 15%;
-    padding-bottom: 15%;
-    &:hover {
-      background-color: $iron;
-    }
+	margin: 0;
+	width: 15%;
+	padding-bottom: 15%;
+	&:hover {
+	  background-color: $iron;
+	}
   }
 
   .station-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
   }
 }
 
@@ -124,20 +124,20 @@ section.margin-bottom {
   content: "Drag or drop spotify playlists";
 
   &.draggingOver {
-    background-color: $lima;
+	background-color: $lima;
   }
 
   &.dropped {
   }
 
   .loader-content {
-    pointer-events: none;
-    color: $star-dust;
-    font-size: 1.4em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	pointer-events: none;
+	color: $star-dust;
+	font-size: 1.4em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
   }
 }
 
@@ -145,27 +145,66 @@ section.margin-bottom {
   width: 100%;
 
   .total-tracks {
-    display: inline-block;
+	display: inline-block;
   }
 
   .station-sort {
-    float: right;
-    color: $star-dust;
-    font-size: 0.8em;
+	float: right;
+	color: $star-dust;
+	font-size: 0.8em;
 
-    #sort-select {
-      margin-left: 0.5em;
-    }
+	#sort-select {
+	  margin-left: 0.5em;
+	}
   }
   .update-station {
-    float: right;
-    background-color: $lima;
-    border-radius: 0;
-    &:hover {
-      background-color: $deep-magenta;
-    }
+	float: right;
+	background-color: $lima;
+	border-radius: 0;
+	&:hover {
+	  background-color: $deep-magenta;
+	}
   }
 }
+
+
+.list-functions {
+	width:100%;
+	height: 50px;
+	vertical-align:top;
+
+	.mixitup-page-list {
+		text-align:center;
+		display:inline-block;
+		float:left;
+		width:200px;
+	}
+	.mixitup-page-stats {
+		display:inline-block;
+		text-align:right;
+		float:left;
+		
+	}
+	input[type="text"]:focus {
+  		outline: 0 none;
+  		border-color: #e4e4e4;
+	}
+	fieldset{
+  		display: inline-block;
+  		float:right;
+  		text-align: right;
+  		vertical-align: top;
+  		padding:0 20px 0 20px;
+  		width:25%;
+	}
+	h4{
+		font-size: 1em;
+		display: inline-block;
+		padding:0 20px 0 20px;
+	}
+}
+
+
 
 .filters {
   padding-left: 1em;
@@ -173,14 +212,14 @@ section.margin-bottom {
   font-size: 1.2em;
 
   .filter-btn {
-    display: inline-block;
-    margin-right: 1em;
-    cursor: pointer;
-    color: $star-dust;
+	display: inline-block;
+	margin-right: 1em;
+	cursor: pointer;
+	color: $star-dust;
 
-    &.active {
-      color: $lima;
-    }
+	&.active {
+	  color: $lima;
+	}
   }
 }
 
@@ -194,112 +233,124 @@ $track-height: 48px;
   width: $track-height * 5 + 4;
 
   div {
-    height: 3em;
-    width: $track-height;
-    display: inline-block;
+	height: 3em;
+	width: $track-height;
+	display: inline-block;
   }
 
   .more-popular {
   }
 
   .less-popular {
-    text-align: right;
-    direction: rtl;
-    float: right;
+	text-align: right;
+	direction: rtl;
+	float: right;
   }
 }
 
 #tracks {
   width: 100%;
+  margin-top:20px;
 }
 
 .track {
-  display: none;
+  // display: none;
   height: $track-height;
   margin-bottom: 1px;
   padding: 0;
   width: 100%;
 
   &:nth-of-type(even) {
-    background-color: $ebb;
+	background-color: $ebb;
   }
 
   &:nth-of-type(odd) {
-    background-color: $iron;
+	background-color: $iron;
   }
 
   &:hover {
-    background-color: white;
+	background-color: white;
 
-    .rating-selector .rating-item {
-      background-color: $iron;
-    }
+	.rating-selector .rating-item {
+	  background-color: $iron;
+	}
 
   }
 
   .track-cell {
-    text-align: center;
-    display: inline-block;
-    line-height: $track-height;
-    overflow: hidden;
-    white-space: nowrap;
+	text-align: center;
+	display: inline-block;
+	line-height: $track-height;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: text-top;
   }
 
   .delete-track {
-    width: 6%;
-    cursor: pointer;
+	width: 6%;
+	cursor: pointer;
+	float:left;
+	display: inline-block;
   }
 
   .track-title {
-    width: 24%;
-    text-align: left;
+	width: 24%;
+	text-align: left;
+	float:left;
+	display: inline-block;
   }
 
   .track-artist {
-    width: 24%;
-    text-align: left;
+	width: 24%;
+	text-align: left;
+	float:left;
+	display: inline-block;
   }
 
   .undergroundness-label {
-    display: inline-block;
-    color: $star-dust;
+	height:48px;
+	display: inline-block;
+	color: $star-dust;
+	float:left;
+
   }
 
   /* width makes 98% in total. 100% and it does not stack - we hack this by
    * floating right */
   .undergroundness-rating {
-    width: 44%;
-    float: right;
-    text-align: right;
+	width: 44%;
+	float: right;
+	text-align: right;
+	display:inline-block;
   }
 
   .rating-selector {
-    height: $track-height;
-    display: inline-block;
-    float: right;
-    margin-left: 10px;
+	height: $track-height;
+	display: inline-block;
+	float: right;
+	margin-left: 10px;
 
-    .rating-item {
-      height: $track-height;
-      width: $track-height;
-      margin-left: 1px;
-      background-color: $dark-gray;
-      float: left;
+	.rating-item {
+	  height: $track-height;
+	  width: $track-height;
+	  margin-left: 1px;
+	  background-color: $dark-gray;
+	  float: left;
 
-      &:hover {
-        background-color: $deep-magenta;
-      }
+	  &:hover {
+		background-color: $deep-magenta;
+	  }
 
-      &.selected {
-        background-color: $deep-magenta;
-      }
-    }
+	  &.selected {
+		background-color: $deep-magenta;
+	  }
+	}
   }
 }
 
 
 @media (max-width: 991px) {
   .undergroundness-label {
-    display: none !important;
+	display: none !important;
   }
 }

@@ -15,171 +15,168 @@
 //= require underscore
 // no turbolinks
 //= require bootstrap
+//= require ./mixitup-3/dist/mixitup
+//= require ./mixitup-3/dist/mixitup-pagination
+//= require ./mixitup-3/dist/mixitup-multifilter
+//X= require_tree .
 
-//= require_tree .
-
-$(function() {
-
+$(function () {
   // Undergroundess rating
 
-  $("#tracks").on('click', '.rating-item', function() {
-    console.log('clicked');
 
-    var $this = $(this);
-    var $track = $this.closest('.track');
-
-    // Send the update to the server
-    var rating = $this.attr('data-rating');
-    var track_id = $track.attr('data-id');
-    var data = {
-      "track": {
-        "undergroundness": rating
-      }
-    };
-
-    $.ajax({
-      type: "PUT",
-      url: "/tracks/" + track_id,
-      data: data,
-      success: function() {},
-    });
-
-    // Assume success and update the background color instantly for perceived responsivness
-    $this.siblings().toggleClass('selected', false);
-    $this.toggleClass('selected', true);
-
-    // Set the track rating on the dom so mixitup can sort
-    $track.attr('data-undergroundness', rating);
-
-    // Set the track classes so that mixitup can filter
-    $track.removeClass('unranked');
-    $track.addClass('ranked');
-  });
-
-  // Delete track button
-
-  $('#tracks').on('click', '.track > .delete-track', function() {
-
-    var track_id = $(this).parent().attr("data-id");
-
-    $.ajax({
-      type: "DELETE",
-      url: "/tracks/" + track_id,
-      success: function() {},
-    });
-
-    // Optimistically assume that the delete request is successfull
-    $(this).parent().remove();
-  });
-
-  // Song loader
-
-  var $target = $("#station-song-loader");
-
-  $target.on("dragenter", function(e) {
-    // give the user visual feedback
-    $target.removeClass("dropped");
-    $target.addClass("draggingOver");
-  });
-
-  $target.on("dragleave", function(e) {
-    $target.removeClass("draggingOver");
-  });
-
-  $target.on("dragover", function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  $target.on("drop", function(e) {
-    // dropped! Check out e.dataTransfer
-    $target.removeClass("draggingOver");
-    addDroppedUIState($target);
-    var message = e.originalEvent.dataTransfer.getData("text/plain");
-    e.preventDefault();
-    addTracks(message);
-  });
-
-  function addDroppedUIState($target) {
-    $target.addClass("dropped");
-    $target.find(".loader-content").text("Cheers big ears");
-
-    _.delay(function($target) {
-      $target.removeClass("dropped");
-      $target.find(".loader-content").text("Drag and drop spotify tracks or playlists");
-    }, 1000, $target);
-  }
-
-  function addTracks(text) {
-
-    console.log(text);
-
-    var re = /https?:\/\/open\.spotify\.com\/track\/(.*)/g;
-    var matches = [];
-    var m;
-
-    while ((m = re.exec(text)) !== null) {
-      if (m.index === re.lastIndex) {
-        re.lastIndex++;
-      }
-
-      matches.push(m);
-    }
-
-    matches.forEach(function(match) {
-      var track_data = {
-        "track": {
-          "spotify_id": match[1],
-          "station_id": gon.station_id
-        }
-      };
-
-      $.ajax({
-        type: "POST",
-        url: "/tracks",
-        data: track_data
-      })
-      .done(function(data) {
-        $('#tracks').mixItUp('prepend', $(data));
-      })
-      .fail(function() {
-        alert("There was an error while importing the song: " + match[1]);
-      });
-    });
-  }
-
-});
-
-$(function(){
-
-  $sortSelect = $('#sort-select'),
-    $container = $('#tracks');
-
-  $container.mixItUp({
+  var mixer = mixitup('#tracks', {
     selectors: {
-      target: '.track', /* .mix */
-      filter: '.filter-btn' /* .filter */
+      target: '.track' //, /* .mix */
+      //filter: '.filter-btn' /* .filter */
     },
     load: {
       sort: 'created_at:desc' /* default:asc */
     },
     animation: {
-      enable: false
+      "duration": 250,
+        "nudge": true,
+        "reverseOut": false,
+        "effects": "fade translateX(20%)"
     },
-    callbacks: {
-      onMixLoad: function(){
-        $(this).mixItUp('setOptions', {
-          animation: {
-            enable: true
-          },
-        });
+    pagination: {
+        limit: 100 // impose a limit of 8 targets per page
+
+    }, 
+    multifilter: {
+        enable:true
+    }   
+  })
+
+  $('#tracks').on('click', '.rating-item', function () {
+    console.log('clicked')
+
+    var $this = $(this)
+    var $track = $this.closest('.track')
+
+    // Send the update to the server
+    var rating = $this.attr('data-rating')
+    var track_id = $track.attr('data-id')
+    var data = {
+      'track': {
+        'undergroundness': rating
       }
     }
-  });
 
-  $sortSelect.on('change', function(){
-    $container.mixItUp('sort', this.value);
-  });
+    $.ajax({
+      type: 'PUT',
+      url: '/tracks/' + track_id,
+      data: data,
+      success: function () {}
+    })
 
-});
+    // Assume success and update the background color instantly for perceived responsivness
+    $this.siblings().toggleClass('selected', false)
+    $this.toggleClass('selected', true)
 
+    // Set the track rating on the dom so mixitup can sort
+    $track.attr('data-undergroundness', rating)
+
+    // Set the track classes so that mixitup can filter
+    $track.removeClass('unranked')
+    $track.addClass('ranked')
+  })
+
+  // Delete track button
+
+  $('#tracks').on('click', '.track > .delete-track', function () {
+    var track_id = $(this).parent().attr('data-id')
+
+    $.ajax({
+      type: 'DELETE',
+      url: '/tracks/' + track_id,
+      success: function () {}
+    })
+
+    // Optimistically assume that the delete request is successfull
+    $(this).parent().remove()
+  })
+
+  // Song loader
+
+  var $target = $('#station-song-loader')
+
+  $target.on('dragenter', function (e) {
+    // give the user visual feedback
+    $target.removeClass('dropped')
+    $target.addClass('draggingOver')
+  })
+
+  $target.on('dragleave', function (e) {
+    $target.removeClass('draggingOver')
+  })
+
+  $target.on('dragover', function (e) {
+    e.preventDefault()
+    return false
+  })
+
+  $target.on('drop', function (e) {
+    // dropped! Check out e.dataTransfer
+    $target.removeClass('draggingOver')
+    addDroppedUIState($target)
+    var message = e.originalEvent.dataTransfer.getData('text/plain')
+    e.preventDefault()
+    addTracks(message)
+  })
+
+  function addDroppedUIState ($target) {
+    $target.addClass('dropped')
+    $target.find('.loader-content').text('Cheers big ears')
+
+    _.delay(function ($target) {
+      $target.removeClass('dropped')
+      $target.find('.loader-content').text('Drag and drop spotify tracks or playlists')
+    }, 1000, $target)
+  }
+
+  function addTracks (text) {
+    console.log(text)
+
+    var re = /https?:\/\/open\.spotify\.com\/track\/(.*)/g
+    var matches = []
+    var m
+
+    while ((m = re.exec(text)) !== null) {
+      if (m.index === re.lastIndex) {
+        re.lastIndex++
+      }
+
+      matches.push(m)
+    }
+
+    matches.forEach(function (match) {
+      var track_data = {
+        'track': {
+          'spotify_id': match[1],
+          'station_id': gon.station_id
+        }
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: '/tracks',
+        data: track_data
+      })
+      .done(function (data) {
+
+        mixer.prepend(data, true)
+        console.log('track loaded')
+        
+      })
+      .fail(function () {
+        alert('There was an error while importing the song: ' + match[1])
+      })
+    })
+  }
+
+  var $sortSelect = $('#sort-select')
+
+  $sortSelect.on('change', function () {
+    mixer.sort(this.value)
+  })
+})
