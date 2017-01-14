@@ -4,7 +4,7 @@
 # summary, hash
 # station_id, belongs_to
 
-class Playlist < ActiveRecord::Base
+class Playlist < ApplicationRecord
 
   belongs_to :station
   serialize :tracks, Array

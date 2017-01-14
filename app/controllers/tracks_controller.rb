@@ -34,15 +34,15 @@ class TracksController < ApplicationController
   end
 
   private
-  def set_track
-  end
 
-  def track_params
-    params.require(:track).permit(:spotify_id, :station_id)
-  end
+    def set_track
+    end
 
-  def track_update_params
-    params.require(:track).permit(:undergroundness)
-  end
+    def track_params
+      params.require(:track).permit(:spotify_id, :station_id)
+    end
 
+    def track_update_params
+      params.require(:track).permit(:undergroundness)
+    end
 end

@@ -1,11 +1,9 @@
-class Api::V1::ApiController < ActionController::Base
+class Api::V1::ApiController < ActionController::API
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :null_session
+  # protect_from_forgery with: :null_session
 
-  respond_to :json
-
-  after_filter do
+  after_action do
     begin
       if request.format.json? && response
         puts "response:"
@@ -19,7 +17,7 @@ class Api::V1::ApiController < ActionController::Base
   def bearer_token
     pattern = /^Bearer /
     header  = request.headers["Authorization"]
-    header.gsub(pattern, '') if header && header.match(pattern)
+    header.gsub(pattern, "") if header && header.match(pattern)
   end
 
   def current_user
@@ -27,12 +25,12 @@ class Api::V1::ApiController < ActionController::Base
   end
 
   def authenticate_with_token!
-    render json: { errors: "Not authenticated" },
-      status: :unauthorized unless user_signed_in?
+    return if user_signed_in?
+
+    render json: { errors: "Not authenticated" }, status: :unauthorized
   end
 
   def user_signed_in?
     current_user.present?
   end
-
 end

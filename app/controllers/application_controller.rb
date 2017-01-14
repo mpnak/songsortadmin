@@ -3,14 +3,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :authenticate
+  before_action :authenticate
 
   def authenticate
-    unless request.format.json?
-      authenticate_or_request_with_http_basic('Administration') do |username, password|
-        username == 'doseadmin' && password == 'bellyflop'
-      end
+    return if request.format.json?
+
+    authenticate_or_request_with_http_basic("Administration") do |username, password|
+      username == "doseadmin" && password == "bellyflop"
     end
   end
-
 end

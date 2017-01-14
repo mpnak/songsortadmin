@@ -1,4 +1,4 @@
-class Station < ActiveRecord::Base
+class Station < ApplicationRecord
   has_many :tracks
   has_many :track_bans
   has_many :track_favorites
@@ -10,48 +10,46 @@ class Station < ActiveRecord::Base
   DEFAULT_STATION_OPTIONS = {
     undergroundness: 3,
     saved_station: false
-  }
+  }.freeze
 
   # attach a user_station_link here to delegate playlist options
   attr_accessor :user_station_link
 
   attr_accessor :playlist
 
-  def self.find_with_user(id, user=nil)
+  def self.find_with_user(id, user = nil)
     Station.find(id).decorate_with_user_info(user)
   end
 
-  def self.find_with_user!(id, user=nil)
+  def self.find_with_user!(id, user = nil)
     Station.find(id).decorate_with_user_info!(user)
   end
 
-  def self.from_params(params, user=nil)
+  def self.from_params(params, user = nil)
     q = if user
-          Station.includes(:user_station_links)
-        else
-          Station.all
-        end
+      Station.includes(:user_station_links)
+    else
+      Station.all
+    end
 
     if params[:saved_station] == true && user
       q = q.where(user_station_links: { user: user, saved_station: true })
     end
 
-    if params[:station_type]
-      q = q.where(station_type: params[:station_type])
-    end
+    q = q.where(station_type: params[:station_type]) if params[:station_type]
 
     q = q.order(updated_at: :desc)
 
-    return q.map {|s| s.decorate_with_user_info(user) }
+    q.map { |s| s.decorate_with_user_info(user) }
   end
 
   def generate_playlist(options = {})
-    if ["featured", "sponsored"].include?(station_type)
+    if %w(featured sponsored).include?(station_type)
       @playlist = Playlist.new(
         station: self,
         profile_name: station_type,
         undergroundness: nil,
-        tracks: tracks.order(created_at: :asc),
+        tracks: tracks.order(created_at: :asc).to_a,
         summary: {}
       )
     else
@@ -62,26 +60,29 @@ class Station < ActiveRecord::Base
       end
       options[:undergroundness] ||= undergroundness
 
-
       playlist_profile = PlaylistProfile.choose(options)
 
       # for the moment print the summary each time
-      @playlist = Playlist.generate(playlist_profile, self, { print_summary: options[:print] })
+      @playlist = Playlist.generate(
+        playlist_profile,
+        self,
+        print_summary: options[:print]
+      )
 
       if options[:print]
-        puts playlist.summary[:text]
+        logger.debug playlist.summary[:text]
         return nil
       end
 
       if @user_station_link
-        #@user_station_link.tracks = playlist.tracks
-        #@user_station_link.tracks_updated_at = DateTime.now
+        # @user_station_link.tracks = playlist.tracks
+        # @user_station_link.tracks_updated_at = DateTime.now
         @user_station_link.playlist = @playlist
         @user_station_link.undergroundness = options[:undergroundness]
         @user_station_link.save
 
         # Note this will decorate with user information like favorited
-        #@user_station_link.tracks_with_user_info
+        # @user_station_link.tracks_with_user_info
       end
 
       @playlist
@@ -90,8 +91,11 @@ class Station < ActiveRecord::Base
 
   def decorate_with_user_info(user = nil)
     if user
-      @user_station_link = user_station_links.where(user: user).first
+      @user_station_link =
+        user_station_links
+        .find_by(user: user)
     end
+
     self
   end
 
@@ -110,26 +114,33 @@ class Station < ActiveRecord::Base
 
     return nil unless user_station_link.try(:playlist)
 
-    return user_station_link.playlist
+    user_station_link.playlist
   end
 
   def undergroundness
-    user_station_link ? user_station_link.undergroundness : DEFAULT_STATION_OPTIONS[:undergroundness]
+    if user_station_link
+      user_station_link.undergroundness
+    else
+      DEFAULT_STATION_OPTIONS[:undergroundness]
+    end
   end
 
   def saved_station
-    user_station_link ? user_station_link.saved_station : DEFAULT_STATION_OPTIONS[:saved_station]
+    if user_station_link
+      user_station_link.saved_station
+    else
+      DEFAULT_STATION_OPTIONS[:saved_station]
+    end
   end
 
   def tracks_updated_at
     return nil unless playlist
-    return playlist.created_at
+    playlist.created_at
   end
 
   def playlist_tracks
     return [] unless playlist
     return playlist.tracks unless user_station_link
-    return playlist.tracks_with_user_info(user_station_link.user.id)
+    playlist.tracks_with_user_info(user_station_link.user.id)
   end
-
 end

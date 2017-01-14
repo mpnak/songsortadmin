@@ -5,9 +5,7 @@ FactoryGirl.define do
     after(:create) do |instance|
       100.times do
         instance.tracks << FactoryGirl.create(:track, station: instance)
-
       end
     end
   end
-
 end

@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   #has_many :saved_stations
   has_many :track_bans
   has_many :track_favorites
