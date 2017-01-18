@@ -25,18 +25,20 @@ class Station < ApplicationRecord
     Station.find(id).decorate_with_user_info!(user)
   end
 
-  def self.from_params(params, user = nil)
+  def self.from_params(options, user = nil)
     q = if user
       Station.includes(:user_station_links)
     else
       Station.all
     end
 
-    if params[:saved_station] == true && user
+    q = q.where(active: true) unless options[:inactive] == true
+
+    if options[:saved_station] == true && user
       q = q.where(user_station_links: { user: user, saved_station: true })
     end
 
-    q = q.where(station_type: params[:station_type]) if params[:station_type]
+    q = q.where(station_type: options[:station_type]) if options[:station_type]
 
     q = q.order(updated_at: :desc)
 

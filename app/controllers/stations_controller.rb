@@ -2,7 +2,7 @@ class StationsController < ApplicationController
   before_action :set_station, only: [:show, :edit, :update, :destroy]
 
   def index
-    @stations = Station.from_params(params)
+    @stations = Station.from_params(params.merge(inactive: true))
   end
 
   def show
@@ -22,6 +22,7 @@ class StationsController < ApplicationController
   def update
     @station.touch
     @station.update(station_params)
+    redirect_to station_path(@station)
   end
 
   def destroy
@@ -42,7 +43,8 @@ class StationsController < ApplicationController
           :short_description,
           :station_type,
           :url,
-          :station_art
+          :station_art,
+          :active
         )
     end
 end

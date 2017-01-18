@@ -21,9 +21,18 @@
 </section>
 
 <section class="station-toolbar margin-bottom">
+  <%= form_for @station do |f| %>
+    <%= f.hidden_field :active, value: !@station.active %>
+    <% if @station.active %>
+      <%= f.submit "Live", class: "btn btn-warning" %>
+    <% else %>
+      <%= f.submit "Inactive", class: "btn btn-default" %>
+    <% end %>
+  <% end %>
+
   <div class="total-tracks">
     Total Tracks: <%= @tracks.count %>
-</div>
+  </div>
 
   <div class="station-sort">
     SORT
