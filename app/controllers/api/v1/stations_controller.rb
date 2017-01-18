@@ -2,7 +2,7 @@ class Api::V1::StationsController < Api::V1::ApiController
   before_action :authenticate_with_token!, only: [:update]
 
   def index
-    @stations = Station.from_params(params, current_user)
+    @stations = Station.from_params(params.merge(active: true), current_user)
     render json: @stations
   end
 
