@@ -22,3 +22,4 @@ vendor/bundle
 #/config/application.yml
 
 latest.dump
+/public/packs
