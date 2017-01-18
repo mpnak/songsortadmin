@@ -68,6 +68,8 @@ gem 'webpacker', github: 'rails/webpacker'
 
 group :development do
   gem 'better_errors'
+  gem 'guard-process', require: false
+  gem 'guard-rails', require: false
   gem 'rack-mini-profiler'
 end
 
