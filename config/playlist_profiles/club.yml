@@ -9,7 +9,7 @@ club:
       multiplier: 1.25
       min: 1
       max: 5
-      slot_min_delta: -1.0
+      slot_min_delta: -2.0
       slot_max_delta: 1.0
     valence:
       multiplier: 2
