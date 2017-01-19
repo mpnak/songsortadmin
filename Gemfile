@@ -64,9 +64,12 @@ gem 'timezone'
 gem 'tzinfo-data'
 gem 'underscore-rails'
 gem 'validates_formatting_of'
+gem 'webpacker', github: 'rails/webpacker'
 
 group :development do
   gem 'better_errors'
+  gem 'guard-process', require: false
+  gem 'guard-rails', require: false
   gem 'rack-mini-profiler'
 end
 
