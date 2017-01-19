@@ -1,0 +1,14 @@
+{
+  "name": "songsortadmin",
+  "private": true,
+  "description": "stationdose backend",
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpnak/songsortadmin.git"
+  },
+  "homepage": "https://github.com/mpnak/songsortadmin#readme"
+}
