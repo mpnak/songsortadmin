@@ -16,7 +16,8 @@ class Playlist < ApplicationRecord
         .where.not(energy: nil)
         .where.not(undergroundness: nil)
         .where.not(valence: nil)
-
+        .group_by(&:artist).map{|k, v| v.first}
+   
     all_track_weights = tracks.map { |track| TrackWeight.new(track, playlist_profile) }
 
     track_weights = tracks.count < playlist_profile.size ?  [] : select_track_weights(all_track_weights, playlist_profile)
@@ -70,7 +71,7 @@ class Playlist < ApplicationRecord
 
       weight = track_weight.weights[n].total.round(2)
       rweight = track_weight.weights[n].random_calibrated.round(4)
-      row_output += ", Weight: #{weight} | #{rweight}, #{track.title}, #{track.id}"
+      row_output += ", Weight: #{weight} | #{rweight}, #{track.title}, #{track.artist}"
       output += row_output + "\n"
     end
 
