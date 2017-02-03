@@ -1,20 +1,20 @@
 class PlaylistProfileChooser
   SCORE_FOR_FORECASTIO_ICONS = {
-    "clear-day" => 8,
-    "clear-night" => 6,
-    "rain" => 1,
-    "snow" => 6,
-    "sleet" => 1,
-    "wind" => 5,
-    "fog" => 3,
-    "cloudy" => 6,
-    "partly-cloudy-day" => 8,
-    "partly-cloudy-night" => 6,
-    "partly-cloudy" => 5
-  }
+    'clear-day' => 8,
+    'clear-night' => 6,
+    'rain' => 1,
+    'snow' => 6,
+    'sleet' => 1,
+    'wind' => 5,
+    'fog' => 3,
+    'cloudy' => 6,
+    'partly-cloudy-day' => 8,
+    'partly-cloudy-night' => 6,
+    'partly-cloudy' => 5
+  }.freeze
 
   DAY_TIME_SCORES = [
-  #03:05  5:7   7:9  9:11  11:13 13:17 17:19 19:21 21:23 23:02  
+    # 03:05  5:7   7:9  9:11  11:13 13:17 17:19 19:21 21:23 23:02
     [4,    1,    1,    2,    5,    7,    6,    4,    3,    1], # Sunday
     [1,    1,    1,    2,    2,    3,    4,    5,    2,    1], # Monday
     [1,    1,    1,    2,    2,    3,    4,    5,    2,    1], # Tuesday
@@ -22,7 +22,7 @@ class PlaylistProfileChooser
     [2,    1,    1,    3,    5,    6,    5,    5,    3,    1], # Thursday
     [3,    1,    1,    5,    6,    7,    6,    6,    6,    3], # Friday
     [4,    1,    1,    2,    5,    7,    6,    7,    8,    7], # Saturday
-  ]
+  ].freeze
 
   TIME_LOWER_BOUND_AND_INDEXES = [
     [0, 8],
@@ -36,11 +36,11 @@ class PlaylistProfileChooser
     [19, 6],
     [21, 7],
     [24, 8]
-  ]
+  ].freeze
 
   ENERGY_PROFILE_NAMES = [
     :mellow, :chill, :vibes, :lounge, :club, :bangin
-  ]
+  ].freeze
 
   PLAYLIST_SCORES = {
     mellow: 2.5,
@@ -49,26 +49,25 @@ class PlaylistProfileChooser
     lounge: 6.9,
     club: 8.4,
     bangin: 10
-  }
+  }.freeze
 
   include ActiveModel::SerializerSupport
 
   attr_accessor :ll, :forecast, :timezone, :localtime, :weather, :hour, :day, :name
 
   def initialize(options = {})
-
     ap options
     @print = options[:print] || false
 
     # Get local weather
-    @ll = options[:ll] || "33.985488,-118.475250" # Venice beach
+    @ll = options[:ll] || '33.985488,-118.475250' # Venice beach
 
     latlng = @ll.split(',').map(&:to_f)
     @forecast = ForecastIO.forecast(*latlng)
-    @timezone = forecast["timezone"]
+    @timezone = forecast['timezone']
     @localtime = ActiveSupport::TimeZone[@timezone].now
 
-    @weather = options[:weather] || forecast["currently"]["icon"]
+    @weather = options[:weather] || forecast['currently']['icon']
     @hour = options[:hour] || @localtime.hour
     @day = options[:day] || @localtime.wday
 
@@ -87,12 +86,12 @@ class PlaylistProfileChooser
     name = playlist_name(total_score)
 
     if @print
-      puts "=========== PlaylistProfileChooser.new ============="
+      puts '=========== PlaylistProfileChooser.new ============='
       puts "Location: #{@ll}, Timezone: #{@timezone}"
       puts "Weather: #{weather}, Score: #{weather_score}"
       puts "Hour: #{hour}, Day: #{day}, Score: #{day_time_score}"
       puts "Name: #{name}, Score: #{total_score}"
-      puts "==============================="
+      puts '==============================='
     end
 
     name
@@ -100,21 +99,21 @@ class PlaylistProfileChooser
 
   private
 
-  def score_for_forecastio_icon(icon_name)
-    SCORE_FOR_FORECASTIO_ICONS.fetch(icon_name) { rand(10) +1 }
-  end
-
-  def playlist_name(score)
-    PLAYLIST_SCORES.each do |name, value|
-      return name if score <= value
+    def score_for_forecastio_icon(icon_name)
+      SCORE_FOR_FORECASTIO_ICONS.fetch(icon_name) { rand(10) + 1 }
     end
-  end
 
-  def score_for_day_index_time_index(day_index, time_index)
-    DAY_TIME_SCORES[day_index][time_index]
-  end
+    def playlist_name(score)
+      PLAYLIST_SCORES.each do |name, value|
+        return name if score <= value
+      end
+    end
 
-  def time_index_from_hour(hour)
-    TIME_LOWER_BOUND_AND_INDEXES.bsearch {|(lbound, _)| hour <= lbound }.last
-  end
+    def score_for_day_index_time_index(day_index, time_index)
+      DAY_TIME_SCORES[day_index][time_index]
+    end
+
+    def time_index_from_hour(hour)
+      TIME_LOWER_BOUND_AND_INDEXES.bsearch { |(lbound, _)| hour <= lbound }.last
+    end
 end

@@ -10,6 +10,9 @@ class Playlist < ApplicationRecord
   serialize :tracks, Array
   serialize :summary, Hash
 
+  def self.generate_lite(playlist_profile, station, options = {})
+  end
+
   def self.generate(playlist_profile, station, options = {})
 
     tracks = station.tracks
