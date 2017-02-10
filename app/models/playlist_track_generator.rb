@@ -1,35 +1,5 @@
-class PlaylistLite
-  PLAYLIST_PROFILE = PlaylistProfile.new(
-    criteria: [
-      {
-        name: 'energy',
-        multiplier: 5.0,
-        criteria_min: 0,
-        criteria_max: 1,
-        min: 0.9,
-        max: 1.0,
-        target: 1
-      },
-      {
-        name: 'undergroundness',
-        multiplier: 1,
-        criteria_min: 1,
-        criteria_max: 5,
-        min: 1,
-        max: 5,
-        target: 3
-      },
-      {
-        name: 'valence',
-        multiplier: 2,
-        criteria_min: 0,
-        criteria_max: 1,
-        target: 0.96
-      }
-    ]
-  )
-
-  def self.generate(tracks: [], playlist_profile: PLAYLIST_PROFILE)
+class PlaylistTrackGenerator
+  def self.call(tracks: [], playlist_profile:)
     # Start with a clean array of possible track contenders
     # Give each track a weight based on the playlist profile
     track_weights_with_index = make_track_weights(tracks, playlist_profile)
@@ -81,17 +51,20 @@ class PlaylistLite
   #############
 
   def self.compute_track_weight(track, playlist_profile)
-    criteria_scores = playlist_profile.criteria.map do |criteria|
+    criteria_scores = playlist_profile.criteria.values do |criteria|
       compute_criteria_weight(criteria: criteria, track: track)
     end
 
     combine_scores(
       values: criteria_scores,
-      factors: playlist_profile.criteria.map(&:multiplier)
+      factors: playlist_profile.criteria.values.map(&:multiplier)
     )
   end
 
   def self.compute_criteria_weight(criteria:, track:)
+    # If there is no target, consider track a perfect match
+    return 1 unless criteria.target
+
     track_value = track.send(criteria.name)
 
     # If the track is missing a value for the criteria, no bother,

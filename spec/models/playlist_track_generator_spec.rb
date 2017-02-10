@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe PlaylistLite do
-  subject { PlaylistLite }
+describe PlaylistTrackGenerator do
+  subject { PlaylistTrackGenerator }
 
   describe '#generate' do
     it 'should generate some tracks' do

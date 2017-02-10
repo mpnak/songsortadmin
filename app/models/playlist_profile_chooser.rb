@@ -1,4 +1,20 @@
 class PlaylistProfileChooser
+  def self.load_playlist_profile_templates
+    Dir["#{Rails.root}/config/playlist_profiles/*.yml"]
+      .reduce({}) do |memo, file|
+      data = YAML.load_file(file).deep_symbolize_keys
+      memo[data[:name].to_sym] = data
+      memo
+    end
+  end
+
+  # Hash of playlist profile data
+  @playlist_profile_templates = load_playlist_profile_templates
+
+  class << self
+    attr_reader :playlist_profile_templates
+  end
+
   SCORE_FOR_FORECASTIO_ICONS = {
     'clear-day' => 8,
     'clear-night' => 6,
@@ -53,48 +69,61 @@ class PlaylistProfileChooser
 
   include ActiveModel::SerializerSupport
 
-  attr_accessor :ll, :forecast, :timezone, :localtime, :weather, :hour, :day, :name
+  attr_accessor(
+    :ll, :forecast, :timezone,
+    :localtime, :weather, :hour,
+    :day, :name, :playlist_profile
+  )
 
   def initialize(options = {})
-    ap options
-    @print = options[:print] || false
+    profile_args = options.slice(:ll, :weather, :hour, :day, :name)
 
     # Get local weather
-    @ll = options[:ll] || '33.985488,-118.475250' # Venice beach
+    profile_args[:ll] ||= '33.985488,-118.475250' # Venice beach
+    forecast = forecast_from_location(profile_args[:ll])
 
-    latlng = @ll.split(',').map(&:to_f)
-    @forecast = ForecastIO.forecast(*latlng)
-    @timezone = forecast['timezone']
-    @localtime = ActiveSupport::TimeZone[@timezone].now
+    profile_args[:weather] ||= forecast['currently']['icon']
+    profile_args[:timezone] = forecast['timezone']
 
-    @weather = options[:weather] || forecast['currently']['icon']
-    @hour = options[:hour] || @localtime.hour
-    @day = options[:day] || @localtime.wday
+    localtime = ActiveSupport::TimeZone[profile_args[:timezone]].now
 
-    @name = choose_name_by_values(@weather, @day, @hour)
+    profile_args[:hour] ||= localtime.hour
+    profile_args[:day] ||= localtime.wday
+    profile_args[:name] ||= choose_name(profile_args)
+
+    template = self.class.playlist_profile_templates[profile_args[:name].to_sym]
+    profile_args = template.merge(profile_args)
+
+    if options[:undergroundness]
+      profile_args[:criteria][:undergroundness][:target] =
+        options[:undergroundness]
+    end
+
+    self.playlist_profile = PlaylistProfile.new(profile_args)
+  end
+
+  def forecast_from_location(ll)
+    latlng = ll.split(',').map(&:to_f)
+    ForecastIO.forecast(*latlng)
   end
 
   def all_names
     ENERGY_PROFILE_NAMES
   end
 
-  def choose_name_by_values(weather, day, hour)
+  # Choose a profile name based on the weather and time of day
+  def choose_name(profile_args)
+    weather = profile_args[:weather]
+    day = profile_args[:day]
+    hour = profile_args[:hour]
+
     weather_score = score_for_forecastio_icon(weather)
-    day_time_score = score_for_day_index_time_index(day, time_index_from_hour(hour))
+    day_time_score = score_for_day_index_time_index(
+      day, time_index_from_hour(hour)
+    )
     total_score = (weather_score + day_time_score) / 2.0
 
-    name = playlist_name(total_score)
-
-    if @print
-      puts '=========== PlaylistProfileChooser.new ============='
-      puts "Location: #{@ll}, Timezone: #{@timezone}"
-      puts "Weather: #{weather}, Score: #{weather_score}"
-      puts "Hour: #{hour}, Day: #{day}, Score: #{day_time_score}"
-      puts "Name: #{name}, Score: #{total_score}"
-      puts '==============================='
-    end
-
-    name
+    playlist_name_from_score(total_score)
   end
 
   private
@@ -103,7 +132,7 @@ class PlaylistProfileChooser
       SCORE_FOR_FORECASTIO_ICONS.fetch(icon_name) { rand(10) + 1 }
     end
 
-    def playlist_name(score)
+    def playlist_name_from_score(score)
       PLAYLIST_SCORES.each do |name, value|
         return name if score <= value
       end
