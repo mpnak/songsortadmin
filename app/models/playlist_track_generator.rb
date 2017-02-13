@@ -51,7 +51,7 @@ class PlaylistTrackGenerator
   #############
 
   def self.compute_track_weight(track, playlist_profile)
-    criteria_scores = playlist_profile.criteria.values do |criteria|
+    criteria_scores = playlist_profile.criteria.values.map do |criteria|
       compute_criteria_weight(criteria: criteria, track: track)
     end
 

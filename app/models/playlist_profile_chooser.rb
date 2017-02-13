@@ -69,14 +69,31 @@ class PlaylistProfileChooser
 
   include ActiveModel::SerializerSupport
 
-  attr_accessor(
+  extend Forwardable
+
+  def_delegators(
+    :@playlist_profile,
     :ll, :forecast, :timezone,
-    :localtime, :weather, :hour,
-    :day, :name, :playlist_profile
+    :weather, :hour,
+    :day, :name
   )
 
+  attr_reader :localtime
+
+  # attr_accessor(
+  #   :ll, :forecast, :timezone,
+  #   :localtime, :weather, :hour,
+  #   :day, :name, :playlist_profile
+  # )
+
+  attr_reader :playlist_profile
+
+  def all_names
+    ENERGY_PROFILE_NAMES
+  end
+
   def initialize(options = {})
-    profile_args = options.slice(:ll, :weather, :hour, :day, :name)
+    profile_args = options.to_h.slice(:ll, :weather, :hour, :day, :name)
 
     # Get local weather
     profile_args[:ll] ||= '33.985488,-118.475250' # Venice beach
@@ -87,6 +104,9 @@ class PlaylistProfileChooser
 
     localtime = ActiveSupport::TimeZone[profile_args[:timezone]].now
 
+    @localtime = localtime
+
+    profile_args[:localtime] ||= localtime.to_s
     profile_args[:hour] ||= localtime.hour
     profile_args[:day] ||= localtime.wday
     profile_args[:name] ||= choose_name(profile_args)
@@ -99,7 +119,7 @@ class PlaylistProfileChooser
         options[:undergroundness]
     end
 
-    self.playlist_profile = PlaylistProfile.new(profile_args)
+    @playlist_profile = PlaylistProfile.new(profile_args)
   end
 
   def forecast_from_location(ll)
@@ -107,9 +127,6 @@ class PlaylistProfileChooser
     ForecastIO.forecast(*latlng)
   end
 
-  def all_names
-    ENERGY_PROFILE_NAMES
-  end
 
   # Choose a profile name based on the weather and time of day
   def choose_name(profile_args)

@@ -2,6 +2,7 @@ class PlaylistProfile
   class Criteria
     include Virtus.model
 
+    attribute :name, String
     attribute :randomness, Float, default: 0
     attribute :multiplier, Float, default: 1
     attribute :criteria_min, Float
@@ -30,12 +31,14 @@ end
 
 class PlaylistProfile
   include Virtus.model
+  include ActiveModel::SerializerSupport
 
   attribute :name, String
-  attribute :criteria, Hash[String => Criteria]
+  attribute :criteria, Hash[Symbol => Criteria]
 
   # used for analytics
   attribute :weather, String
+  attribute :localtime, String
   attribute :hour, Integer
   attribute :day, Integer
   attribute :timezone, String

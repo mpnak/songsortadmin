@@ -17,7 +17,10 @@ class Playlist < ApplicationRecord
       .where.not(undergroundness: nil)
       .where.not(valence: nil)
 
-    playlist_tracks = PlaylistTrackGenerator.call(all_tracks, playlist_profile)
+    playlist_tracks = PlaylistTrackGenerator.call(
+      tracks: all_tracks,
+      playlist_profile: playlist_profile
+    )
 
     Playlist.create(
       station: station,

@@ -30,7 +30,7 @@ describe PlaylistProfileChooser do
     }
     playlist_profile = subject.new(args).playlist_profile
     expect(playlist_profile.name).to eq 'chill'
-    criteria = playlist_profile.criteria['undergroundness']
+    criteria = playlist_profile.criteria[:undergroundness]
     expect(criteria).not_to be nil
     expect(criteria.target).to be 4.0
   end

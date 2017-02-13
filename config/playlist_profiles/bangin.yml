@@ -1,12 +1,14 @@
   name: 'bangin'
   criteria:
     energy:
+      name: 'energy'
       randomness: 0.6
       multiplier: 5.0
       criteria_min: 0
       criteria_max: 1.0
       target: 0.9
     undergroundness:
+      name: 'undergroundness'
       randomness: 0.6
       multiplier: 1
       criteria_min: 1
@@ -14,6 +16,7 @@
       min_delta: -2.0
       max_delta: 1.0
     valence:
+      name: 'valence'
       randomness: 0.6
       multiplier: 2.0
       criteria_min: 0

@@ -3,11 +3,12 @@ require 'rails_helper'
 describe PlaylistTrackGenerator do
   subject { PlaylistTrackGenerator }
 
-  describe '#generate' do
+  describe '#call' do
     it 'should generate some tracks' do
       station = FactoryGirl.create :station
+      playlist_profile = PlaylistProfileChooser.new.playlist_profile
 
-      subject.generate(tracks: station.tracks)
+      subject.call(tracks: station.tracks, playlist_profile: playlist_profile)
     end
   end
 
