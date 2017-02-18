@@ -10,6 +10,37 @@ describe PlaylistTrackGenerator do
 
       subject.call(tracks: station.tracks, playlist_profile: playlist_profile)
     end
+
+    xit 'when randomness is 0 it should be deterministic' do
+    end
+
+    xit 'increasing a criteria target should raise the average' do
+    end
+  end
+
+  describe '#compute_track_weight' do
+    it 'if a track breaks the min or max it scores 0' do
+      [:energy, :undergroundness, :valence].each do |criteria_name|
+        playlist_profile = PlaylistProfileChooser.new.playlist_profile
+        playlist_profile.criteria[criteria_name].min = 1
+        track = FactoryGirl.create :track
+
+        expect(
+          subject.compute_track_weight(
+            track: track, playlist_profile: playlist_profile
+          )
+        ).to eq 0
+
+        playlist_profile.criteria[criteria_name].min = 0
+        playlist_profile.criteria[criteria_name].max = 0
+
+        expect(
+          subject.compute_track_weight(
+            track: track, playlist_profile: playlist_profile
+          )
+        ).to eq 0
+      end
+    end
   end
 
   describe '#combine_score' do

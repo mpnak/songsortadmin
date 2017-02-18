@@ -11,7 +11,9 @@ class PlaylistTrackGenerator
   def self.make_track_weights(tracks, playlist_profile)
     track_weights_with_index = tracks.each_with_index.map do |track, index|
       {
-        weight: compute_track_weight(track, playlist_profile),
+        weight: compute_track_weight(
+          track: track, playlist_profile: playlist_profile
+        ),
         index: index
       }
     end
@@ -50,7 +52,14 @@ class PlaylistTrackGenerator
   # Computing a tracks weight
   #############
 
-  def self.compute_track_weight(track, playlist_profile)
+  def self.compute_track_weight(track:, playlist_profile:)
+    if track_should_be_rejected?(
+      track: track,
+      playlist_profile: playlist_profile
+    )
+      return 0
+    end
+
     criteria_scores = playlist_profile.criteria.values.map do |criteria|
       compute_criteria_weight(criteria: criteria, track: track)
     end
@@ -59,6 +68,13 @@ class PlaylistTrackGenerator
       values: criteria_scores,
       factors: playlist_profile.criteria.values.map(&:multiplier)
     )
+  end
+
+  def self.track_should_be_rejected?(track:, playlist_profile:)
+    playlist_profile.criteria.values.any? do |criteria|
+      value = track.send(criteria.name)
+      value.nil? || value < criteria.min || value > criteria.max
+    end
   end
 
   def self.compute_criteria_weight(criteria:, track:)
