@@ -53,10 +53,7 @@ class PlaylistTrackGenerator
   #############
 
   def self.compute_track_weight(track:, playlist_profile:)
-    if track_should_be_rejected?(
-      track: track,
-      playlist_profile: playlist_profile
-    )
+    if track_should_be_rejected?(track: track, playlist_profile: playlist_profile)
       return 0
     end
 
@@ -70,6 +67,7 @@ class PlaylistTrackGenerator
     )
   end
 
+  # Reject the track is if it busts any criteria min or max requirements
   def self.track_should_be_rejected?(track:, playlist_profile:)
     playlist_profile.criteria.values.any? do |criteria|
       value = track.send(criteria.name)
@@ -77,7 +75,7 @@ class PlaylistTrackGenerator
     end
   end
 
-  def self.compute_criteria_weight(criteria:, track:)
+  def self.compute_criteria_weight(criteria:, track:) # rubocop:disable Metrics/MethodLength
     # If there is no target, consider track a perfect match
     return 1 unless criteria.target
 

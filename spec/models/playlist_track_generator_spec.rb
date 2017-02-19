@@ -1,5 +1,49 @@
 require 'rails_helper'
 
+class PlaylistProfileAnalysis
+  def initialize(tracks, playlist_profile)
+    @playlist_profile = playlist_profile
+    @tracks = tracks
+  end
+
+  def do_analaysis(tracks, playlist_profile)
+    tracks.map do |track|
+      analyze_track(track, playlist_profile)
+    end
+  end
+
+  def analyze_track(track, playlist_profile)
+    criteria_weights = playlist_profile.criteria.values.map do |criteria|
+      PlaylistTrackGenerator.compute_criteria_weight(
+        criteria: criteria, track: track
+      )
+    end
+
+    track_weight = PlaylistTrackGenerator.compute_track_weight(
+      track: track, playlist_profile: playlist_profile
+    )
+
+    { criteria_weights: criteria_weights,
+      track_weight: track_weight }
+  end
+
+  def average(criteria_name)
+    @tracks.map { |track| track.send(criteria_name) }.reduce(&:+) / @tracks.size
+  end
+
+  def average_energy
+    average(:energy)
+  end
+
+  def average_undergroundness
+    average(:undergroundness)
+  end
+
+  def average_valence
+    average(:valence)
+  end
+end
+
 describe PlaylistTrackGenerator do
   subject { PlaylistTrackGenerator }
 
@@ -14,7 +58,30 @@ describe PlaylistTrackGenerator do
     xit 'when randomness is 0 it should be deterministic' do
     end
 
-    xit 'increasing a criteria target should raise the average' do
+    it 'increasing a criteria target should raise the average' do
+      playlist_profile_low = PlaylistProfileChooser.new.playlist_profile
+      playlist_profile_low.criteria[:energy].target = 0.5
+      playlist_profile_high = PlaylistProfileChooser.new.playlist_profile
+      playlist_profile_high.criteria[:energy].target = 0.8
+
+      station = FactoryGirl.create :station
+
+      tracks_low = subject.call(
+        tracks: station.tracks, playlist_profile: playlist_profile_low
+      )
+
+      tracks_high = subject.call(
+        tracks: station.tracks, playlist_profile: playlist_profile_high
+      )
+
+      analysis_low = PlaylistProfileAnalysis.new(
+        tracks_low, playlist_profile_low
+      )
+      analysis_high = PlaylistProfileAnalysis.new(
+        tracks_high, playlist_profile_high
+      )
+
+      expect(analysis_low.average_energy).to be < analysis_high.average_energy
     end
   end
 
@@ -22,7 +89,8 @@ describe PlaylistTrackGenerator do
     it 'if a track breaks the min or max it scores 0' do
       [:energy, :undergroundness, :valence].each do |criteria_name|
         playlist_profile = PlaylistProfileChooser.new.playlist_profile
-        playlist_profile.criteria[criteria_name].min = 1
+        playlist_profile.criteria[criteria_name].min =
+          playlist_profile.criteria[criteria_name].criteria_max + 0.01
         track = FactoryGirl.create :track
 
         expect(
@@ -31,8 +99,10 @@ describe PlaylistTrackGenerator do
           )
         ).to eq 0
 
-        playlist_profile.criteria[criteria_name].min = 0
-        playlist_profile.criteria[criteria_name].max = 0
+        playlist_profile.criteria[criteria_name].min =
+          playlist_profile.criteria[criteria_name].criteria_min
+        playlist_profile.criteria[criteria_name].max =
+          playlist_profile.criteria[criteria_name].criteria_min - 0.01
 
         expect(
           subject.compute_track_weight(
