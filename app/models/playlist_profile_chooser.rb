@@ -127,7 +127,6 @@ class PlaylistProfileChooser
     ForecastIO.forecast(*latlng)
   end
 
-
   # Choose a profile name based on the weather and time of day
   def choose_name(profile_args)
     weather = profile_args[:weather]

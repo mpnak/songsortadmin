@@ -5,7 +5,7 @@ describe PlaylistProfileChooser do
 
   describe 'templates' do
     it 'should have loaded the templates' do
-      expect(subject.playlist_profile_templates.count).to eq 6
+      expect(subject.playlist_profile_templates.count).to eq 7
     end
   end
 

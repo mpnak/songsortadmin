@@ -33,6 +33,12 @@ class PlaylistProfile
   include Virtus.model
   include ActiveModel::SerializerSupport
 
+  def self.default
+    filename = "#{Rails.root}/config/playlist_profiles/default.yml"
+    data = YAML.load_file(filename).deep_symbolize_keys
+    new(data)
+  end
+
   attribute :name, String
   attribute :criteria, Hash[Symbol => Criteria]
 

@@ -50,18 +50,32 @@ describe PlaylistTrackGenerator do
   describe '#call' do
     it 'should generate some tracks' do
       station = FactoryGirl.create :station
-      playlist_profile = PlaylistProfileChooser.new.playlist_profile
+      playlist_profile = PlaylistProfile.default
 
       subject.call(tracks: station.tracks, playlist_profile: playlist_profile)
     end
 
-    xit 'when randomness is 0 it should be deterministic' do
+    it 'when randomness is 0 it should be deterministic' do
+      station = FactoryGirl.create :station
+      playlist_profile = PlaylistProfile.default
+
+      tracks1 = subject.call(tracks: station.tracks, playlist_profile: playlist_profile)
+      tracks2 = subject.call(tracks: station.tracks, playlist_profile: playlist_profile)
+
+      analysis1 = PlaylistProfileAnalysis.new(
+        tracks1, playlist_profile
+      )
+      analysis2 = PlaylistProfileAnalysis.new(
+        tracks2, playlist_profile
+      )
+
+      expect(analysis1.average_energy).to eq analysis2.average_energy
     end
 
     it 'increasing a criteria target should raise the average' do
-      playlist_profile_low = PlaylistProfileChooser.new.playlist_profile
+      playlist_profile_low = PlaylistProfile.default
       playlist_profile_low.criteria[:energy].target = 0.5
-      playlist_profile_high = PlaylistProfileChooser.new.playlist_profile
+      playlist_profile_high = PlaylistProfile.default
       playlist_profile_high.criteria[:energy].target = 0.8
 
       station = FactoryGirl.create :station
@@ -88,7 +102,7 @@ describe PlaylistTrackGenerator do
   describe '#compute_track_weight' do
     it 'if a track breaks the min or max it scores 0' do
       [:energy, :undergroundness, :valence].each do |criteria_name|
-        playlist_profile = PlaylistProfileChooser.new.playlist_profile
+        playlist_profile = PlaylistProfile.default
         playlist_profile.criteria[criteria_name].min =
           playlist_profile.criteria[criteria_name].criteria_max + 0.01
         track = FactoryGirl.create :track

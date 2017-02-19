@@ -11,9 +11,7 @@ class PlaylistTrackGenerator
   def self.make_track_weights(tracks, playlist_profile)
     track_weights_with_index = tracks.each_with_index.map do |track, index|
       {
-        weight: compute_track_weight(
-          track: track, playlist_profile: playlist_profile
-        ),
+        weight: compute_track_weight(track: track, playlist_profile: playlist_profile),
         index: index
       }
     end
